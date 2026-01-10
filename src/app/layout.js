@@ -3,7 +3,6 @@ import "./globals.css";
 
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
-import { Sidebar } from "@/components/Sidebar/Sidebar";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -31,7 +30,6 @@ export default function RootLayout({ children }) {
         <Header />
 
         <div className='app-shell'>
-          <Sidebar />
           <main className='app-main'>{children}</main>
           <Footer />
         </div>

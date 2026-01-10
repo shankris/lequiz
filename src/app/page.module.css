@@ -1,0 +1,47 @@
+.dashboardLayout {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  /* Main content takes remaining space, sidebar is fixed */
+  gap: 2.5rem;
+  align-items: start;
+
+}
+
+.mainContent {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.header h1 {
+  margin-bottom: 0.5rem;
+  color: var(--accentColor);
+}
+
+.sidebar {
+  position: sticky;
+  top: 70px;
+  height: calc(100vh - var(--headerHeight) -30px)
+}
+
+/* Login Screen Styles */
+.loginWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .dashboardLayout {
+    grid-template-columns: 1fr;
+    /* Stack sidebar on mobile */
+  }
+
+  .sidebar {
+    position: static;
+  }
+}

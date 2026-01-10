@@ -1,0 +1,22 @@
+[
+  { "id": "01-le-la-les", "title": "Le, La, Les", "icon": "BookOpen" },
+  { "id": "02-un-une-des", "title": "Un, Une, Des", "icon": "Layers" },
+  { "id": "03-salutations", "title": "Salutations", "icon": "MessageCircle" },
+  { "id": "04-nombres-0-100", "title": "Les Nombres", "icon": "Hash" },
+  { "id": "05-etre-avoir", "title": "Être & Avoir", "icon": "Activity" },
+  { "id": "06-pronoms-sujets", "title": "Pronoms Sujets", "icon": "Users" },
+  { "id": "07-couleurs-adjectifs", "title": "Couleurs & Adj", "icon": "Palette" },
+  { "id": "08-verbes-er", "title": "Verbes en -ER", "icon": "Zap" },
+  { "id": "09-la-famille", "title": "La Famille", "icon": "Users" },
+  { "id": "10-jours-mois", "title": "Jours & Mois", "icon": "Calendar" },
+  { "id": "11-ma-maison", "title": "Ma Maison", "icon": "Home" },
+  { "id": "12-la-negation", "title": "La Négation", "icon": "Trash2" },
+  { "id": "13-les-questions", "title": "Les Questions", "icon": "HelpCircle" },
+  { "id": "14-aller-futur-proche", "title": "Aller & Futur", "icon": "FastForward" },
+  { "id": "15-la-nourriture", "title": "La Nourriture", "icon": "Utensils" },
+  { "id": "16-les-animaux", "title": "Les Animaux", "icon": "Dog" },
+  { "id": "17-le-corps", "title": "Le Corps", "icon": "User" },
+  { "id": "18-les-vetements", "title": "Les Vêtements", "icon": "Shirt" },
+  { "id": "19-la-meteo", "title": "La Météo", "icon": "CloudSun" },
+  { "id": "20-ma-routine", "title": "Ma Routine", "icon": "Clock" }
+]

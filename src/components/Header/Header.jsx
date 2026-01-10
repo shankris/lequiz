@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import styles from "./Header.module.css";
 import ThemeToggle from "./ThemeToggle";
 import NotificationBell from "../Notification/NotificationBell";
@@ -33,11 +34,22 @@ export default function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.inner}>
-        <div className={styles.logo}>Bookmarker</div>
-
-        <div>
-          <SearchInput />
+        <div className={styles.logo}>
+          <Image
+            src='/flagFrance.svg'
+            alt='Le Quiz App Logo'
+            width={45}
+            height={28}
+            priority
+          />
+          <div>
+            Le<span>Quiz</span>
+          </div>
         </div>
+
+        {/* <div>
+          <SearchInput />
+        </div> */}
 
         {/* Right side of header */}
         <div className={styles.rightIcons}>

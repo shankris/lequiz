@@ -1,0 +1,240 @@
+/* Theme Variables - Defined here or in globals.css */
+:root {
+  --bg-quiz: #ffffff;
+  --bg-card: #f9fafb;
+  --text-main: #111827;
+  --text-muted: #6b7280;
+  --border: #e5e7eb;
+  --accentColor: #0070f3;
+  --bg-hover: #f3f4f6;
+
+  --example-bg: #f8f9fa;
+  --example-border: #3b82f6;
+  --example-label: #6b7280;
+  --example-text: #1f2937;
+
+  /* Feedback Colors (Light) */
+  --correct-bg: #ecfdf5;
+  --correct-border: #10b981;
+  --correct-text: #065f46;
+  --wrong-bg: #fef2f2;
+  --wrong-border: #ef4444;
+  --wrong-text: #991b1b;
+}
+
+html[data-theme="dark"] {
+  --bg-quiz: #0f172a;
+  --bg-card: #1e293b;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --border: #334155;
+  --accentColor: #3b82f6;
+  --bg-hover: #2d3748;
+
+  --example-bg: #1f2937;
+  /* Darker grey-blue */
+  --example-border: #60a5fa;
+  /* Lighter blue for better contrast */
+  --example-label: #9ca3af;
+  /* Muted grey */
+  --example-text: #f3f4f6;
+  /* Near white */
+
+  /* Feedback Colors (Dark) */
+  --correct-bg: rgba(16, 185, 129, 0.2);
+  --correct-border: #10b981;
+  --correct-text: #34d399;
+  --wrong-bg: rgba(239, 68, 68, 0.2);
+  --wrong-border: #f87171;
+  --wrong-text: #fca5a5;
+}
+
+.quizContainer {
+  background-color: var(--bg-quiz);
+  color: var(--text-main);
+  min-height: 100vh;
+
+  /* 🔑 THIS IS THE FIX */
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+
+.questionCard {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 24px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.instruction {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+  font-weight: 500;
+  text-transform: uppercase;
+  /* Optional: makes it look like a professional header */
+  letter-spacing: 0.5px;
+}
+
+.questionText {
+  font-size: 1.8rem;
+  /* Larger font for the actual challenge */
+  color: var(--text-main);
+  margin-bottom: 24px;
+  font-weight: 700;
+}
+
+.optionsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.btnOption {
+  padding: 16px;
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  /* FIXED: Use variable instead of hardcoded 'white' */
+  background: var(--bg-quiz);
+  color: var(--text-main);
+  text-align: left;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.2s ease;
+}
+
+.btnOption:hover:not(:disabled) {
+  border-color: var(--accentColor);
+  background: var(--bg-hover);
+}
+
+/* Correct/Wrong logic using variables */
+.correct {
+  border-color: var(--correct-border) !important;
+  background-color: var(--correct-bg) !important;
+  color: var(--correct-text) !important;
+}
+
+.wrong {
+  border-color: var(--wrong-border) !important;
+  background-color: var(--wrong-bg) !important;
+  color: var(--wrong-text) !important;
+}
+
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.feedbackArea {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  animation: fadeIn 0.3s ease;
+}
+
+.explanation {
+  color: var(--text-muted);
+  font-style: italic;
+  margin-bottom: 15px;
+}
+
+.nextBtn {
+  width: 100%;
+  padding: 14px;
+  background: var(--accentColor);
+  color: white;
+  /* Contrast color always remains white */
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.trophyIcon {
+  color: #fbbf24;
+  margin-bottom: 1rem;
+}
+
+.scoreCircle {
+  margin: 1.5rem 0;
+}
+
+.scoreBig {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--accentColor);
+}
+
+.scoreSmall {
+  font-size: 1.5rem;
+  color: var(--text-muted);
+}
+
+.status {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-size: 1.2rem;
+  color: var(--text-main);
+}
+
+.questionSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.translate {
+  font-size: 16px;
+  color: var(--text-muted);
+}
+
+.sentenceContainer {
+  margin-top: 12px;
+  padding: 12px;
+  background-color: var(--example-bg);
+  border-left: 4px solid var(--example-border);
+  border-radius: 6px;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.exampleLabel {
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: var(--example-label);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 4px;
+  letter-spacing: 0.025em;
+}
+
+.sentenceText {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--example-text);
+  margin: 0;
+  line-height: 1.5;
+}
