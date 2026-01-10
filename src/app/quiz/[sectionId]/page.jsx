@@ -26,11 +26,7 @@ export default function QuizPage() {
         const data = await import(`@/data/a1/${sectionId}.json`);
 
         if (data && data.default.questions) {
-          // --- SHUFFLE & SLICE LOGIC ---
-          const shuffled = [...data.default.questions]
-            .sort(() => Math.random() - 0.5) // Randomize order
-            .slice(0, 20); // Pick only the first 20
-
+          const shuffled = [...data.default.questions].sort(() => Math.random() - 0.5).slice(0, 20);
           setCurrentQuestions(shuffled);
         }
       } catch (err) {
@@ -43,11 +39,18 @@ export default function QuizPage() {
     if (sectionId) fetchQuizData();
   }, [sectionId]);
 
+  const currentQ = currentQuestions[currentIndex];
+
+  // Helper to handle both object options {text, rationale} and simple string options
+  const getOptionText = (opt) => (typeof opt === "object" ? opt.text : opt);
+
   const handleOptionClick = (option) => {
     if (hasAnswered) return;
     setSelectedOption(option);
     setHasAnswered(true);
-    if (option === currentQuestions[currentIndex].answer) {
+
+    const optionText = getOptionText(option);
+    if (optionText === currentQ.answer) {
       setScore((prev) => prev + 1);
     }
   };
@@ -65,7 +68,6 @@ export default function QuizPage() {
   if (loading) return <div className={styles.status}>Chargement du quiz...</div>;
   if (error || currentQuestions.length === 0) return <div className={styles.status}>Quiz non trouvé.</div>;
 
-  // --- RESULT SCREEN ---
   if (quizFinished) {
     const percentage = Math.round((score / currentQuestions.length) * 100);
     return (
@@ -84,7 +86,6 @@ export default function QuizPage() {
             <span className={styles.scoreSmall}>/ {currentQuestions.length}</span>
           </div>
           <p className={styles.explanation}>{percentage}% de réussite</p>
-
           <button
             onClick={() => window.location.reload()}
             className={styles.nextBtn}
@@ -107,8 +108,6 @@ export default function QuizPage() {
       </div>
     );
   }
-
-  const currentQ = currentQuestions[currentIndex];
 
   return (
     <div className={styles.quizContainer}>
@@ -135,16 +134,18 @@ export default function QuizPage() {
       </div>
 
       <div className={styles.questionCard}>
-        <p className={styles.instruction}>Choisissez l'article correct pour :</p>
+        <p className={styles.instruction}>Choisissez la bonne réponse :</p>
 
         <div className={styles.questionSection}>
           <h2 className={styles.questionText}>{currentQ.question}</h2>
-          <div className={styles.translate}>{currentQ.translation && <span className={styles.translationText}>{currentQ.translation}</span>}</div>{" "}
+          <div className={styles.translate}>{currentQ.translation && <span className={styles.translationText}>{currentQ.translation}</span>}</div>
         </div>
+
         <div className={styles.optionsGrid}>
           {currentQ.options.map((opt, i) => {
+            const optText = getOptionText(opt);
             const isSelected = selectedOption === opt;
-            const isCorrect = opt === currentQ.answer;
+            const isCorrect = optText === currentQ.answer;
 
             let btnClass = styles.btnOption;
             if (hasAnswered) {
@@ -160,7 +161,7 @@ export default function QuizPage() {
                 onClick={() => handleOptionClick(opt)}
                 disabled={hasAnswered}
               >
-                <span>{opt}</span>
+                <span>{optText}</span>
                 {hasAnswered && isCorrect && <CheckCircle2 size={18} />}
                 {hasAnswered && isSelected && !isCorrect && <XCircle size={18} />}
               </button>
@@ -170,7 +171,25 @@ export default function QuizPage() {
 
         {hasAnswered && (
           <div className={styles.feedbackArea}>
+            {/* 1. Specific Rationale (Only if available) */}
+            {selectedOption?.rationale && (
+              <div className={styles.rationaleBox}>
+                <p className={styles.rationaleText}>
+                  <strong>Note :</strong> {selectedOption.rationale}
+                </p>
+              </div>
+            )}
+
+            {/* 2. General Explanation */}
             <p className={styles.explanation}>{currentQ.explanation}</p>
+
+            {/* 3. Example Sentence */}
+            {currentQ.sentence && (
+              <div className={styles.sentenceContainer}>
+                <span className={styles.exampleLabel}>Exemple :</span>
+                <p className={styles.sentenceText}>{currentQ.sentence}</p>
+              </div>
+            )}
 
             <button
               onClick={handleNext}
@@ -178,13 +197,6 @@ export default function QuizPage() {
             >
               {currentIndex === currentQuestions.length - 1 ? "Voir les résultats" : "Continuer"}
             </button>
-
-            {currentQ.sentence && (
-              <div className={styles.sentenceContainer}>
-                <span className={styles.exampleLabel}>Exemple :</span>
-                <p className={styles.sentenceText}>{currentQ.sentence}</p>
-              </div>
-            )}
           </div>
         )}
       </div>

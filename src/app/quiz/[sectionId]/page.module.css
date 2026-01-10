@@ -213,7 +213,7 @@ html[data-theme="dark"] {
 }
 
 .sentenceContainer {
-  margin-top: 12px;
+  margin: 15px 0;
   padding: 12px;
   background-color: var(--example-bg);
   border-left: 4px solid var(--example-border);
@@ -237,4 +237,20 @@ html[data-theme="dark"] {
   color: var(--example-text);
   margin: 0;
   line-height: 1.5;
+}
+
+.rationaleContainer {
+  margin-bottom: 15px;
+  padding: 12px;
+  border-radius: 8px;
+  background-color: rgba(59, 130, 246, 0.1);
+  /* Very light blue tint */
+  border: 1px dashed var(--example-border);
+}
+
+.rationaleText {
+  font-size: 0.95rem;
+  color: var(--example-text);
+  margin: 0;
+  line-height: 1.4;
 }
