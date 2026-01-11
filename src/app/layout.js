@@ -1,6 +1,8 @@
 import { Montserrat, Open_Sans } from "next/font/google";
 import "./globals.css";
 
+import Providers from "./providers";
+
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 
@@ -27,12 +29,14 @@ export default function RootLayout({ children }) {
   return (
     <html lang='en'>
       <body className={`${montserrat.variable} ${openSans.variable}`}>
-        <Header />
+        <Providers>
+          <Header />
 
-        <div className='app-shell'>
-          <main className='app-main'>{children}</main>
-          <Footer />
-        </div>
+          <div className='app-shell'>
+            <main className='app-main'>{children}</main>
+            <Footer />
+          </div>
+        </Providers>
       </body>
     </html>
   );

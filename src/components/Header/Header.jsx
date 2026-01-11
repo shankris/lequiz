@@ -6,6 +6,8 @@ import ThemeToggle from "./ThemeToggle";
 import NotificationBell from "../Notification/NotificationBell";
 import SearchInput from "./Search/SearchInput";
 
+import UserMenu from "@/components/Auth/UserMenu";
+
 const notifications = [
   {
     id: 1,
@@ -60,6 +62,7 @@ export default function Header() {
             onItemClick={(item) => console.log("Clicked", item)}
             onViewAll={() => router.push("/notifications")}
           />
+          <UserMenu />
         </div>
       </div>
     </header>

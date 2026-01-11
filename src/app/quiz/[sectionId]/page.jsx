@@ -2,12 +2,16 @@
 
 import { useParams, useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
-import { ArrowLeft, CheckCircle2, XCircle, Trophy, RotateCcw } from "lucide-react";
+import { useSession, signIn } from "next-auth/react"; // Import hooks
+import { ArrowLeft, CheckCircle2, XCircle, Trophy, RotateCcw, Lock } from "lucide-react";
 import styles from "./page.module.css";
 
 export default function QuizPage() {
   const { sectionId } = useParams();
   const router = useRouter();
+  const { data: session, status } = useSession(); // Access auth state
+
+  console.log("Current User Session:", session);
 
   const [currentQuestions, setCurrentQuestions] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -20,28 +24,76 @@ export default function QuizPage() {
   const [quizFinished, setQuizFinished] = useState(false);
 
   useEffect(() => {
-    async function fetchQuizData() {
-      try {
-        setLoading(true);
-        const data = await import(`@/data/a1/${sectionId}.json`);
+    // Only fetch data if the user is authenticated
+    if (status === "authenticated") {
+      async function fetchQuizData() {
+        try {
+          setLoading(true);
+          const data = await import(`@/data/a1/${sectionId}.json`);
 
-        if (data && data.default.questions) {
-          const shuffled = [...data.default.questions].sort(() => Math.random() - 0.5).slice(0, 20);
-          setCurrentQuestions(shuffled);
+          if (data && data.default.questions) {
+            const shuffled = [...data.default.questions].sort(() => Math.random() - 0.5).slice(0, 20);
+            setCurrentQuestions(shuffled);
+          }
+        } catch (err) {
+          console.error("Could not find quiz file:", err);
+          setError(true);
+        } finally {
+          setLoading(false);
         }
-      } catch (err) {
-        console.error("Could not find quiz file:", err);
-        setError(true);
-      } finally {
-        setLoading(false);
       }
+      if (sectionId) fetchQuizData();
     }
-    if (sectionId) fetchQuizData();
-  }, [sectionId]);
+  }, [sectionId, status]);
+
+  // --- LOADING STATE ---
+  if (status === "loading" || (status === "authenticated" && loading)) {
+    return <div className={styles.status}>Chargement du quiz...</div>;
+  }
+
+  // --- UNAUTHENTICATED STATE (The Login Gate) ---
+  if (status === "unauthenticated") {
+    return (
+      <div className={styles.quizContainer}>
+        <div
+          className={styles.questionCard}
+          style={{ textAlign: "center", padding: "40px" }}
+        >
+          <Lock
+            size={48}
+            style={{ margin: "0 auto 20px", color: "#666" }}
+          />
+          <h2 className={styles.questionText}>Contenu Protégé</h2>
+          <p
+            className={styles.explanation}
+            style={{ marginBottom: "20px" }}
+          >
+            Veuillez vous connecter pour accéder aux exercices et enregistrer votre progression.
+          </p>
+          <button
+            onClick={() => signIn("github")}
+            className={styles.nextBtn}
+          >
+            Se connecter avec GitHub
+          </button>
+          <button
+            onClick={() => router.push("/")}
+            className={styles.backBtn}
+            style={{ marginTop: "20px" }}
+          >
+            Retour au Dashboard
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  if (error || (status === "authenticated" && currentQuestions.length === 0)) {
+    return <div className={styles.status}>Quiz non trouvé.</div>;
+  }
 
   const currentQ = currentQuestions[currentIndex];
 
-  // Helper to handle both object options {text, rationale} and simple string options
   const getOptionText = (opt) => (typeof opt === "object" ? opt.text : opt);
 
   const handleOptionClick = (option) => {
@@ -65,9 +117,7 @@ export default function QuizPage() {
     }
   };
 
-  if (loading) return <div className={styles.status}>Chargement du quiz...</div>;
-  if (error || currentQuestions.length === 0) return <div className={styles.status}>Quiz non trouvé.</div>;
-
+  // --- RESULT SCREEN ---
   if (quizFinished) {
     const percentage = Math.round((score / currentQuestions.length) * 100);
     return (
@@ -86,6 +136,7 @@ export default function QuizPage() {
             <span className={styles.scoreSmall}>/ {currentQuestions.length}</span>
           </div>
           <p className={styles.explanation}>{percentage}% de réussite</p>
+          <p style={{ fontSize: "0.9rem", color: "#666", marginBottom: "20px" }}>Bravo {session?.user?.name} !</p>
           <button
             onClick={() => window.location.reload()}
             className={styles.nextBtn}
@@ -109,6 +160,7 @@ export default function QuizPage() {
     );
   }
 
+  // --- QUIZ ACTIVE SCREEN ---
   return (
     <div className={styles.quizContainer}>
       <button
@@ -171,7 +223,6 @@ export default function QuizPage() {
 
         {hasAnswered && (
           <div className={styles.feedbackArea}>
-            {/* 1. Specific Rationale (Only if available) */}
             {selectedOption?.rationale && (
               <div className={styles.rationaleBox}>
                 <p className={styles.rationaleText}>
@@ -180,10 +231,8 @@ export default function QuizPage() {
               </div>
             )}
 
-            {/* 2. General Explanation */}
             <p className={styles.explanation}>{currentQ.explanation}</p>
 
-            {/* 3. Example Sentence */}
             {currentQ.sentence && (
               <div className={styles.sentenceContainer}>
                 <span className={styles.exampleLabel}>Exemple :</span>
