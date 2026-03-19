@@ -57,6 +57,7 @@ html[data-theme="dark"] {
   /* 🔑 THIS IS THE FIX */
   padding: 20px;
   transition: all 0.3s ease;
+  width: 800px;
 }
 
 
