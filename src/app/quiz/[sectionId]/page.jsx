@@ -4,6 +4,9 @@ import { useParams, useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 import { useSession, signIn } from "next-auth/react";
 import { ArrowLeft, CheckCircle2, XCircle, Trophy, RotateCcw, Lock } from "lucide-react";
+
+import QuestionGrid from "@/components/QuestionGrid/QuestionGrid";
+
 import styles from "./page.module.css";
 
 export default function QuizPage() {
@@ -21,22 +24,38 @@ export default function QuizPage() {
   const [score, setScore] = useState(0);
   const [quizFinished, setQuizFinished] = useState(false);
 
-  // Default options fallback if "options" is missing in JSON
-  const DEFAULT_OPTIONS = ["Le", "La", "Les", "L'"];
+  const [answers, setAnswers] = useState([]);
+
+  const handleJump = (index) => {
+    setCurrentIndex(index);
+    setHasAnswered(false);
+    setSelectedOption(null);
+  };
 
   useEffect(() => {
     if (status === "authenticated") {
       async function fetchQuizData() {
         try {
           setLoading(true);
-          const data = await import(`@/data/a1/${sectionId}.json`);
+          const data = await import(`@/data/${sectionId}.json`);
 
           if (data && data.default.questions) {
-            // 1. Filter: Only keep questions where type is "A1"
-            const a1Questions = data.default.questions.filter((q) => q.type === "A1");
+            // ✅ Normalize new JSON format → old UI format
+            const normalizedQuestions = data.default.questions
+              .filter((q) => q.Level === "A1")
+              .map((q) => ({
+                id: q.id,
+                question: q.Question,
+                options: [q.options1, q.options2, q.options3, q.options4],
+                answer: q.answer,
+                explanation: `${q.tips || ""} ${q.grammar_rule || ""} ${q.exception || ""}`,
+                translation: q.english_translation,
+                complete_answer: q.complete_answer,
+                similar_examples: q.similar_examples,
+              }));
 
-            // 2. Shuffle and take up to 20
-            const shuffled = [...a1Questions].sort(() => Math.random() - 0.5).slice(0, 20);
+            // Shuffle + limit
+            const shuffled = [...normalizedQuestions].sort(() => Math.random() - 0.5).slice(0, 20);
 
             setCurrentQuestions(shuffled);
           }
@@ -47,6 +66,7 @@ export default function QuizPage() {
           setLoading(false);
         }
       }
+
       if (sectionId) fetchQuizData();
     }
   }, [sectionId, status]);
@@ -87,30 +107,40 @@ export default function QuizPage() {
             Retour au Dashboard
           </button>
         </div>
+
+        <QuestionGrid
+          questions={currentQuestions}
+          answers={answers}
+          currentIndex={currentIndex}
+          onJump={handleJump}
+        />
       </div>
     );
   }
 
-  if (error || (status === "authenticated" && currentQuestions.length === 0)) {
+  if (error || currentQuestions.length === 0) {
     return <div className={styles.status}>Aucune question A1 trouvée dans cette section.</div>;
   }
 
   const currentQ = currentQuestions[currentIndex];
 
-  // Use options from JSON, or fallback to default if missing
-  const displayOptions = currentQ.options || DEFAULT_OPTIONS;
-
-  const getOptionText = (opt) => (typeof opt === "object" ? opt.text : opt);
-
   const handleOptionClick = (option) => {
     if (hasAnswered) return;
+
     setSelectedOption(option);
     setHasAnswered(true);
 
-    const optionText = getOptionText(option);
-    if (optionText === currentQ.answer) {
+    const isCorrect = option === currentQ.answer;
+
+    if (isCorrect) {
       setScore((prev) => prev + 1);
     }
+
+    setAnswers((prev) => {
+      const updated = [...prev];
+      updated[currentIndex] = isCorrect ? "correct" : "wrong";
+      return updated;
+    });
   };
 
   const handleNext = () => {
@@ -125,6 +155,7 @@ export default function QuizPage() {
 
   if (quizFinished) {
     const percentage = Math.round((score / currentQuestions.length) * 100);
+
     return (
       <div className={styles.quizContainer}>
         <div
@@ -136,11 +167,14 @@ export default function QuizPage() {
             className={styles.trophyIcon}
           />
           <h2 className={styles.questionText}>Quiz Terminé !</h2>
+
           <div className={styles.scoreCircle}>
             <span className={styles.scoreBig}>{score}</span>
             <span className={styles.scoreSmall}>/ {currentQuestions.length}</span>
           </div>
+
           <p className={styles.explanation}>{percentage}% de réussite</p>
+
           <button
             onClick={() => window.location.reload()}
             className={styles.nextBtn}
@@ -148,7 +182,7 @@ export default function QuizPage() {
             <RotateCcw
               size={18}
               style={{ marginRight: "8px" }}
-            />{" "}
+            />
             Réessayer
           </button>
         </div>
@@ -172,28 +206,33 @@ export default function QuizPage() {
           </span>
           <span>Score: {score}</span>
         </div>
+
         <div className={styles.progressBarBg}>
           <div
             className={styles.progressFill}
-            style={{ width: `${((currentIndex + 1) / currentQuestions.length) * 100}%` }}
+            style={{
+              width: `${((currentIndex + 1) / currentQuestions.length) * 100}%`,
+            }}
           />
         </div>
       </div>
 
       <div className={styles.questionCard}>
         <p className={styles.instruction}>Choisissez la bonne réponse :</p>
+
         <div className={styles.questionSection}>
           <h2 className={styles.questionText}>{currentQ.question}</h2>
+
           {currentQ.translation && <p className={styles.translationText}>{currentQ.translation}</p>}
         </div>
 
         <div className={styles.optionsGrid}>
-          {displayOptions.map((opt, i) => {
-            const optText = getOptionText(opt);
+          {currentQ.options.map((opt, i) => {
             const isSelected = selectedOption === opt;
-            const isCorrect = optText === currentQ.answer;
+            const isCorrect = opt === currentQ.answer;
 
             let btnClass = styles.btnOption;
+
             if (hasAnswered) {
               if (isCorrect) btnClass += ` ${styles.correct}`;
               else if (isSelected) btnClass += ` ${styles.wrong}`;
@@ -207,7 +246,8 @@ export default function QuizPage() {
                 onClick={() => handleOptionClick(opt)}
                 disabled={hasAnswered}
               >
-                <span>{optText}</span>
+                <span>{opt}</span>
+
                 {hasAnswered && isCorrect && <CheckCircle2 size={32} />}
                 {hasAnswered && isSelected && !isCorrect && <XCircle size={32} />}
               </button>
@@ -217,13 +257,35 @@ export default function QuizPage() {
 
         {hasAnswered && (
           <div className={styles.feedbackArea}>
+            {/* Explanation */}
             <p className={styles.explanation}>{currentQ.explanation}</p>
-            {currentQ.sentence && (
-              <div className={styles.sentenceContainer}>
-                <span className={styles.exampleLabel}>Exemple :</span>
-                <p className={styles.sentenceText}>{currentQ.sentence}</p>
+
+            {/* Correct Answer */}
+            {currentQ.complete_answer && (
+              <div
+                className={styles.sentenceText}
+                dangerouslySetInnerHTML={{
+                  __html: currentQ.complete_answer,
+                }}
+              />
+            )}
+
+            {/* Similar Examples */}
+            {currentQ.similar_examples && (
+              <div className={styles.examples}>
+                {JSON.parse(currentQ.similar_examples).map((ex, i) => (
+                  <div key={i}>
+                    <span
+                      dangerouslySetInnerHTML={{
+                        __html: ex.french,
+                      }}
+                    />{" "}
+                    - {ex.english}
+                  </div>
+                ))}
               </div>
             )}
+
             <button
               onClick={handleNext}
               className={styles.nextBtn}

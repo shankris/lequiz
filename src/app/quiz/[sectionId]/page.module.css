@@ -70,13 +70,13 @@ html[data-theme="dark"] {
 }
 
 .instruction {
-  font-size: 0.95rem;
+  font-size: 16px;
   color: var(--text-muted);
-  margin-bottom: 8px;
-  font-weight: 500;
-  text-transform: uppercase;
+  /* margin-bottom: 8px; */
+  font-weight: 300;
+  /* text-transform: uppercase; */
   /* Optional: makes it look like a professional header */
-  letter-spacing: 0.5px;
+  /* letter-spacing: 0.5px; */
 }
 
 .questionText {
@@ -153,9 +153,13 @@ html[data-theme="dark"] {
   color: white;
   /* Contrast color always remains white */
   border: none;
-  border-radius: 12px;
+  border-radius: 4px;
   font-weight: 600;
   cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @keyframes fadeIn {
@@ -172,8 +176,9 @@ html[data-theme="dark"] {
 
 
 .trophyIcon {
-  color: #fbbf24;
+  color: #336699;
   margin-bottom: 1rem;
+  display: inline;
 }
 
 .scoreCircle {
@@ -253,4 +258,10 @@ html[data-theme="dark"] {
   color: var(--example-text);
   margin: 0;
   line-height: 1.4;
+}
+
+.quizLayout {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
 }

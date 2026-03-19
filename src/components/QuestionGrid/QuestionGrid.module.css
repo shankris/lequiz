@@ -1,0 +1,39 @@
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(5, 50px);
+  gap: 10px;
+  padding: 10px;
+}
+
+.box {
+  width: 50px;
+  height: 50px;
+  background-color: #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.box:hover {
+  transform: scale(1.05);
+}
+
+/* States */
+.correct {
+  background-color: #4caf50;
+  color: white;
+}
+
+.wrong {
+  background-color: #f44336;
+  color: white;
+}
+
+/* Current question highlight */
+.current {
+  border: 3px solid #000;
+}
