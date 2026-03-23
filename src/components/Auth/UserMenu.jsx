@@ -14,7 +14,7 @@ export default function UserMenu() {
         className={styles.authButton}
         onClick={() => signIn()}
       >
-        Login
+        Login to save session
       </button>
     );
   }

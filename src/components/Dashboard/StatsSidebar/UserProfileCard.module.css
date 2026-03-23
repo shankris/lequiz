@@ -1,0 +1,63 @@
+.profileCard {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  background: var(--surfaceColor);
+  padding: var(--space-sm);
+  border-radius: var(--borderRadius-lg);
+  border: 1px solid var(--borderColor);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.avatarFallback {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--accentColor);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.userName {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--txtColor);
+  padding: 0;
+  margin: 4px 0 6px;
+  line-height: 1;
+}
+
+.userLevel {
+  font-size: 12px;
+  color: var(--mutedColor);
+  padding: 0;
+  line-height: 1;
+  margin: 0;
+}
+
+.guestTag {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  background: var(--surfaceAlt);
+  color: var(--mutedColor);
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: var(--borderRadius-sm);
+}

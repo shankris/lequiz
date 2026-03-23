@@ -3,30 +3,48 @@
 import styles from "./QuestionGrid.module.css";
 
 export default function QuestionGrid({ questions, answers, currentIndex, onJump }) {
+  // ✅ Stats
+  const attempted = answers.filter((a) => a !== undefined).length;
+  const correct = answers.filter((a) => a === "correct").length;
+  const incorrect = answers.filter((a) => a === "wrong").length;
+
   return (
-    <div className={styles.gridContainer}>
-      {questions.map((q, index) => {
-        const status = answers[index]; // correct | wrong | undefined
+    <div className={styles.wrapper}>
+      {/* ✅ SCORE */}
+      <div className={styles.scoreContainer}>
+        <div className={styles.attempted}>Attempted {attempted}</div>
 
-        let boxClass = styles.box;
+        <div className={styles.resultRow}>
+          <span className={styles.correctText}>Correct {correct}</span>
+          <span className={styles.incorrectText}>Incorrect {incorrect}</span>
+        </div>
+      </div>
 
-        if (status === "correct") boxClass += ` ${styles.correct}`;
-        else if (status === "wrong") boxClass += ` ${styles.wrong}`;
+      {/* ✅ GRID */}
+      <div className={styles.gridContainer}>
+        {questions.map((q, index) => {
+          const status = answers[index];
 
-        if (index === currentIndex) {
-          boxClass += ` ${styles.current}`;
-        }
+          let boxClass = styles.box;
 
-        return (
-          <div
-            key={index}
-            className={boxClass}
-            onClick={() => onJump(index)}
-          >
-            {index + 1}
-          </div>
-        );
-      })}
+          if (status === "correct") boxClass += ` ${styles.correct}`;
+          else if (status === "wrong") boxClass += ` ${styles.wrong}`;
+
+          if (index === currentIndex) {
+            boxClass += ` ${styles.current}`;
+          }
+
+          return (
+            <div
+              key={index}
+              className={boxClass}
+              onClick={() => onJump(index)} // ✅ CLICK BACK
+            >
+              {index + 1}
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }

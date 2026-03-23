@@ -1,0 +1,129 @@
+.calendarGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.weekRow {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.day {
+  width: 100%;
+  aspect-ratio: 1;
+  background: var(--surfaceAlt);
+  border-radius: 4px;
+  transition: var(--transition-fast);
+}
+
+/* Active day */
+.active {
+  background: var(--accentColor);
+}
+
+/* Weekend styling */
+.weekend {
+  opacity: 0.6;
+}
+
+/* Optional: weekend + active combo */
+.weekend.active {
+  opacity: 1;
+  filter: brightness(1.1);
+}
+
+.day {
+  width: 100%;
+  aspect-ratio: 1;
+  background: var(--surfaceAlt);
+  border-radius: 4px;
+  transition: var(--transition-fast);
+}
+
+/* Active days */
+.active {
+  background: var(--accentColor);
+}
+
+/* Weekend */
+.weekend {
+  opacity: 0.7;
+}
+
+/* Future / empty days (grey) */
+.future {
+  background: var(--borderColor);
+  opacity: 0.4;
+}
+
+/* Weekday header */
+.weekLabels {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin-bottom: 4px;
+}
+
+.weekLabel {
+  text-align: center;
+  font-size: 11px;
+  color: var(--mutedColor);
+}
+
+/* Day box */
+.day {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  background: var(--surfaceAlt);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  font-size: 11px;
+  color: var(--mutedColor);
+  transition: var(--transition-fast);
+}
+
+/* Date inside box */
+.dateNumber {
+  font-size: 15px;
+  opacity: 0.8;
+}
+
+/* Active */
+.active {
+  background: var(--accentColor);
+  color: white;
+}
+
+/* Weekend */
+.weekend {
+  opacity: 0.75;
+}
+
+/* Future / empty */
+.future {
+  background: var(--borderColor);
+  opacity: 0.4;
+}
+
+.calendarHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 2px 8px;
+}
+
+.calendarCard {
+  margin: 0;
+  padding: 0;
+  /* background-color: #ddd; */
+}
+
+.calendarLegend {
+  font-size: 12px;
+  color: var(--mutedColor);
+}

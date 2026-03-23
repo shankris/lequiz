@@ -10,7 +10,7 @@
 .mainContent {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  /* gap: 2rem; */
 }
 
 .header h1 {

@@ -3,7 +3,7 @@
 // import { useSession, signIn } from "next-auth/react";
 import styles from "./page.module.css";
 import SubSectionGrid from "@/components/Dashboard/SubSectionGrid";
-import StatsSidebar from "@/components/Dashboard/StatsSidebar";
+import StatsSidebar from "@/components/Dashboard/StatsSidebar/StatsSidebar";
 
 export default function Home() {
   /* We are bypassing Auth for now to focus on the Quiz logic.

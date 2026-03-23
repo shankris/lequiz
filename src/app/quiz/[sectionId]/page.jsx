@@ -2,16 +2,15 @@
 
 import { useParams, useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
-import { useSession, signIn } from "next-auth/react";
-import { ArrowLeft, CheckCircle2, XCircle, Trophy, RotateCcw, Lock } from "lucide-react";
+import { ArrowLeft, CheckCircle2, XCircle, Trophy, RotateCcw } from "lucide-react";
 
 import QuestionGrid from "@/components/QuestionGrid/QuestionGrid";
+import { updateStats } from "@/utils/statsService";
 import styles from "./page.module.css";
 
 export default function QuizPage() {
   const { sectionId } = useParams();
   const router = useRouter();
-  const { data: session, status } = useSession();
 
   const [currentQuestions, setCurrentQuestions] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -24,101 +23,126 @@ export default function QuizPage() {
   const [quizFinished, setQuizFinished] = useState(false);
 
   const [answers, setAnswers] = useState([]);
+  const [statsSaved, setStatsSaved] = useState(false);
 
-  // ✅ Better jump logic
+  // ----------------- LocalStorage helpers -----------------
+  const getUsedQuestionIds = () => {
+    if (typeof window === "undefined") return [];
+    const used = localStorage.getItem("usedQuestionIds");
+    return used ? JSON.parse(used) : [];
+  };
+
+  const setUsedQuestionIds = (ids) => {
+    if (typeof window === "undefined") return;
+    localStorage.setItem("usedQuestionIds", JSON.stringify(ids));
+  };
+  // -------------------------------------------------------
+
   const handleJump = (index) => {
     setCurrentIndex(index);
     setSelectedOption(null);
     setHasAnswered(answers[index] !== undefined);
   };
 
+  // ----------------- Load quiz data -----------------
   useEffect(() => {
-    if (status === "authenticated") {
-      async function fetchQuizData() {
-        try {
-          setLoading(true);
+    async function fetchQuizData() {
+      try {
+        setLoading(true);
 
-          const data = await import(`@/data/${sectionId}.json`);
+        const data = await import(`@/data/${sectionId}.json`);
+        let questionsArray = [];
 
-          if (data && data.default.questions) {
-            const normalizedQuestions = data.default.questions
-              .filter((q) => q.Level === "A1")
-              .map((q) => ({
-                id: q.id,
-                question: q.Question,
-                options: [q.options1, q.options2, q.options3, q.options4],
-                answer: q.answer,
-                explanation: `${q.tips || ""} ${q.grammar_rule || ""} ${q.exception || ""}`,
-                translation: q.english_translation,
-                complete_answer: q.complete_answer,
-                similar_examples: q.similar_examples,
-              }));
+        if (data.default && Array.isArray(data.default)) questionsArray = data.default;
+        else if (data.default && data.default.questions) questionsArray = data.default.questions;
+        else if (Array.isArray(data)) questionsArray = data;
 
-            const shuffled = [...normalizedQuestions].sort(() => Math.random() - 0.5).slice(0, 20);
-
-            setCurrentQuestions(shuffled);
-          }
-        } catch (err) {
-          console.error("Could not find quiz file:", err);
+        if (questionsArray.length === 0) {
           setError(true);
-        } finally {
-          setLoading(false);
+          return;
         }
+
+        let usedIds = getUsedQuestionIds();
+
+        let normalizedQuestions = questionsArray
+          .filter((q) => q.Level === "A1")
+          .filter((q) => !usedIds.includes(q.id))
+          .map((q) => ({
+            id: q.id,
+            question: q.Q,
+            options: [q.opt1, q.opt2, q.opt3, q.opt4],
+            answer: q.ans,
+            explanation: `${q.tips || ""} ${q.grammar_rule || ""} ${q.exception || ""}`,
+            translation: q.eng,
+            complete_answer: q.compAns,
+            similar: q.similar,
+          }));
+
+        if (normalizedQuestions.length === 0) {
+          // Reset if all questions used
+          localStorage.removeItem("usedQuestionIds");
+          usedIds = [];
+          normalizedQuestions = questionsArray
+            .filter((q) => q.Level === "A1")
+            .map((q) => ({
+              id: q.id,
+              question: q.Q,
+              options: [q.opt1, q.opt2, q.opt3, q.opt4],
+              answer: q.ans,
+              explanation: `${q.tips || ""} ${q.grammar_rule || ""} ${q.exception || ""}`,
+              translation: q.eng,
+              complete_answer: q.compAns,
+              similar: q.similar,
+            }));
+        }
+
+        const shuffled = [...normalizedQuestions].sort(() => Math.random() - 0.5).slice(0, 20);
+        setUsedQuestionIds([...usedIds, ...shuffled.map((q) => q.id)]);
+        setCurrentQuestions(shuffled);
+      } catch (err) {
+        console.error("Could not find quiz file:", err);
+        setError(true);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    if (sectionId) fetchQuizData();
+  }, [sectionId]);
+
+  // ----------------- Save stats and activity -----------------
+  useEffect(() => {
+    if (quizFinished && !statsSaved && currentQuestions.length > 0) {
+      updateStats({
+        score,
+        totalQuestions: currentQuestions.length,
+        questions: currentQuestions,
+        answers,
+        sectionId,
+      });
+
+      // Save activity for today
+      if (typeof window !== "undefined") {
+        const todayStr = new Date().toISOString().split("T")[0];
+        const activity = JSON.parse(localStorage.getItem("activityData") || "{}");
+        activity[todayStr] = true;
+        localStorage.setItem("activityData", JSON.stringify(activity));
+
+        // Notify calendar components
+        window.dispatchEvent(new Event("activityUpdated"));
       }
 
-      if (sectionId) fetchQuizData();
+      setStatsSaved(true);
     }
-  }, [sectionId, status]);
+  }, [quizFinished, statsSaved, currentQuestions, score, answers, sectionId]);
 
-  // ✅ Loading
-  if (status === "loading" || (status === "authenticated" && loading)) {
-    return <div className={styles.status}>Chargement du quiz...</div>;
-  }
-
-  // ✅ Auth block (NO grid here)
-  if (status === "unauthenticated") {
-    return (
-      <div className={styles.quizContainer}>
-        <div
-          className={styles.questionCard}
-          style={{ textAlign: "center", padding: "40px" }}
-        >
-          <Lock
-            size={48}
-            style={{ margin: "0 auto 20px", color: "#666" }}
-          />
-          <h2 className={styles.questionText}>Contenu Protégé</h2>
-          <p
-            className={styles.explanation}
-            style={{ marginBottom: "20px" }}
-          >
-            Veuillez vous connecter pour accéder aux exercices.
-          </p>
-          <button
-            onClick={() => signIn("github")}
-            className={styles.nextBtn}
-          >
-            Se connecter avec GitHub
-          </button>
-          <button
-            onClick={() => router.push("/")}
-            className={styles.backBtn}
-            style={{ marginTop: "20px" }}
-          >
-            Retour au Dashboard
-          </button>
-        </div>
-      </div>
-    );
-  }
-
-  if (error || currentQuestions.length === 0) {
-    return <div className={styles.status}>Aucune question A1 trouvée dans cette section.</div>;
-  }
+  // ----------------- Loading / Error -----------------
+  if (loading) return <div className={styles.status}>Chargement du quiz...</div>;
+  if (error || currentQuestions.length === 0) return <div className={styles.status}>Aucune question A1 trouvée pour cette section.</div>;
 
   const currentQ = currentQuestions[currentIndex];
 
-  // ✅ Answer click
+  // ----------------- Answer handling -----------------
   const handleOptionClick = (option) => {
     if (hasAnswered) return;
 
@@ -126,10 +150,7 @@ export default function QuizPage() {
     setHasAnswered(true);
 
     const isCorrect = option === currentQ.answer;
-
-    if (isCorrect) {
-      setScore((prev) => prev + 1);
-    }
+    if (isCorrect) setScore((prev) => prev + 1);
 
     setAnswers((prev) => {
       const updated = [...prev];
@@ -139,24 +160,29 @@ export default function QuizPage() {
   };
 
   const handleNext = () => {
-    if (currentIndex < currentQuestions.length - 1) {
-      setHasAnswered(false);
-      setSelectedOption(null);
-      setCurrentIndex((prev) => prev + 1);
-    } else {
-      setQuizFinished(true);
+    const total = currentQuestions.length;
+    for (let i = currentIndex + 1; i < total; i++) {
+      if (answers[i] === undefined) {
+        setCurrentIndex(i);
+        setHasAnswered(false);
+        setSelectedOption(null);
+        return;
+      }
     }
+    for (let i = 0; i < currentIndex; i++) {
+      if (answers[i] === undefined) {
+        setCurrentIndex(i);
+        setHasAnswered(false);
+        setSelectedOption(null);
+        return;
+      }
+    }
+    setQuizFinished(true);
   };
 
-  // ✅ Safe JSON parse
-  let examples = [];
-  try {
-    examples = JSON.parse(currentQ.similar_examples || "[]");
-  } catch {
-    examples = [];
-  }
+  const examples = Array.isArray(currentQ.similar) ? currentQ.similar : [];
 
-  // ✅ Result screen
+  // ----------------- Quiz finished screen -----------------
   if (quizFinished) {
     const percentage = Math.round((score / currentQuestions.length) * 100);
 
@@ -194,10 +220,9 @@ export default function QuizPage() {
     );
   }
 
-  // ✅ MAIN UI WITH GRID
+  // ----------------- Main Quiz UI -----------------
   return (
     <div className={styles.quizLayout}>
-      {/* LEFT GRID */}
       <div className={styles.quizContainer}>
         <button
           onClick={() => router.push("/")}
@@ -206,30 +231,11 @@ export default function QuizPage() {
           <ArrowLeft size={18} /> Dashboard
         </button>
 
-        <div className={styles.progress}>
-          <div className={styles.progressText}>
-            <span>
-              Question {currentIndex + 1} / {currentQuestions.length}
-            </span>
-            <span>Score: {score}</span>
-          </div>
-
-          <div className={styles.progressBarBg}>
-            <div
-              className={styles.progressFill}
-              style={{
-                width: `${((currentIndex + 1) / currentQuestions.length) * 100}%`,
-              }}
-            />
-          </div>
-        </div>
-
         <div className={styles.questionCard}>
           <p className={styles.instruction}>Choisissez la bonne réponse :</p>
 
           <div className={styles.questionSection}>
             <h2 className={styles.questionText}>{currentQ.question}</h2>
-
             {currentQ.translation && <p className={styles.translationText}>{currentQ.translation}</p>}
           </div>
 
@@ -237,7 +243,6 @@ export default function QuizPage() {
             {currentQ.options.map((opt, i) => {
               const isSelected = selectedOption === opt;
               const isCorrect = opt === currentQ.answer;
-
               let btnClass = styles.btnOption;
 
               if (hasAnswered) {
@@ -254,7 +259,6 @@ export default function QuizPage() {
                   disabled={hasAnswered}
                 >
                   <span>{opt}</span>
-
                   {hasAnswered && isCorrect && <CheckCircle2 size={32} />}
                   {hasAnswered && isSelected && !isCorrect && <XCircle size={32} />}
                 </button>
@@ -265,13 +269,10 @@ export default function QuizPage() {
           {hasAnswered && (
             <div className={styles.feedbackArea}>
               <p className={styles.explanation}>{currentQ.explanation}</p>
-
               {currentQ.complete_answer && (
                 <div
                   className={styles.sentenceText}
-                  dangerouslySetInnerHTML={{
-                    __html: currentQ.complete_answer,
-                  }}
+                  dangerouslySetInnerHTML={{ __html: currentQ.complete_answer }}
                 />
               )}
 
@@ -291,7 +292,6 @@ export default function QuizPage() {
           )}
         </div>
       </div>
-      {/* RIGHT QUIZ */}
 
       <QuestionGrid
         questions={currentQuestions}

@@ -1,0 +1,6 @@
+.sidebarContainer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  /* gap: var(--space-md); */
+}

@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={styles.inner}>
-        <p className={styles.copy}>© {new Date().getFullYear()} Bookmarker</p>
+        <p className={styles.copy}>© {new Date().getFullYear()} Le Quiz</p>
 
         <nav aria-label='Footer navigation'>
           <ul className={styles.links}>

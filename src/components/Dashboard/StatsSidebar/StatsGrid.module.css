@@ -1,0 +1,55 @@
+.calendarCard {
+  background: #111;
+  padding: 12px;
+  border-radius: 12px;
+  margin-top: 16px;
+}
+
+.calendarHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.calendarGrid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 4px;
+}
+
+.day {
+  width: 100%;
+  aspect-ratio: 1;
+  background: #222;
+  border-radius: 4px;
+}
+
+.active {
+  background: #10b981;
+}
+
+.calendarLegend {
+  font-size: 12px;
+  color: #aaa;
+  margin-top: 8px;
+}
+
+.iconBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.statItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 6px;
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.statItem:hover {
+  background-color: #eee;
+}
