@@ -52,6 +52,7 @@
   --txtColor: #1f2933;
   --mutedColor: #6b7280;
   --headingCol: #203060;
+  --highlight1: #607fa3;
 
   /* Borders */
   --borderColor: #e5e7eb;
@@ -106,6 +107,7 @@ html[data-theme="dark"] {
   --txtColor: #e5e7eb;
   --mutedColor: #9ca3af;
   --headingCol: #e2e8f0;
+  --highlight1: #123359;
 
   /* Borders */
   --borderColor: #1e293b;

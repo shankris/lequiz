@@ -1,17 +1,16 @@
 .card {
-  background: var(--surfaceColor);
-  padding: var(--space-sm);
-  border-radius: var(--borderRadius-lg);
-  border: 1px solid var(--borderColor);
-  box-shadow: var(--shadow-sm);
+  /* background: var(--surfaceColor); */
+  /* padding: var(--space-sm); */
+  /* border-radius: var(--borderRadius-lg); */
+  /* border: 1px solid var(--borderColor); */
+  /* box-shadow: var(--shadow-sm); */
 }
 
 .header {
   display: flex;
   align-items: center;
-  gap: var(--space-xs);
-  margin-bottom: var(--space-xs);
-  color: var(--txtColor);
+  gap: 8px;
+  margin: 4px 8px;
 }
 
 .description {

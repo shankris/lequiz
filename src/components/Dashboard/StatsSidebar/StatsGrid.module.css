@@ -42,6 +42,10 @@
   gap: 8px;
 }
 
+.statsList {
+  margin: 6px 0 0 0;
+}
+
 .statItem {
   display: flex;
   align-items: center;

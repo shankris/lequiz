@@ -1,13 +1,13 @@
 "use client";
 
-import { AlertCircle, RotateCcw } from "lucide-react";
+import { XCircle, RotateCcw } from "lucide-react";
 import styles from "./WrongAnswersCard.module.css";
 
 export default function WrongAnswersCard({ wrongCount = 0, onStartPractice }) {
   return (
     <div className={styles.card}>
       <div className={styles.header}>
-        <AlertCircle size={18} />
+        <XCircle size={18} />
         <h4>Réviser vos erreurs</h4>
       </div>
 

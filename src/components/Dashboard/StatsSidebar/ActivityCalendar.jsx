@@ -12,9 +12,10 @@ export default function ActivityCalendar({ activityData = {} }) {
   // 👉 Get earliest activity date
   const firstActivityDate = activityDates.length ? new Date(activityDates[0]) : new Date(today);
 
-  // 👉 Start from beginning of that week
+  // 👉 Start from beginning of that week (Monday)
   const start = new Date(firstActivityDate);
-  start.setDate(start.getDate() - start.getDay());
+  const day = start.getDay(); // 0 = Sunday, 1 = Monday...
+  start.setDate(start.getDate() - ((day + 6) % 7)); // shift to Monday
 
   // 👉 Build days until today
   const days = [];
@@ -35,15 +36,13 @@ export default function ActivityCalendar({ activityData = {} }) {
     current.setDate(current.getDate() + 1);
   }
 
-  // 👉 Fill last week
+  // 👉 Fill last week to complete 7 days
   const remainder = days.length % 7;
   if (remainder !== 0) {
     const missing = 7 - remainder;
-
     for (let i = 0; i < missing; i++) {
       const date = new Date(current);
       date.setDate(current.getDate() + i);
-
       const iso = date.getFullYear() + "-" + String(date.getMonth() + 1).padStart(2, "0") + "-" + String(date.getDate()).padStart(2, "0");
 
       days.push({
@@ -69,9 +68,9 @@ export default function ActivityCalendar({ activityData = {} }) {
       </div>
 
       <div className={styles.calendarGrid}>
-        {/* Week labels */}
+        {/* Week labels (Monday first, French convention) */}
         <div className={styles.weekLabels}>
-          {["S", "M", "T", "W", "T", "F", "S"].map((d, i) => (
+          {["L", "M", "M", "J", "V", "S", "D"].map((d, i) => (
             <span
               key={i}
               className={styles.weekLabel}
@@ -110,7 +109,7 @@ export default function ActivityCalendar({ activityData = {} }) {
   );
 }
 
-// ✅ FIXED helper
+// ✅ Helper
 function getLastActive(activityDates) {
   if (!activityDates || activityDates.length === 0) return "Aucune";
 

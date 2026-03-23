@@ -58,14 +58,14 @@ export default function StatsSidebar() {
       {/* 📊 Stats */}
       <StatsGrid levelStats={levelStats} />
 
-      {/* 📅 Calendar */}
-      <ActivityCalendar activityData={activityData} />
-
       {/* ❌ Wrong Answers */}
       <WrongAnswersCard
         wrongCount={levelStats.wrongAnswers.length}
         onStartPractice={() => router.push(`/quiz/wrong?level=${LEVEL}`)}
       />
+
+      {/* 📅 Calendar */}
+      <ActivityCalendar activityData={activityData} />
     </div>
   );
 }

@@ -19,9 +19,10 @@
 }
 
 /* Active day */
-.active {
-  background: var(--accentColor);
-}
+/* .active {
+  background: var(--highlight1);
+  color: #fff;
+} */
 
 /* Weekend styling */
 .weekend {
@@ -43,9 +44,9 @@
 }
 
 /* Active days */
-.active {
+/* .active {
   background: var(--accentColor);
-}
+} */
 
 /* Weekend */
 .weekend {
@@ -95,7 +96,7 @@
 
 /* Active */
 .active {
-  background: var(--accentColor);
+  background: var(--highlight1);
   color: white;
 }
 
