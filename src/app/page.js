@@ -46,9 +46,9 @@ export default function Home() {
   return (
     <div className={styles.dashboardLayout}>
       <main className={styles.mainContent}>
-        <header className={styles.header}>
-          <h1>Niveau A1 - Dashboard</h1>
-          <p>Choisissez une leçon pour commencer votre pratique quotidienne.</p>
+        <header>
+          <h1 className='header'>Bienvenue ! Accélérons votre apprentissage du français.</h1>
+          <div className='subHead'>Choisissez un Quiz pour commencer votre pratique quotidienne.</div>
         </header>
 
         <SubSectionGrid />

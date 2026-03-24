@@ -63,7 +63,7 @@ export default function ActivityCalendar({ activityData = {} }) {
   return (
     <div className={styles.calendarCard}>
       <div className={styles.calendarHeader}>
-        <CalendarIcon size={18} />
+        <CalendarIcon size={20} />
         <h4>Activité</h4>
       </div>
 

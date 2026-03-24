@@ -1,30 +1,24 @@
 "use client";
 
-import { XCircle, RotateCcw } from "lucide-react";
+import { CircleCheckBig, RotateCcw } from "lucide-react";
 import styles from "./WrongAnswersCard.module.css";
 
 export default function WrongAnswersCard({ wrongCount = 0, onStartPractice }) {
+  // ✅ Cap display at 40+
+  const displayCount = wrongCount > 40 ? "40+" : wrongCount;
+
   return (
     <div className={styles.card}>
       <div className={styles.header}>
-        <XCircle size={18} />
-        <h4>Réviser vos erreurs</h4>
+        <div className={`${styles.iconBox}`}>
+          <CircleCheckBig size={20} />
+          <span className={styles.statLabel}>Corriger mes fautes</span>
+        </div>
+
+        <div className={styles.statText}>
+          <span className={styles.statValue}>{displayCount}</span>
+        </div>
       </div>
-
-      <p className={styles.description}>
-        Vous avez {wrongCount} question{wrongCount > 1 ? "s" : ""} à revoir.
-      </p>
-
-      <button
-        className={styles.button}
-        onClick={onStartPractice}
-        disabled={wrongCount === 0}
-      >
-        <RotateCcw size={16} />
-        Reprendre les erreurs
-      </button>
-
-      {wrongCount === 0 && <p className={styles.empty}>🎉 Aucune erreur ! Continuez comme ça.</p>}
     </div>
   );
 }

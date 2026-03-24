@@ -13,15 +13,11 @@
   /* gap: 2rem; */
 }
 
-.header h1 {
-  margin-bottom: 0.5rem;
-  color: var(--accentColor);
-}
 
 .sidebar {
   position: sticky;
   top: 70px;
-  height: calc(100vh - var(--headerHeight) -30px)
+  height: calc(100vh - var(--headerHeight) - 30px - 70px)
 }
 
 /* Login Screen Styles */

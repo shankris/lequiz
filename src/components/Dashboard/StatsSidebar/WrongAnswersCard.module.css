@@ -1,9 +1,10 @@
 .card {
-  /* background: var(--surfaceColor); */
-  /* padding: var(--space-sm); */
-  /* border-radius: var(--borderRadius-lg); */
-  /* border: 1px solid var(--borderColor); */
-  /* box-shadow: var(--shadow-sm); */
+  border-bottom: 1px solid #e1e1e1;
+  padding: 6px 0px;
+}
+
+.card:hover {
+  background-color: #eee;
 }
 
 .header {
@@ -11,6 +12,7 @@
   align-items: center;
   gap: 8px;
   margin: 4px 8px;
+  justify-content: space-between;
 }
 
 .description {
@@ -19,31 +21,14 @@
   margin-bottom: var(--space-sm);
 }
 
-.button {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  background: var(--accentColor);
-  color: white;
-  border: none;
-  padding: 8px 10px;
-  border-radius: var(--borderRadius-md);
-  cursor: pointer;
-  transition: var(--transition-fast);
-}
-
-.button:hover {
-  background: var(--hoverColor);
-}
-
-.button:disabled {
-  background: var(--surfaceAlt);
-  color: var(--mutedColor);
-  cursor: not-allowed;
-}
-
 .empty {
   font-size: 12px;
   color: var(--accentColor);
   margin-top: var(--space-xs);
+}
+
+.iconBox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }

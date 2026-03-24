@@ -110,7 +110,7 @@ export default function QuizPage() {
     if (sectionId) fetchQuizData();
   }, [sectionId]);
 
-  // ----------------- Save stats and activity -----------------
+  // ----------------- Save stats, activity, and progress -----------------
   useEffect(() => {
     if (quizFinished && !statsSaved && currentQuestions.length > 0) {
       updateStats({
@@ -121,15 +121,28 @@ export default function QuizPage() {
         sectionId,
       });
 
-      // Save activity for today
       if (typeof window !== "undefined") {
+        // ---------------- ACTIVITY ----------------
         const todayStr = new Date().toISOString().split("T")[0];
         const activity = JSON.parse(localStorage.getItem("activityData") || "{}");
         activity[todayStr] = true;
         localStorage.setItem("activityData", JSON.stringify(activity));
 
-        // Notify calendar components
+        // ---------------- PROGRESS (NEW) ----------------
+        const progress = JSON.parse(localStorage.getItem("quizProgress") || "{}");
+
+        const existingScore = progress[sectionId];
+
+        // ✅ Keep BEST score only
+        if (!existingScore || score > existingScore) {
+          progress[sectionId] = score;
+        }
+
+        localStorage.setItem("quizProgress", JSON.stringify(progress));
+
+        // ---------------- NOTIFY UI ----------------
         window.dispatchEvent(new Event("activityUpdated"));
+        window.dispatchEvent(new Event("progressUpdated")); // ✅ IMPORTANT
       }
 
       setStatsSaved(true);

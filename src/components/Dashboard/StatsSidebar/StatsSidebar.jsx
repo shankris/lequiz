@@ -8,6 +8,7 @@ import UserProfileCard from "./UserProfileCard";
 import StatsGrid from "./StatsGrid";
 import ActivityCalendar from "./ActivityCalendar";
 import WrongAnswersCard from "./WrongAnswersCard";
+import UserMenu from "@/components/Auth/UserMenu";
 
 import styles from "./StatsSidebar.module.css";
 
@@ -49,23 +50,26 @@ export default function StatsSidebar() {
 
   return (
     <div className={styles.sidebarContainer}>
-      {/* 👤 Profile */}
-      <UserProfileCard
-        user={session?.user}
-        level={LEVEL}
-      />
+      <div>
+        {/* 👤 Profile */}
+        <UserProfileCard
+          user={session?.user}
+          level={LEVEL}
+        />
 
-      {/* 📊 Stats */}
-      <StatsGrid levelStats={levelStats} />
+        {/* 📊 Stats */}
+        <StatsGrid levelStats={levelStats} />
 
-      {/* ❌ Wrong Answers */}
-      <WrongAnswersCard
-        wrongCount={levelStats.wrongAnswers.length}
-        onStartPractice={() => router.push(`/quiz/wrong?level=${LEVEL}`)}
-      />
+        {/* ❌ Wrong Answers */}
+        <WrongAnswersCard
+          wrongCount={levelStats.wrongAnswers.length}
+          onStartPractice={() => router.push(`/quiz/wrong?level=${LEVEL}`)}
+        />
 
-      {/* 📅 Calendar */}
-      <ActivityCalendar activityData={activityData} />
+        {/* 📅 Calendar */}
+        <ActivityCalendar activityData={activityData} />
+      </div>
+      <UserMenu />
     </div>
   );
 }

@@ -1,0 +1,7 @@
+To Do
+
+- Multi-lingual
+- Save data to supabase
+- Keyboard selection
+
+- Check all questions

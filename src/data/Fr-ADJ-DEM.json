@@ -1204,8 +1204,8 @@
       "opt2": "Cette",
       "opt3": "Ce",
       "opt4": "Cet",
-      "ans": "Ce",
-      "compAns": "<strong>Ce</strong> escalier est raide.",
+      "ans": "Cet",
+      "compAns": "<strong>Cet</strong> escalier est raide.",
       "cat": "Adjectifs démonstratifs - Masculin singulier",
       "Level": "A1",
       "gender": "Masculin",
@@ -1531,7 +1531,7 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces manteaux' est correct.",
       "eng": "These coats are warm.",
-      "similar": "[{ \"\"french\"\": \"\"<strong>Ces</strong> vestes\"\", \"\"english\"\": \"\"These jackets\"\", \"\"gender\"\": \"\"Féminin\"\", \"\"number\"\": \"\"Pluriel\"\" }, { \"\"french\"\": \"\"<strong>Ces</strong> pulls\"\", \"\"english\"\": \"\"These sweaters\"\", \"\"gender\"\": \"\"Masculin\"\", \"\"number\"\": \"\"Pluriel\"\" }]"
+      "similar": [{ "french": "<strong>Ces</strong> vestes", "english": "These jackets", "gender": "Féminin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> pulls", "english": "These sweaters", "gender": "Masculin", "number": "Pluriel" }]
     },
     {
       "id": "DEM-074",
@@ -1552,7 +1552,7 @@
       "grammar_rule": "Cet + nom masculin commençant par un h muet.",
       "exception": "⚠️ 'cet hôpital' fait la liaison (cétôpital).",
       "eng": "This hospital is renowned.",
-      "similar": "[{ \"\"french\"\": \"\"<strong>Cet</strong> hospice\"\", \"\"english\"\": \"\"This hospice\"\", \"\"gender\"\": \"\"Masculin\"\", \"\"number\"\": \"\"Singulier\"\" }, { \"\"french\"\": \"\"<strong>Cet</strong> hôpital universitaire\"\", \"\"english\"\": \"\"This university hospital\"\", \"\"gender\"\": \"\"Masculin\"\", \"\"number\"\": \"\"Singulier\"\" }]"
+      "similar": [{ "french": "<strong>Cet</strong> hospice", "english": "This hospice", "gender": "Masculin", "number": "Singulier" }, { "french": "<strong>Cet</strong> hôpital universitaire", "english": "This university hospital", "gender": "Masculin", "number": "Singulier" }]
     },
     {
       "id": "DEM-075",
@@ -1573,7 +1573,7 @@
       "grammar_rule": "Cette + nom féminin singulier.",
       "exception": "⚠️ 'cette fenêtre' est correct.",
       "eng": "This window is open.",
-      "similar": "[{ \"\"french\"\": \"\"<strong>Cette</strong> porte\"\", \"\"english\"\": \"\"This door\"\", \"\"gender\"\": \"\"Féminin\"\", \"\"number\"\": \"\"Singulier\"\" }, { \"\"french\"\": \"\"<strong>Cette</strong> lucarne\"\", \"\"english\"\": \"\"This skylight\"\", \"\"gender\"\": \"\"Féminin\"\", \"\"number\"\": \"\"Singulier\"\" }]"
+      "similar": [{ "french": "<strong>Cette</strong> porte", "english": "This door", "gender": "Féminin", "number": "Singulier" }, { "french": "<strong>Cette</strong> lucarne", "english": "This skylight", "gender": "Féminin", "number": "Singulier" }]
     },
     {
       "id": "DEM-076",
@@ -1594,7 +1594,7 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces jeux' est correct.",
       "eng": "These games are fun.",
-      "similar": "[{ \"\"french\"\": \"\"<strong>Ces</strong> jouets\"\", \"\"english\"\": \"\"These toys\"\", \"\"gender\"\": \"\"Masculin\"\", \"\"number\"\": \"\"Pluriel\"\" }, { \"\"french\"\": \"\"<strong>Ces</strong> activités\"\", \"\"english\"\": \"\"These activities\"\", \"\"gender\"\": \"\"Féminin\"\", \"\"number\"\": \"\"Pluriel\"\" }]"
+      "similar": [{ "french": "<strong>Ces</strong> jouets", "english": "These toys", "gender": "Masculin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> activités", "english": "These activities", "gender": "Féminin", "number": "Pluriel" }]
     },
     {
       "id": "DEM-077",
@@ -1603,19 +1603,19 @@
       "opt2": "Cette",
       "opt3": "Cet",
       "opt4": "Ce",
-      "ans": "Ce",
-      "compAns": "<strong>Ce</strong> arbre est centenaire.",
+      "ans": "Cet",
+      "compAns": "<strong>Cet</strong> arbre est centenaire.",
       "cat": "Adjectifs démonstratifs - Masculin singulier",
       "Level": "A1",
       "gender": "Masculin",
       "number": "Singulier",
       "noun_start": "consonne",
       "noun": "arbre",
-      "tips": "Arbre est masculin singulier → 'ce'.",
-      "grammar_rule": "Ce + nom masculin singulier commençant par une consonne.",
-      "exception": "⚠️ 'cet arbre' est correct (le 'a' est une voyelle mais 'ce' est utilisé car le son 'a' après 'ce' est accepté).",
+      "tips": "Arbre commence par une voyelle → utilisez 'cet'.",
+      "grammar_rule": "Cet + nom masculin singulier commençant par une voyelle.",
+      "exception": "⚠️  'ce arbre' est incorrect.",
       "eng": "This tree is a hundred years old.",
-      "similar": "[{ \"\"french\"\": \"\"<strong>Ce</strong> chêne\"\", \"\"english\"\": \"\"This oak\"\", \"\"gender\"\": \"\"Masculin\"\", \"\"number\"\": \"\"Singulier\"\" }, { \"\"french\"\": \"\"<strong>Ce</strong> pin\"\", \"\"english\"\": \"\"This pine\"\", \"\"gender\"\": \"\"Masculin\"\", \"\"number\"\": \"\"Singulier\"\" }]"
+      "similar": [{ "french": "<strong>Ce</strong> chêne", "english": "This oak", "gender": "Masculin", "number": "Singulier" }, { "french": "<strong>Ce</strong> pin", "english": "This pine", "gender": "Masculin", "number": "Singulier" }]
     },
     {
       "id": "DEM-078",
@@ -1636,7 +1636,7 @@
       "grammar_rule": "Cette s'utilise pour tous les noms féminins.",
       "exception": "⚠️ 'cette école' fait la liaison (cétécole).",
       "eng": "This school is renowned.",
-      "similar": "[{ \"\"french\"\": \"\"<strong>Cette</strong> école primaire\"\", \"\"english\"\": \"\"This elementary school\"\", \"\"gender\"\": \"\"Féminin\"\", \"\"number\"\": \"\"Singulier\"\" }, { \"\"french\"\": \"\"<strong>Cette</strong> université\"\", \"\"english\"\": \"\"This university\"\", \"\"gender\"\": \"\"Féminin\"\", \"\"number\"\": \"\"Singulier\"\" }]"
+      "similar": [{ "french": "<strong>Cette</strong> école primaire", "english": "This elementary school", "gender": "Féminin", "number": "Singulier" }, { "french": "<strong>Cette</strong> université", "english": "This university", "gender": "Féminin", "number": "Singulier" }]
     },
     {
       "id": "DEM-079",
@@ -1657,7 +1657,7 @@
       "grammar_rule": "Avec un h aspiré, on utilise 'ce' même devant une voyelle.",
       "exception": "⚠️ 'ce héros' ne fait PAS la liaison (ce éro).",
       "eng": "This hero is legendary.",
-      "similar": "[{ \"\"french\"\": \"\"<strong>Ce</strong> héroïne\"\", \"\"english\"\": \"\"This heroine\"\", \"\"gender\"\": \"\"Féminin\"\", \"\"number\"\": \"\"Singulier\"\" }, { \"\"french\"\": \"\"<strong>Ce</strong> héros de guerre\"\", \"\"english\"\": \"\"This war hero\"\", \"\"gender\"\": \"\"Masculin\"\", \"\"number\"\": \"\"Singulier\"\" }]"
+      "similar": [{ "french": "<strong>Ce</strong> héroïne", "english": "This heroine", "gender": "Féminin", "number": "Singulier" }, { "french": "<strong>Ce</strong> héros de guerre", "english": "This war hero", "gender": "Masculin", "number": "Singulier" }]
     },
     {
       "id": "DEM-080",
@@ -1678,7 +1678,7 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces châteaux' est correct.",
       "eng": "These castles are magnificent.",
-      "similar": "[{ \"\"french\"\": \"\"<strong>Ces</strong> palais\"\", \"\"english\"\": \"\"These palaces\"\", \"\"gender\"\": \"\"Masculin\"\", \"\"number\"\": \"\"Pluriel\"\" }, { \"\"french\"\": \"\"<strong>Ces</strong> monuments\"\", \"\"english\"\": \"\"These monuments\"\", \"\"gender\"\": \"\"Masculin\"\", \"\"number\"\": \"\"Pluriel\"\" }]"
+      "similar": [{ "french": "<strong>Ces</strong> palais", "english": "These palaces", "gender": "Masculin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> monuments", "english": "These monuments", "gender": "Masculin", "number": "Pluriel" }]
     },
     {
       "id": "DEM-081",
@@ -1699,7 +1699,7 @@
       "grammar_rule": "Cette s'utilise pour tous les noms féminins.",
       "exception": "⚠️ 'cette eau' fait la liaison (cét eau).",
       "eng": "This water is fresh.",
-      "similar": "[{ \"\"french\"\": \"\"<strong>Cette</strong> eau minérale\"\", \"\"english\"\": \"\"This mineral water\"\", \"\"gender\"\": \"\"Féminin\"\", \"\"number\"\": \"\"Singulier\"\" }, { \"\"french\"\": \"\"<strong>Cette</strong> eau gazeuse\"\", \"\"english\"\": \"\"This sparkling water\"\", \"\"gender\"\": \"\"Féminin\"\", \"\"number\"\": \"\"Singulier\"\" }]"
+      "similar": [{ "french": "<strong>Cette</strong> eau minérale", "english": "This mineral water", "gender": "Féminin", "number": "Singulier" }, { "french": "<strong>Cette</strong> eau gazeuse", "english": "This sparkling water", "gender": "Féminin", "number": "Singulier" }]
     },
     {
       "id": "DEM-082",
@@ -1720,7 +1720,7 @@
       "grammar_rule": "Ce + nom masculin singulier commençant par une consonne.",
       "exception": "⚠️ 'ce uniforme' est correct (le 'u' est une voyelle mais 'ce' est utilisé).",
       "eng": "This uniform is blue.",
-      "similar": "[{ \"\"french\"\": \"\"<strong>Ce</strong> costume\"\", \"\"english\"\": \"\"This suit\"\", \"\"gender\"\": \"\"Masculin\"\", \"\"number\"\": \"\"Singulier\"\" }, { \"\"french\"\": \"\"<strong>Ce</strong> vêtement\"\", \"\"english\"\": \"\"This clothing\"\", \"\"gender\"\": \"\"Masculin\"\", \"\"number\"\": \"\"Singulier\"\" }]"
+      "similar": [{ "french": "<strong>Ce</strong> costume", "english": "This suit", "gender": "Masculin", "number": "Singulier" }, { "french": "<strong>Ce</strong> vêtement", "english": "This clothing", "gender": "Masculin", "number": "Singulier" }]
     },
     {
       "id": "DEM-083",
@@ -1741,7 +1741,7 @@
       "grammar_rule": "Cette s'utilise pour tous les noms féminins.",
       "exception": "⚠️ 'cette orange' fait la liaison (cétorange).",
       "eng": "This orange is juicy.",
-      "similar": "[{ \"\"french\"\": \"\"<strong>Cette</strong> pomme\"\", \"\"english\"\": \"\"This apple\"\", \"\"gender\"\": \"\"Féminin\"\", \"\"number\"\": \"\"Singulier\"\" }, { \"\"french\"\": \"\"<strong>Cette</strong> poire\"\", \"\"english\"\": \"\"This pear\"\", \"\"gender\"\": \"\"Féminin\"\", \"\"number\"\": \"\"Singulier\"\" }]"
+      "similar": [{ "french": "<strong>Cette</strong> pomme", "english": "This apple", "gender": "Féminin", "number": "Singulier" }, { "french": "<strong>Cette</strong> poire", "english": "This pear", "gender": "Féminin", "number": "Singulier" }]
     },
     {
       "id": "DEM-084",
@@ -1762,7 +1762,7 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces histoires' fait la liaison (cé zistoires).",
       "eng": "These stories are fascinating.",
-      "similar": "[{ \"\"french\"\": \"\"<strong>Ces</strong> aventures\"\", \"\"english\"\": \"\"These adventures\"\", \"\"gender\"\": \"\"Féminin\"\", \"\"number\"\": \"\"Pluriel\"\" }, { \"\"french\"\": \"\"<strong>Ces</strong> légendes\"\", \"\"english\"\": \"\"These legends\"\", \"\"gender\"\": \"\"Féminin\"\", \"\"number\"\": \"\"Pluriel\"\" }]"
+      "similar": [{ "french": "<strong>Ces</strong> aventures", "english": "These adventures", "gender": "Féminin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> légendes", "english": "These legends", "gender": "Féminin", "number": "Pluriel" }]
     },
     {
       "id": "DEM-085",
@@ -1783,7 +1783,7 @@
       "grammar_rule": "Cet + nom masculin commençant par une voyelle.",
       "exception": "⚠️ 'cet outil' fait la liaison (cétoutil).",
       "eng": "This tool is useful.",
-      "similar": "[{ \"\"french\"\": \"\"<strong>Cet</strong> instrument\"\", \"\"english\"\": \"\"This instrument\"\", \"\"gender\"\": \"\"Masculin\"\", \"\"number\"\": \"\"Singulier\"\" }, { \"\"french\"\": \"\"<strong>Cet</strong> appareil\"\", \"\"english\"\": \"\"This device\"\", \"\"gender\"\": \"\"Masculin\"\", \"\"number\"\": \"\"Singulier\"\" }]"
+      "similar": [{ "french": "<strong>Cet</strong> instrument", "english": "This instrument", "gender": "Masculin", "number": "Singulier" }, { "french": "<strong>Cet</strong> appareil", "english": "This device", "gender": "Masculin", "number": "Singulier" }]
     },
     {
       "id": "DEM-086",
@@ -1804,7 +1804,7 @@
       "grammar_rule": "Cette + nom féminin singulier.",
       "exception": "⚠️ 'cette table' est correct.",
       "eng": "This table is made of wood.",
-      "similar": "[{ \"\"french\"\": \"\"<strong>Cette</strong> chaise\"\", \"\"english\"\": \"\"This chair\"\", \"\"gender\"\": \"\"Féminin\"\", \"\"number\"\": \"\"Singulier\"\" }, { \"\"french\"\": \"\"<strong>Cette</strong> étagère\"\", \"\"english\"\": \"\"This shelf\"\", \"\"gender\"\": \"\"Féminin\"\", \"\"number\"\": \"\"Singulier\"\" }]"
+      "similar": [{ "french": "<strong>Cette</strong> chaise", "english": "This chair", "gender": "Féminin", "number": "Singulier" }, { "french": "<strong>Cette</strong> étagère", "english": "This shelf", "gender": "Féminin", "number": "Singulier" }]
     },
     {
       "id": "DEM-087",
@@ -1825,7 +1825,7 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces enfants' fait la liaison (cé zanfants).",
       "eng": "These children are well-behaved.",
-      "similar": "[{ \"\"french\"\": \"\"<strong>Ces</strong> garçons\"\", \"\"english\"\": \"\"These boys\"\", \"\"gender\"\": \"\"Masculin\"\", \"\"number\"\": \"\"Pluriel\"\" }, { \"\"french\"\": \"\"<strong>Ces</strong> filles\"\", \"\"english\"\": \"\"These girls\"\", \"\"gender\"\": \"\"Féminin\"\", \"\"number\"\": \"\"Pluriel\"\" }]"
+      "similar": [{ "french": "<strong>Ces</strong> garçons", "english": "These boys", "gender": "Masculin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> filles", "english": "These girls", "gender": "Féminin", "number": "Pluriel" }]
     },
     {
       "id": "DEM-088",
@@ -1846,7 +1846,7 @@
       "grammar_rule": "Cet + nom masculin commençant par un h muet.",
       "exception": "⚠️ 'cet hiver' fait la liaison (cétiver).",
       "eng": "This winter is harsh.",
-      "similar": "[{ \"\"french\"\": \"\"<strong>Cet</strong> hiver froid\"\", \"\"english\"\": \"\"This cold winter\"\", \"\"gender\"\": \"\"Masculin\"\", \"\"number\"\": \"\"Singulier\"\" }, { \"\"french\"\": \"\"<strong>Cet</strong> hiver rigoureux\"\", \"\"english\"\": \"\"This harsh winter\"\", \"\"gender\"\": \"\"Masculin\"\", \"\"number\"\": \"\"Singulier\"\" }]"
+      "similar": [{ "french": "<strong>Cet</strong> hiver froid", "english": "This cold winter", "gender": "Masculin", "number": "Singulier" }, { "french": "<strong>Cet</strong> hiver rigoureux", "english": "This harsh winter", "gender": "Masculin", "number": "Singulier" }]
     },
     {
       "id": "DEM-089",
@@ -1867,7 +1867,7 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces animaux' fait la liaison (cé zanimaux).",
       "eng": "These animals are wild.",
-      "similar": "[{ \"\"french\"\": \"\"<strong>Ces</strong> oiseaux\"\", \"\"english\"\": \"\"These birds\"\", \"\"gender\"\": \"\"Masculin\"\", \"\"number\"\": \"\"Pluriel\"\" }, { \"\"french\"\": \"\"<strong>Ces</strong> insectes\"\", \"\"english\"\": \"\"These insects\"\", \"\"gender\"\": \"\"Masculin\"\", \"\"number\"\": \"\"Pluriel\"\" }]"
+      "similar": [{ "french": "<strong>Ces</strong> oiseaux", "english": "These birds", "gender": "Masculin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> insectes", "english": "These insects", "gender": "Masculin", "number": "Pluriel" }]
     },
     {
       "id": "DEM-090",
@@ -1888,7 +1888,7 @@
       "grammar_rule": "Cette + nom féminin singulier.",
       "exception": "⚠️ 'cette voiture' est correct.",
       "eng": "This car is red.",
-      "similar": "[{ \"\"french\"\": \"\"<strong>Cette</strong> automobile\"\", \"\"english\"\": \"\"This automobile\"\", \"\"gender\"\": \"\"Féminin\"\", \"\"number\"\": \"\"Singulier\"\" }, { \"\"french\"\": \"\"<strong>Cette</strong> berline\"\", \"\"english\"\": \"\"This sedan\"\", \"\"gender\"\": \"\"Féminin\"\", \"\"number\"\": \"\"Singulier\"\" }]"
+      "similar": [{ "french": "<strong>Cette</strong> automobile", "english": "This automobile", "gender": "Féminin", "number": "Singulier" }, { "french": "<strong>Cette</strong> berline", "english": "This sedan", "gender": "Féminin", "number": "Singulier" }]
     },
     {
       "id": "DEM-091",
@@ -1909,7 +1909,7 @@
       "grammar_rule": "Ce + nom masculin singulier commençant par une consonne.",
       "exception": "⚠️ 'ce chapeau' est correct.",
       "eng": "This hat is made of straw.",
-      "similar": "[{ \"\"french\"\": \"\"<strong>Ce</strong> bonnet\"\", \"\"english\"\": \"\"This bonnet\"\", \"\"gender\"\": \"\"Masculin\"\", \"\"number\"\": \"\"Singulier\"\" }, { \"\"french\"\": \"\"<strong>Ce</strong> casquette\"\", \"\"english\"\": \"\"This cap\"\", \"\"gender\"\": \"\"Féminin\"\", \"\"number\"\": \"\"Singulier\"\" }]"
+      "similar": [{ "french": "<strong>Ce</strong> bonnet", "english": "This bonnet", "gender": "Masculin", "number": "Singulier" }, { "french": "<strong>Ce</strong> casquette", "english": "This cap", "gender": "Féminin", "number": "Singulier" }]
     },
     {
       "id": "DEM-092",
@@ -1930,7 +1930,7 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces universités' fait la liaison (cé zuniversités).",
       "eng": "These universities are prestigious.",
-      "similar": "[{ \"\"french\"\": \"\"<strong>Ces</strong> écoles\"\", \"\"english\"\": \"\"These schools\"\", \"\"gender\"\": \"\"Féminin\"\", \"\"number\"\": \"\"Pluriel\"\" }, { \"\"french\"\": \"\"<strong>Ces</strong> facultés\"\", \"\"english\"\": \"\"These faculties\"\", \"\"gender\"\": \"\"Féminin\"\", \"\"number\"\": \"\"Pluriel\"\" }]"
+      "similar": [{ "french": "<strong>Ces</strong> écoles", "english": "These schools", "gender": "Féminin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> facultés", "english": "These faculties", "gender": "Féminin", "number": "Pluriel" }]
     },
     {
       "id": "DEM-093",
@@ -1951,7 +1951,7 @@
       "grammar_rule": "Cet + nom masculin commençant par un h muet.",
       "exception": "⚠️ 'cet homme' fait la liaison (cé tomme).",
       "eng": "This man is kind.",
-      "similar": "[{ \"\"french\"\": \"\"<strong>Cet</strong> homme âgé\"\", \"\"english\"\": \"\"This elderly man\"\", \"\"gender\"\": \"\"Masculin\"\", \"\"number\"\": \"\"Singulier\"\" }, { \"\"french\"\": \"\"<strong>Cet</strong> homme d'affaires\"\", \"\"english\"\": \"\"This businessman\"\", \"\"gender\"\": \"\"Masculin\"\", \"\"number\"\": \"\"Singulier\"\" }]"
+      "similar": [{ "french": "<strong>Cet</strong> homme âgé", "english": "This elderly man", "gender": "Masculin", "number": "Singulier" }, { "french": "<strong>Cet</strong> homme d'affaires", "english": "This businessman", "gender": "Masculin", "number": "Singulier" }]
     },
     {
       "id": "DEM-094",
@@ -1972,7 +1972,7 @@
       "grammar_rule": "Ce + nom masculin singulier commençant par une consonne.",
       "exception": "⚠️ 'ce crayon' est correct.",
       "eng": "This pencil is blue.",
-      "similar": "[{ \"\"french\"\": \"\"<strong>Ce</strong> stylo\"\", \"\"english\"\": \"\"This pen\"\", \"\"gender\"\": \"\"Masculin\"\", \"\"number\"\": \"\"Singulier\"\" }, { \"\"french\"\": \"\"<strong>Ce</strong> feutre\"\", \"\"english\"\": \"\"This marker\"\", \"\"gender\"\": \"\"Masculin\"\", \"\"number\"\": \"\"Singulier\"\" }]"
+      "similar": [{ "french": "<strong>Ce</strong> stylo", "english": "This pen", "gender": "Masculin", "number": "Singulier" }, { "french": "<strong>Ce</strong> feutre", "english": "This marker", "gender": "Masculin", "number": "Singulier" }]
     },
     {
       "id": "DEM-095",
@@ -1993,7 +1993,7 @@
       "grammar_rule": "Cette s'utilise pour tous les noms féminins.",
       "exception": "⚠️ 'cette usine' fait la liaison (cétusine).",
       "eng": "This factory is closed.",
-      "similar": "[{ \"\"french\"\": \"\"<strong>Cette</strong> fabrique\"\", \"\"english\"\": \"\"This factory\"\", \"\"gender\"\": \"\"Féminin\"\", \"\"number\"\": \"\"Singulier\"\" }, { \"\"french\"\": \"\"<strong>Cette</strong> entreprise\"\", \"\"english\"\": \"\"This company\"\", \"\"gender\"\": \"\"Féminin\"\", \"\"number\"\": \"\"Singulier\"\" }]"
+      "similar": [{ "french": "<strong>Cette</strong> fabrique", "english": "This factory", "gender": "Féminin", "number": "Singulier" }, { "french": "<strong>Cette</strong> entreprise", "english": "This company", "gender": "Féminin", "number": "Singulier" }]
     },
     {
       "id": "DEM-096",
@@ -2014,7 +2014,7 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces idées' fait la liaison (cé zidées).",
       "eng": "These ideas are original.",
-      "similar": "[{ \"\"french\"\": \"\"<strong>Ces</strong> concepts\"\", \"\"english\"\": \"\"These concepts\"\", \"\"gender\"\": \"\"Masculin\"\", \"\"number\"\": \"\"Pluriel\"\" }, { \"\"french\"\": \"\"<strong>Ces</strong> pensées\"\", \"\"english\"\": \"\"These thoughts\"\", \"\"gender\"\": \"\"Féminin\"\", \"\"number\"\": \"\"Pluriel\"\" }]"
+      "similar": [{ "french": "<strong>Ces</strong> concepts", "english": "These concepts", "gender": "Masculin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> pensées", "english": "These thoughts", "gender": "Féminin", "number": "Pluriel" }]
     },
     {
       "id": "DEM-097",
@@ -2035,7 +2035,7 @@
       "grammar_rule": "Avec un h aspiré, on utilise 'ce' même devant une voyelle.",
       "exception": "⚠️ 'ce hibou' ne fait PAS la liaison (ce ibou).",
       "eng": "This owl is perched.",
-      "similar": "[{ \"\"french\"\": \"\"<strong>Ce</strong> hibou grand-duc\"\", \"\"english\"\": \"\"This eagle owl\"\", \"\"gender\"\": \"\"Masculin\"\", \"\"number\"\": \"\"Singulier\"\" }, { \"\"french\"\": \"\"<strong>Ce</strong> hérisson\"\", \"\"english\"\": \"\"This hedgehog\"\", \"\"gender\"\": \"\"Masculin\"\", \"\"number\"\": \"\"Singulier\"\" }]"
+      "similar": [{ "french": "<strong>Ce</strong> hibou grand-duc", "english": "This eagle owl", "gender": "Masculin", "number": "Singulier" }, { "french": "<strong>Ce</strong> hérisson", "english": "This hedgehog", "gender": "Masculin", "number": "Singulier" }]
     },
     {
       "id": "DEM-098",
@@ -2056,7 +2056,7 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces fleurs' est correct.",
       "eng": "These flowers are fragrant.",
-      "similar": "[{ \"\"french\"\": \"\"<strong>Ces</strong> roses\"\", \"\"english\"\": \"\"These roses\"\", \"\"gender\"\": \"\"Féminin\"\", \"\"number\"\": \"\"Pluriel\"\" }, { \"\"french\"\": \"\"<strong>Ces</strong> tulipes\"\", \"\"english\"\": \"\"These tulips\"\", \"\"gender\"\": \"\"Féminin\"\", \"\"number\"\": \"\"Pluriel\"\" }]"
+      "similar": [{ "french": "<strong>Ces</strong> roses", "english": "These roses", "gender": "Féminin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> tulipes", "english": "These tulips", "gender": "Féminin", "number": "Pluriel" }]
     },
     {
       "id": "DEM-099",
@@ -2077,7 +2077,7 @@
       "grammar_rule": "Cet + nom masculin commençant par une voyelle.",
       "exception": "⚠️ 'cet oiseau' fait la liaison (cét oiseau).",
       "eng": "This bird sings well.",
-      "similar": "[{ \"\"french\"\": \"\"<strong>Cet</strong> oiseau chanteur\"\", \"\"english\"\": \"\"This songbird\"\", \"\"gender\"\": \"\"Masculin\"\", \"\"number\"\": \"\"Singulier\"\" }, { \"\"french\"\": \"\"<strong>Cet</strong> oiseau migrateur\"\", \"\"english\"\": \"\"This migratory bird\"\", \"\"gender\"\": \"\"Masculin\"\", \"\"number\"\": \"\"Singulier\"\" }]"
+      "similar": [{ "french": "<strong>Cet</strong> oiseau chanteur", "english": "This songbird", "gender": "Masculin", "number": "Singulier" }, { "french": "<strong>Cet</strong> oiseau migrateur", "english": "This migratory bird", "gender": "Masculin", "number": "Singulier" }]
     },
     {
       "id": "DEM-100",
@@ -2098,7 +2098,7 @@
       "grammar_rule": "Cette s'utilise pour tous les noms féminins.",
       "exception": "⚠️ 'cette église' fait la liaison (cétégise).",
       "eng": "This church is old.",
-      "similar": "[{ \"\"french\"\": \"\"<strong>Cette</strong> cathédrale\"\", \"\"english\"\": \"\"This cathedral\"\", \"\"gender\"\": \"\"Féminin\"\", \"\"number\"\": \"\"Singulier\"\" }, { \"\"french\"\": \"\"<strong>Cette</strong> chapelle\"\", \"\"english\"\": \"\"This chapel\"\", \"\"gender\"\": \"\"Féminin\"\", \"\"number\"\": \"\"Singulier\"\" }]"
+      "similar": [{ "french": "<strong>Cette</strong> cathédrale", "english": "This cathedral", "gender": "Féminin", "number": "Singulier" }, { "french": "<strong>Cette</strong> chapelle", "english": "This chapel", "gender": "Féminin", "number": "Singulier" }]
     },
     {
       "id": "DEM-101",
@@ -2119,7 +2119,7 @@
       "grammar_rule": "Ce + nom masculin singulier commençant par une consonne.",
       "exception": "⚠️ Devant une voyelle ou un h muet, utilisez 'cet'.",
       "eng": "This book is fascinating.",
-      "similar": "[{ \"\"french\"\": \"\"<strong>Ce</strong> roman\"\", \"\"english\"\": \"\"This novel\"\", \"\"gender\"\": \"\"Masculin\"\", \"\"number\"\": \"\"Singulier\"\" }, { \"\"french\"\": \"\"<strong>Ce</strong> poème\"\", \"\"english\"\": \"\"This poem\"\", \"\"gender\"\": \"\"Masculin\"\", \"\"number\"\": \"\"Singulier\"\" }]"
+      "similar": [{ "french": "<strong>Ce</strong> roman", "english": "This novel", "gender": "Masculin", "number": "Singulier" }, { "french": "<strong>Ce</strong> poème", "english": "This poem", "gender": "Masculin", "number": "Singulier" }]
     },
     {
       "id": "DEM-102",
@@ -2140,7 +2140,7 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces étoiles' fait la liaison (cé zétoiles).",
       "eng": "These stars shine in the sky.",
-      "similar": "[{ \"\"french\"\": \"\"<strong>Ces</strong> planètes\"\", \"\"english\"\": \"\"These planets\"\", \"\"gender\"\": \"\"Féminin\"\", \"\"number\"\": \"\"Pluriel\"\" }, { \"\"french\"\": \"\"<strong>Ces</strong> galaxies\"\", \"\"english\"\": \"\"These galaxies\"\", \"\"gender\"\": \"\"Féminin\"\", \"\"number\"\": \"\"Pluriel\"\" }]"
+      "similar": [{ "french": "<strong>Ces</strong> planètes", "english": "These planets", "gender": "Féminin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> galaxies", "english": "These galaxies", "gender": "Féminin", "number": "Pluriel" }]
     },
     {
       "id": "DEM-103",
@@ -2161,7 +2161,7 @@
       "grammar_rule": "Cette + nom féminin singulier.",
       "exception": "⚠️ 'cette voiture' est correct.",
       "eng": "This car is fast.",
-      "similar": "[{ \"\"french\"\": \"\"<strong>Cette</strong> automobile\"\", \"\"english\"\": \"\"This automobile\"\", \"\"gender\"\": \"\"Féminin\"\", \"\"number\"\": \"\"Singulier\"\" }, { \"\"french\"\": \"\"<strong>Cette</strong> moto\"\", \"\"english\"\": \"\"This motorcycle\"\", \"\"gender\"\": \"\"Féminin\"\", \"\"number\"\": \"\"Singulier\"\" }]"
+      "similar": [{ "french": "<strong>Cette</strong> automobile", "english": "This automobile", "gender": "Féminin", "number": "Singulier" }, { "french": "<strong>Cette</strong> moto", "english": "This motorcycle", "gender": "Féminin", "number": "Singulier" }]
     },
     {
       "id": "DEM-104",
@@ -2182,7 +2182,7 @@
       "grammar_rule": "Cet + nom masculin commençant par un h muet.",
       "exception": "⚠️ 'cet hôtel' fait la liaison (cétôtel).",
       "eng": "This hotel is luxurious.",
-      "similar": "[{ \"\"french\"\": \"\"<strong>Cet</strong> établissement\"\", \"\"english\"\": \"\"This establishment\"\", \"\"gender\"\": \"\"Masculin\"\", \"\"number\"\": \"\"Singulier\"\" }, { \"\"french\"\": \"\"<strong>Cet</strong> palace\"\", \"\"english\"\": \"\"This palace hotel\"\", \"\"gender\"\": \"\"Masculin\"\", \"\"number\"\": \"\"Singulier\"\" }]"
+      "similar": [{ "french": "<strong>Cet</strong> établissement", "english": "This establishment", "gender": "Masculin", "number": "Singulier" }, { "french": "<strong>Cet</strong> palace", "english": "This palace hotel", "gender": "Masculin", "number": "Singulier" }]
     },
     {
       "id": "DEM-105",
@@ -2203,7 +2203,7 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces enfants' fait la liaison (cé zanfants).",
       "eng": "These children play in the garden.",
-      "similar": "[{ \"\"french\"\": \"\"<strong>Ces</strong> garçons\"\", \"\"english\"\": \"\"These boys\"\", \"\"gender\"\": \"\"Masculin\"\", \"\"number\"\": \"\"Pluriel\"\" }, { \"\"french\"\": \"\"<strong>Ces</strong> filles\"\", \"\"english\"\": \"\"These girls\"\", \"\"gender\"\": \"\"Féminin\"\", \"\"number\"\": \"\"Pluriel\"\" }]"
+      "similar": [{ "french": "<strong>Ces</strong> garçons", "english": "These boys", "gender": "Masculin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> filles", "english": "These girls", "gender": "Féminin", "number": "Pluriel" }]
     },
     {
       "id": "DEM-106",
@@ -2224,7 +2224,7 @@
       "grammar_rule": "Ce + nom masculin singulier commençant par une consonne.",
       "exception": "⚠️ 'ce arbre' est correct.",
       "eng": "This tree is majestic.",
-      "similar": "[{ \"\"french\"\": \"\"<strong>Ce</strong> chêne\"\", \"\"english\"\": \"\"This oak\"\", \"\"gender\"\": \"\"Masculin\"\", \"\"number\"\": \"\"Singulier\"\" }, { \"\"french\"\": \"\"<strong>Ce</strong> pin\"\", \"\"english\"\": \"\"This pine\"\", \"\"gender\"\": \"\"Masculin\"\", \"\"number\"\": \"\"Singulier\"\" }]"
+      "similar": [{ "french": "<strong>Ce</strong> chêne", "english": "This oak", "gender": "Masculin", "number": "Singulier" }, { "french": "<strong>Ce</strong> pin", "english": "This pine", "gender": "Masculin", "number": "Singulier" }]
     },
     {
       "id": "DEM-107",
@@ -2245,7 +2245,7 @@
       "grammar_rule": "Cette s'utilise pour tous les noms féminins.",
       "exception": "⚠️ 'cette idée' fait la liaison (cétidée).",
       "eng": "This idea is brilliant.",
-      "similar": "[{ \"\"french\"\": \"\"<strong>Cette</strong> invention\"\", \"\"english\"\": \"\"This invention\"\", \"\"gender\"\": \"\"Féminin\"\", \"\"number\"\": \"\"Singulier\"\" }, { \"\"french\"\": \"\"<strong>Cette</strong> découverte\"\", \"\"english\"\": \"\"This discovery\"\", \"\"gender\"\": \"\"Féminin\"\", \"\"number\"\": \"\"Singulier\"\" }]"
+      "similar": [{ "french": "<strong>Cette</strong> invention", "english": "This invention", "gender": "Féminin", "number": "Singulier" }, { "french": "<strong>Cette</strong> découverte", "english": "This discovery", "gender": "Féminin", "number": "Singulier" }]
     },
     {
       "id": "DEM-108",
@@ -2266,7 +2266,7 @@
       "grammar_rule": "Avec un h aspiré, on utilise 'ce' même devant une voyelle.",
       "exception": "⚠️ 'ce héros' ne fait PAS la liaison (ce éro).",
       "eng": "This hero is brave.",
-      "similar": "[{ \"\"french\"\": \"\"<strong>Ce</strong> héroïne\"\", \"\"english\"\": \"\"This heroine\"\", \"\"gender\"\": \"\"Féminin\"\", \"\"number\"\": \"\"Singulier\"\" }, { \"\"french\"\": \"\"<strong>Ce</strong> champion\"\", \"\"english\"\": \"\"This champion\"\", \"\"gender\"\": \"\"Masculin\"\", \"\"number\"\": \"\"Singulier\"\" }]"
+      "similar": [{ "french": "<strong>Ce</strong> héroïne", "english": "This heroine", "gender": "Féminin", "number": "Singulier" }, { "french": "<strong>Ce</strong> champion", "english": "This champion", "gender": "Masculin", "number": "Singulier" }]
     },
     {
       "id": "DEM-109",
@@ -2287,7 +2287,7 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces chaussures' est correct.",
       "eng": "These shoes are comfortable.",
-      "similar": "[{ \"\"french\"\": \"\"<strong>Ces</strong> bottes\"\", \"\"english\"\": \"\"These boots\"\", \"\"gender\"\": \"\"Féminin\"\", \"\"number\"\": \"\"Pluriel\"\" }, { \"\"french\"\": \"\"<strong>Ces</strong> sandales\"\", \"\"english\"\": \"\"These sandals\"\", \"\"gender\"\": \"\"Féminin\"\", \"\"number\"\": \"\"Pluriel\"\" }]"
+      "similar": [{ "french": "<strong>Ces</strong> bottes", "english": "These boots", "gender": "Féminin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> sandales", "english": "These sandals", "gender": "Féminin", "number": "Pluriel" }]
     },
     {
       "id": "DEM-110",
@@ -2308,7 +2308,7 @@
       "grammar_rule": "Cet + nom masculin commençant par une voyelle.",
       "exception": "⚠️ 'cet oiseau' fait la liaison (cét oiseau).",
       "eng": "This bird sings melodiously.",
-      "similar": "[{ \"\"french\"\": \"\"<strong>Cet</strong> oiseau chanteur\"\", \"\"english\"\": \"\"This songbird\"\", \"\"gender\"\": \"\"Masculin\"\", \"\"number\"\": \"\"Singulier\"\" }, { \"\"french\"\": \"\"<strong>Cet</strong> oiseau migrateur\"\", \"\"english\"\": \"\"This migratory bird\"\", \"\"gender\"\": \"\"Masculin\"\", \"\"number\"\": \"\"Singulier\"\" }]"
+      "similar": [{ "french": "<strong>Cet</strong> oiseau chanteur", "english": "This songbird", "gender": "Masculin", "number": "Singulier" }, { "french": "<strong>Cet</strong> oiseau migrateur", "english": "This migratory bird", "gender": "Masculin", "number": "Singulier" }]
     },
     {
       "id": "DEM-111",
@@ -2329,7 +2329,7 @@
       "grammar_rule": "Cette + nom féminin singulier.",
       "exception": "⚠️ 'cette maison' est correct.",
       "eng": "This house is white.",
-      "similar": "[{ \"\"french\"\": \"\"<strong>Cette</strong> villa\"\", \"\"english\"\": \"\"This villa\"\", \"\"gender\"\": \"\"Féminin\"\", \"\"number\"\": \"\"Singulier\"\" }, { \"\"french\"\": \"\"<strong>Cette</strong> demeure\"\", \"\"english\"\": \"\"This dwelling\"\", \"\"gender\"\": \"\"Féminin\"\", \"\"number\"\": \"\"Singulier\"\" }]"
+      "similar": [{ "french": "<strong>Cette</strong> villa", "english": "This villa", "gender": "Féminin", "number": "Singulier" }, { "french": "<strong>Cette</strong> demeure", "english": "This dwelling", "gender": "Féminin", "number": "Singulier" }]
     },
     {
       "id": "DEM-112",
@@ -2350,7 +2350,7 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces ordinateurs' fait la liaison (cé zordinateurs).",
       "eng": "These computers are modern.",
-      "similar": "[{ \"\"french\"\": \"\"<strong>Ces</strong> appareils\"\", \"\"english\"\": \"\"These devices\"\", \"\"gender\"\": \"\"Masculin\"\", \"\"number\"\": \"\"Pluriel\"\" }, { \"\"french\"\": \"\"<strong>Ces</strong> écrans\"\", \"\"english\"\": \"\"These screens\"\", \"\"gender\"\": \"\"Masculin\"\", \"\"number\"\": \"\"Pluriel\"\" }]"
+      "similar": [{ "french": "<strong>Ces</strong> appareils", "english": "These devices", "gender": "Masculin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> écrans", "english": "These screens", "gender": "Masculin", "number": "Pluriel" }]
     },
     {
       "id": "DEM-113",
@@ -2371,7 +2371,7 @@
       "grammar_rule": "Cet + nom masculin commençant par un h muet.",
       "exception": "⚠️ 'cet homme' fait la liaison (cé tomme).",
       "eng": "This man is elderly.",
-      "similar": "[{ \"\"french\"\": \"\"<strong>Cet</strong> homme âgé\"\", \"\"english\"\": \"\"This elderly man\"\", \"\"gender\"\": \"\"Masculin\"\", \"\"number\"\": \"\"Singulier\"\" }, { \"\"french\"\": \"\"<strong>Cet</strong> homme d'affaires\"\", \"\"english\"\": \"\"This businessman\"\", \"\"gender\"\": \"\"Masculin\"\", \"\"number\"\": \"\"Singulier\"\" }]"
+      "similar": [{ "french": "<strong>Cet</strong> homme âgé", "english": "This elderly man", "gender": "Masculin", "number": "Singulier" }, { "french": "<strong>Cet</strong> homme d'affaires", "english": "This businessman", "gender": "Masculin", "number": "Singulier" }]
     },
     {
       "id": "DEM-114",
@@ -2392,7 +2392,7 @@
       "grammar_rule": "Cette + nom féminin singulier.",
       "exception": "⚠️ 'cette table' est correct.",
       "eng": "This table is made of wood.",
-      "similar": "[{ \"\"french\"\": \"\"<strong>Cette</strong> chaise\"\", \"\"english\"\": \"\"This chair\"\", \"\"gender\"\": \"\"Féminin\"\", \"\"number\"\": \"\"Singulier\"\" }, { \"\"french\"\": \"\"<strong>Cette</strong> étagère\"\", \"\"english\"\": \"\"This shelf\"\", \"\"gender\"\": \"\"Féminin\"\", \"\"number\"\": \"\"Singulier\"\" }]"
+      "similar": [{ "french": "<strong>Cette</strong> chaise", "english": "This chair", "gender": "Féminin", "number": "Singulier" }, { "french": "<strong>Cette</strong> étagère", "english": "This shelf", "gender": "Féminin", "number": "Singulier" }]
     },
     {
       "id": "DEM-115",
@@ -2413,7 +2413,7 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces fleurs' est correct.",
       "eng": "These flowers are beautiful.",
-      "similar": "[{ \"\"french\"\": \"\"<strong>Ces</strong> roses\"\", \"\"english\"\": \"\"These roses\"\", \"\"gender\"\": \"\"Féminin\"\", \"\"number\"\": \"\"Pluriel\"\" }, { \"\"french\"\": \"\"<strong>Ces</strong> tulipes\"\", \"\"english\"\": \"\"These tulips\"\", \"\"gender\"\": \"\"Féminin\"\", \"\"number\"\": \"\"Pluriel\"\" }]"
+      "similar": [{ "french": "<strong>Ces</strong> roses", "english": "These roses", "gender": "Féminin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> tulipes", "english": "These tulips", "gender": "Féminin", "number": "Pluriel" }]
     },
     {
       "id": "DEM-116",
@@ -2434,7 +2434,7 @@
       "grammar_rule": "Cette s'utilise pour tous les noms féminins.",
       "exception": "⚠️ 'cette école' fait la liaison (cétécole).",
       "eng": "This school is elementary.",
-      "similar": "[{ \"\"french\"\": \"\"<strong>Cette</strong> école maternelle\"\", \"\"english\"\": \"\"This preschool\"\", \"\"gender\"\": \"\"Féminin\"\", \"\"number\"\": \"\"Singulier\"\" }, { \"\"french\"\": \"\"<strong>Cette</strong> école secondaire\"\", \"\"english\"\": \"\"This secondary school\"\", \"\"gender\"\": \"\"Féminin\"\", \"\"number\"\": \"\"Singulier\"\" }]"
+      "similar": [{ "french": "<strong>Cette</strong> école maternelle", "english": "This preschool", "gender": "Féminin", "number": "Singulier" }, { "french": "<strong>Cette</strong> école secondaire", "english": "This secondary school", "gender": "Féminin", "number": "Singulier" }]
     },
     {
       "id": "DEM-117",
@@ -2455,7 +2455,7 @@
       "grammar_rule": "Ce + nom masculin singulier commençant par une consonne.",
       "exception": "⚠️ 'ce crayon' est correct.",
       "eng": "This pencil is blue.",
-      "similar": "[{ \"\"french\"\": \"\"<strong>Ce</strong> stylo\"\", \"\"english\"\": \"\"This pen\"\", \"\"gender\"\": \"\"Masculin\"\", \"\"number\"\": \"\"Singulier\"\" }, { \"\"french\"\": \"\"<strong>Ce</strong> feutre\"\", \"\"english\"\": \"\"This marker\"\", \"\"gender\"\": \"\"Masculin\"\", \"\"number\"\": \"\"Singulier\"\" }]"
+      "similar": [{ "french": "<strong>Ce</strong> stylo", "english": "This pen", "gender": "Masculin", "number": "Singulier" }, { "french": "<strong>Ce</strong> feutre", "english": "This marker", "gender": "Masculin", "number": "Singulier" }]
     },
     {
       "id": "DEM-118",
@@ -2476,7 +2476,7 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces avions' fait la liaison (cé zavions).",
       "eng": "These planes are at the airport.",
-      "similar": "[{ \"\"french\"\": \"\"<strong>Ces</strong> hélicoptères\"\", \"\"english\"\": \"\"These helicopters\"\", \"\"gender\"\": \"\"Masculin\"\", \"\"number\"\": \"\"Pluriel\"\" }, { \"\"french\"\": \"\"<strong>Ces</strong> avions de ligne\"\", \"\"english\"\": \"\"These airliners\"\", \"\"gender\"\": \"\"Masculin\"\", \"\"number\"\": \"\"Pluriel\"\" }]"
+      "similar": [{ "french": "<strong>Ces</strong> hélicoptères", "english": "These helicopters", "gender": "Masculin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> avions de ligne", "english": "These airliners", "gender": "Masculin", "number": "Pluriel" }]
     },
     {
       "id": "DEM-119",
@@ -2497,7 +2497,7 @@
       "grammar_rule": "Cet + nom masculin commençant par un h muet.",
       "exception": "⚠️ 'cet hiver' fait la liaison (cétiver).",
       "eng": "This winter is cold.",
-      "similar": "[{ \"\"french\"\": \"\"<strong>Cet</strong> hiver rigoureux\"\", \"\"english\"\": \"\"This harsh winter\"\", \"\"gender\"\": \"\"Masculin\"\", \"\"number\"\": \"\"Singulier\"\" }, { \"\"french\"\": \"\"<strong>Cet</strong> hiver neigeux\"\", \"\"english\"\": \"\"This snowy winter\"\", \"\"gender\"\": \"\"Masculin\"\", \"\"number\"\": \"\"Singulier\"\" }]"
+      "similar": [{ "french": "<strong>Cet</strong> hiver rigoureux", "english": "This harsh winter", "gender": "Masculin", "number": "Singulier" }, { "french": "<strong>Cet</strong> hiver neigeux", "english": "This snowy winter", "gender": "Masculin", "number": "Singulier" }]
     },
     {
       "id": "DEM-120",
@@ -2518,7 +2518,7 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces voitures' est correct.",
       "eng": "These cars are electric.",
-      "similar": "[{ \"\"french\"\": \"\"<strong>Ces</strong> automobiles\"\", \"\"english\"\": \"\"These automobiles\"\", \"\"gender\"\": \"\"Féminin\"\", \"\"number\"\": \"\"Pluriel\"\" }, { \"\"french\"\": \"\"<strong>Ces</strong> véhicules\"\", \"\"english\"\": \"\"These vehicles\"\", \"\"gender\"\": \"\"Masculin\"\", \"\"number\"\": \"\"Pluriel\"\" }]"
+      "similar": [{ "french": "<strong>Ces</strong> automobiles", "english": "These automobiles", "gender": "Féminin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> véhicules", "english": "These vehicles", "gender": "Masculin", "number": "Pluriel" }]
     },
     {
       "id": "DEM-121",
@@ -2539,7 +2539,7 @@
       "grammar_rule": "Cette s'utilise pour tous les noms féminins.",
       "exception": "⚠️ 'cette université' fait la liaison (cétuniversité).",
       "eng": "This university is renowned.",
-      "similar": "[{ \"\"french\"\": \"\"<strong>Cette</strong> faculté\"\", \"\"english\"\": \"\"This faculty\"\", \"\"gender\"\": \"\"Féminin\"\", \"\"number\"\": \"\"Singulier\"\" }, { \"\"french\"\": \"\"<strong>Cette</strong> école\"\", \"\"english\"\": \"\"This school\"\", \"\"gender\"\": \"\"Féminin\"\", \"\"number\"\": \"\"Singulier\"\" }]"
+      "similar": [{ "french": "<strong>Cette</strong> faculté", "english": "This faculty", "gender": "Féminin", "number": "Singulier" }, { "french": "<strong>Cette</strong> école", "english": "This school", "gender": "Féminin", "number": "Singulier" }]
     },
     {
       "id": "DEM-122",
@@ -2560,7 +2560,7 @@
       "grammar_rule": "Ce + nom masculin singulier commençant par une consonne.",
       "exception": "⚠️ 'ce chapeau' est correct.",
       "eng": "This hat is made of straw.",
-      "similar": "[{ \"\"french\"\": \"\"<strong>Ce</strong> bonnet\"\", \"\"english\"\": \"\"This bonnet\"\", \"\"gender\"\": \"\"Masculin\"\", \"\"number\"\": \"\"Singulier\"\" }, { \"\"french\"\": \"\"<strong>Ce</strong> casque\"\", \"\"english\"\": \"\"This helmet\"\", \"\"gender\"\": \"\"Masculin\"\", \"\"number\"\": \"\"Singulier\"\" }]"
+      "similar": [{ "french": "<strong>Ce</strong> bonnet", "english": "This bonnet", "gender": "Masculin", "number": "Singulier" }, { "french": "<strong>Ce</strong> casque", "english": "This helmet", "gender": "Masculin", "number": "Singulier" }]
     },
     {
       "id": "DEM-123",
@@ -2581,7 +2581,7 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces histoires' fait la liaison (cé zistoires).",
       "eng": "These stories are true.",
-      "similar": "[{ \"\"french\"\": \"\"<strong>Ces</strong> contes\"\", \"\"english\"\": \"\"These tales\"\", \"\"gender\"\": \"\"Masculin\"\", \"\"number\"\": \"\"Pluriel\"\" }, { \"\"french\"\": \"\"<strong>Ces</strong> légendes\"\", \"\"english\"\": \"\"These legends\"\", \"\"gender\"\": \"\"Féminin\"\", \"\"number\"\": \"\"Pluriel\"\" }]"
+      "similar": [{ "french": "<strong>Ces</strong> contes", "english": "These tales", "gender": "Masculin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> légendes", "english": "These legends", "gender": "Féminin", "number": "Pluriel" }]
     },
     {
       "id": "DEM-125",
@@ -2602,7 +2602,10 @@
       "grammar_rule": "Cette + nom féminin singulier.",
       "exception": "⚠️ 'cette fenêtre' est correct.",
       "eng": "This window is open.",
-      "similar": [{ "french": "<strong>Cette</strong> porte", "english": "This door", "gender": "Féminin", "number": "Singulier" }, { "french": "<strong>Cette</strong> lucarne", "english": "This skylight", "gender": "Féminin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Cette</strong> porte", "english": "This door", "gender": "Féminin", "number": "Singulier" },
+        { "french": "<strong>Cette</strong> lucarne", "english": "This skylight", "gender": "Féminin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-126",
@@ -2623,7 +2626,10 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces gâteaux' est correct.",
       "eng": "These cakes are delicious.",
-      "similar": [{ "french": "<strong>Ces</strong> desserts", "english": "These desserts", "gender": "Masculin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> pâtisseries", "english": "These pastries", "gender": "Féminin", "number": "Pluriel" }]
+      "similar": [
+        { "french": "<strong>Ces</strong> desserts", "english": "These desserts", "gender": "Masculin", "number": "Pluriel" },
+        { "french": "<strong>Ces</strong> pâtisseries", "english": "These pastries", "gender": "Féminin", "number": "Pluriel" }
+      ]
     },
     {
       "id": "DEM-127",
@@ -2644,7 +2650,10 @@
       "grammar_rule": "Cette s'utilise pour tous les noms féminins.",
       "exception": "⚠️ 'cette eau' fait la liaison (cét eau).",
       "eng": "This water is fresh.",
-      "similar": [{ "french": "<strong>Cette</strong> eau minérale", "english": "This mineral water", "gender": "Féminin", "number": "Singulier" }, { "french": "<strong>Cette</strong> eau gazeuse", "english": "This sparkling water", "gender": "Féminin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Cette</strong> eau minérale", "english": "This mineral water", "gender": "Féminin", "number": "Singulier" },
+        { "french": "<strong>Cette</strong> eau gazeuse", "english": "This sparkling water", "gender": "Féminin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-128",
@@ -2665,7 +2674,10 @@
       "grammar_rule": "Ce + nom masculin singulier commençant par une consonne.",
       "exception": "⚠️ 'ce château' est correct.",
       "eng": "This castle is old.",
-      "similar": [{ "french": "<strong>Ce</strong> palais", "english": "This palace", "gender": "Masculin", "number": "Singulier" }, { "french": "<strong>Ce</strong> monument", "english": "This monument", "gender": "Masculin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Ce</strong> palais", "english": "This palace", "gender": "Masculin", "number": "Singulier" },
+        { "french": "<strong>Ce</strong> monument", "english": "This monument", "gender": "Masculin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-129",
@@ -2686,7 +2698,10 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces livres' est correct.",
       "eng": "These books are on the table.",
-      "similar": [{ "french": "<strong>Ces</strong> cahiers", "english": "These notebooks", "gender": "Masculin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> revues", "english": "These magazines", "gender": "Féminin", "number": "Pluriel" }]
+      "similar": [
+        { "french": "<strong>Ces</strong> cahiers", "english": "These notebooks", "gender": "Masculin", "number": "Pluriel" },
+        { "french": "<strong>Ces</strong> revues", "english": "These magazines", "gender": "Féminin", "number": "Pluriel" }
+      ]
     },
     {
       "id": "DEM-130",
@@ -2707,7 +2722,10 @@
       "grammar_rule": "Cette s'utilise pour tous les noms féminins.",
       "exception": "⚠️ 'cette orange' fait la liaison (cétorange).",
       "eng": "This orange is juicy.",
-      "similar": [{ "french": "<strong>Cette</strong> pomme", "english": "This apple", "gender": "Féminin", "number": "Singulier" }, { "french": "<strong>Cette</strong> poire", "english": "This pear", "gender": "Féminin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Cette</strong> pomme", "english": "This apple", "gender": "Féminin", "number": "Singulier" },
+        { "french": "<strong>Cette</strong> poire", "english": "This pear", "gender": "Féminin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-131",
@@ -2728,7 +2746,10 @@
       "grammar_rule": "Avec un h aspiré, on utilise 'ce' même devant une voyelle.",
       "exception": "⚠️ 'ce hibou' ne fait PAS la liaison (ce ibou).",
       "eng": "This owl is nocturnal.",
-      "similar": [{ "french": "<strong>Ce</strong> hibou grand-duc", "english": "This eagle owl", "gender": "Masculin", "number": "Singulier" }, { "french": "<strong>Ce</strong> hérisson", "english": "This hedgehog", "gender": "Masculin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Ce</strong> hibou grand-duc", "english": "This eagle owl", "gender": "Masculin", "number": "Singulier" },
+        { "french": "<strong>Ce</strong> hérisson", "english": "This hedgehog", "gender": "Masculin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-132",
@@ -2749,7 +2770,10 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces montagnes' est correct.",
       "eng": "These mountains are snow-capped.",
-      "similar": [{ "french": "<strong>Ces</strong> sommets", "english": "These peaks", "gender": "Masculin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> collines", "english": "These hills", "gender": "Féminin", "number": "Pluriel" }]
+      "similar": [
+        { "french": "<strong>Ces</strong> sommets", "english": "These peaks", "gender": "Masculin", "number": "Pluriel" },
+        { "french": "<strong>Ces</strong> collines", "english": "These hills", "gender": "Féminin", "number": "Pluriel" }
+      ]
     },
     {
       "id": "DEM-133",
@@ -2770,7 +2794,10 @@
       "grammar_rule": "Ce + nom masculin singulier commençant par une consonne.",
       "exception": "⚠️ 'cet arbre' est correct.",
       "eng": "This tree is in the garden.",
-      "similar": [{ "french": "<strong>Ce</strong> chêne", "english": "This oak", "gender": "Masculin", "number": "Singulier" }, { "french": "<strong>Ce</strong> pommier", "english": "This apple tree", "gender": "Masculin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Ce</strong> chêne", "english": "This oak", "gender": "Masculin", "number": "Singulier" },
+        { "french": "<strong>Ce</strong> pommier", "english": "This apple tree", "gender": "Masculin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-134",
@@ -2791,7 +2818,10 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces idées' fait la liaison (cé zidées).",
       "eng": "These ideas are creative.",
-      "similar": [{ "french": "<strong>Ces</strong> concepts", "english": "These concepts", "gender": "Masculin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> suggestions", "english": "These suggestions", "gender": "Féminin", "number": "Pluriel" }]
+      "similar": [
+        { "french": "<strong>Ces</strong> concepts", "english": "These concepts", "gender": "Masculin", "number": "Pluriel" },
+        { "french": "<strong>Ces</strong> suggestions", "english": "These suggestions", "gender": "Féminin", "number": "Pluriel" }
+      ]
     },
     {
       "id": "DEM-135",
@@ -2812,7 +2842,10 @@
       "grammar_rule": "Cet + nom masculin commençant par une voyelle.",
       "exception": "⚠️ 'cet outil' fait la liaison (cétoutil).",
       "eng": "This tool is practical.",
-      "similar": [{ "french": "<strong>Cet</strong> instrument", "english": "This instrument", "gender": "Masculin", "number": "Singulier" }, { "french": "<strong>Cet</strong> appareil", "english": "This device", "gender": "Masculin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Cet</strong> instrument", "english": "This instrument", "gender": "Masculin", "number": "Singulier" },
+        { "french": "<strong>Cet</strong> appareil", "english": "This device", "gender": "Masculin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-136",
@@ -2833,7 +2866,10 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces enfants' fait la liaison (cé zanfants).",
       "eng": "These children are happy.",
-      "similar": [{ "french": "<strong>Ces</strong> garçons", "english": "These boys", "gender": "Masculin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> filles", "english": "These girls", "gender": "Féminin", "number": "Pluriel" }]
+      "similar": [
+        { "french": "<strong>Ces</strong> garçons", "english": "These boys", "gender": "Masculin", "number": "Pluriel" },
+        { "french": "<strong>Ces</strong> filles", "english": "These girls", "gender": "Féminin", "number": "Pluriel" }
+      ]
     },
     {
       "id": "DEM-137",
@@ -2854,7 +2890,10 @@
       "grammar_rule": "Cette s'utilise pour tous les noms féminins.",
       "exception": "⚠️ 'cette église' fait la liaison (cétégise).",
       "eng": "This church is Catholic.",
-      "similar": [{ "french": "<strong>Cette</strong> cathédrale", "english": "This cathedral", "gender": "Féminin", "number": "Singulier" }, { "french": "<strong>Cette</strong> chapelle", "english": "This chapel", "gender": "Féminin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Cette</strong> cathédrale", "english": "This cathedral", "gender": "Féminin", "number": "Singulier" },
+        { "french": "<strong>Cette</strong> chapelle", "english": "This chapel", "gender": "Féminin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-138",
@@ -2875,7 +2914,10 @@
       "grammar_rule": "Cet + nom masculin commençant par un h muet.",
       "exception": "⚠️ 'cet hôtel' fait la liaison (cétôtel).",
       "eng": "This hotel is comfortable.",
-      "similar": [{ "french": "<strong>Cet</strong> établissement", "english": "This establishment", "gender": "Masculin", "number": "Singulier" }, { "french": "<strong>Cet</strong> hébergement", "english": "This accommodation", "gender": "Masculin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Cet</strong> établissement", "english": "This establishment", "gender": "Masculin", "number": "Singulier" },
+        { "french": "<strong>Cet</strong> hébergement", "english": "This accommodation", "gender": "Masculin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-139",
@@ -2896,7 +2938,10 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces chemises' est correct.",
       "eng": "These shirts are white.",
-      "similar": [{ "french": "<strong>Ces</strong> vestes", "english": "These jackets", "gender": "Féminin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> pantalons", "english": "These pants", "gender": "Masculin", "number": "Pluriel" }]
+      "similar": [
+        { "french": "<strong>Ces</strong> vestes", "english": "These jackets", "gender": "Féminin", "number": "Pluriel" },
+        { "french": "<strong>Ces</strong> pantalons", "english": "These pants", "gender": "Masculin", "number": "Pluriel" }
+      ]
     },
     {
       "id": "DEM-140",
@@ -2917,7 +2962,10 @@
       "grammar_rule": "Cet + nom masculin commençant par une voyelle.",
       "exception": "⚠️ 'cet oiseau' fait la liaison (cét oiseau).",
       "eng": "This bird flies high.",
-      "similar": [{ "french": "<strong>Cet</strong> oiseau migrateur", "english": "This migratory bird", "gender": "Masculin", "number": "Singulier" }, { "french": "<strong>Cet</strong> oiseau de proie", "english": "This bird of prey", "gender": "Masculin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Cet</strong> oiseau migrateur", "english": "This migratory bird", "gender": "Masculin", "number": "Singulier" },
+        { "french": "<strong>Cet</strong> oiseau de proie", "english": "This bird of prey", "gender": "Masculin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-141",
@@ -2938,7 +2986,10 @@
       "grammar_rule": "Cette + nom féminin singulier.",
       "exception": "⚠️ 'cette maison' est correct.",
       "eng": "This house is big.",
-      "similar": [{ "french": "<strong>Cette</strong> villa", "english": "This villa", "gender": "Féminin", "number": "Singulier" }, { "french": "<strong>Cette</strong> demeure", "english": "This dwelling", "gender": "Féminin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Cette</strong> villa", "english": "This villa", "gender": "Féminin", "number": "Singulier" },
+        { "french": "<strong>Cette</strong> demeure", "english": "This dwelling", "gender": "Féminin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-142",
@@ -2959,7 +3010,10 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces animaux' fait la liaison (cé zanimaux).",
       "eng": "These animals are in the forest.",
-      "similar": [{ "french": "<strong>Ces</strong> bêtes", "english": "These beasts", "gender": "Féminin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> créatures", "english": "These creatures", "gender": "Féminin", "number": "Pluriel" }]
+      "similar": [
+        { "french": "<strong>Ces</strong> bêtes", "english": "These beasts", "gender": "Féminin", "number": "Pluriel" },
+        { "french": "<strong>Ces</strong> créatures", "english": "These creatures", "gender": "Féminin", "number": "Pluriel" }
+      ]
     },
     {
       "id": "DEM-143",
@@ -2980,7 +3034,10 @@
       "grammar_rule": "Cet + nom masculin commençant par un h muet.",
       "exception": "⚠️ 'cet homme' fait la liaison (cé tomme).",
       "eng": "This man is tall.",
-      "similar": [{ "french": "<strong>Cet</strong> homme d'affaires", "english": "This businessman", "gender": "Masculin", "number": "Singulier" }, { "french": "<strong>Cet</strong> homme politique", "english": "This politician", "gender": "Masculin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Cet</strong> homme d'affaires", "english": "This businessman", "gender": "Masculin", "number": "Singulier" },
+        { "french": "<strong>Cet</strong> homme politique", "english": "This politician", "gender": "Masculin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-144",
@@ -3001,7 +3058,10 @@
       "grammar_rule": "Cette + nom féminin singulier.",
       "exception": "⚠️ 'cette table' est correct.",
       "eng": "This table is round.",
-      "similar": [{ "french": "<strong>Cette</strong> chaise", "english": "This chair", "gender": "Féminin", "number": "Singulier" }, { "french": "<strong>Cette</strong> étagère", "english": "This shelf", "gender": "Féminin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Cette</strong> chaise", "english": "This chair", "gender": "Féminin", "number": "Singulier" },
+        { "french": "<strong>Cette</strong> étagère", "english": "This shelf", "gender": "Féminin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-145",
@@ -3022,7 +3082,10 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces jeux' est correct.",
       "eng": "These games are educational.",
-      "similar": [{ "french": "<strong>Ces</strong> activités", "english": "These activities", "gender": "Féminin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> jouets", "english": "These toys", "gender": "Masculin", "number": "Pluriel" }]
+      "similar": [
+        { "french": "<strong>Ces</strong> activités", "english": "These activities", "gender": "Féminin", "number": "Pluriel" },
+        { "french": "<strong>Ces</strong> jouets", "english": "These toys", "gender": "Masculin", "number": "Pluriel" }
+      ]
     },
     {
       "id": "DEM-146",
@@ -3043,7 +3106,10 @@
       "grammar_rule": "Cette s'utilise pour tous les noms féminins.",
       "exception": "⚠️ 'cette école' fait la liaison (cétécole).",
       "eng": "This school is modern.",
-      "similar": [{ "french": "<strong>Cette</strong> école primaire", "english": "This elementary school", "gender": "Féminin", "number": "Singulier" }, { "french": "<strong>Cette</strong> école secondaire", "english": "This secondary school", "gender": "Féminin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Cette</strong> école primaire", "english": "This elementary school", "gender": "Féminin", "number": "Singulier" },
+        { "french": "<strong>Cette</strong> école secondaire", "english": "This secondary school", "gender": "Féminin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-147",
@@ -3064,7 +3130,10 @@
       "grammar_rule": "Ce + nom masculin singulier commençant par une consonne.",
       "exception": "⚠️ 'ce vélo' est correct.",
       "eng": "This bike is fast.",
-      "similar": [{ "french": "<strong>Ce</strong> scooter", "english": "This scooter", "gender": "Masculin", "number": "Singulier" }, { "french": "<strong>Ce</strong> cyclomoteur", "english": "This moped", "gender": "Masculin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Ce</strong> scooter", "english": "This scooter", "gender": "Masculin", "number": "Singulier" },
+        { "french": "<strong>Ce</strong> cyclomoteur", "english": "This moped", "gender": "Masculin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-148",
@@ -3085,7 +3154,10 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces fleurs' est correct.",
       "eng": "These flowers smell good.",
-      "similar": [{ "french": "<strong>Ces</strong> roses", "english": "These roses", "gender": "Féminin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> lilas", "english": "These lilacs", "gender": "Masculin", "number": "Pluriel" }]
+      "similar": [
+        { "french": "<strong>Ces</strong> roses", "english": "These roses", "gender": "Féminin", "number": "Pluriel" },
+        { "french": "<strong>Ces</strong> lilas", "english": "These lilacs", "gender": "Masculin", "number": "Pluriel" }
+      ]
     },
     {
       "id": "DEM-149",
@@ -3106,7 +3178,10 @@
       "grammar_rule": "Cet + nom masculin commençant par une voyelle.",
       "exception": "⚠️ 'cet arbre' fait la liaison (cétarbre).",
       "eng": "This tree is fruit-bearing.",
-      "similar": [{ "french": "<strong>Cet</strong> arbre fruitier", "english": "This fruit tree", "gender": "Masculin", "number": "Singulier" }, { "french": "<strong>Cet</strong> pommier", "english": "This apple tree", "gender": "Masculin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Cet</strong> arbre fruitier", "english": "This fruit tree", "gender": "Masculin", "number": "Singulier" },
+        { "french": "<strong>Cet</strong> pommier", "english": "This apple tree", "gender": "Masculin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-150",
@@ -3127,7 +3202,10 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces hôtels' fait la liaison (cé zôtels).",
       "eng": "These hotels are expensive.",
-      "similar": [{ "french": "<strong>Ces</strong> établissements", "english": "These establishments", "gender": "Masculin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> palaces", "english": "These palace hotels", "gender": "Masculin", "number": "Pluriel" }]
+      "similar": [
+        { "french": "<strong>Ces</strong> établissements", "english": "These establishments", "gender": "Masculin", "number": "Pluriel" },
+        { "french": "<strong>Ces</strong> palaces", "english": "These palace hotels", "gender": "Masculin", "number": "Pluriel" }
+      ]
     },
     {
       "id": "DEM-151",
@@ -3148,7 +3226,10 @@
       "grammar_rule": "Ce + nom masculin singulier commençant par une consonne.",
       "exception": "⚠️ Devant une voyelle ou un h muet, utilisez 'cet'.",
       "eng": "This book is on the table.",
-      "similar": [{ "french": "<strong>Ce</strong> roman", "english": "This novel", "gender": "Masculin", "number": "Singulier" }, { "french": "<strong>Ce</strong> dictionnaire", "english": "This dictionary", "gender": "Masculin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Ce</strong> roman", "english": "This novel", "gender": "Masculin", "number": "Singulier" },
+        { "french": "<strong>Ce</strong> dictionnaire", "english": "This dictionary", "gender": "Masculin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-152",
@@ -3169,7 +3250,10 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces étoiles' fait la liaison (cé zétoiles).",
       "eng": "These stars shine.",
-      "similar": [{ "french": "<strong>Ces</strong> planètes", "english": "These planets", "gender": "Féminin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> galaxies", "english": "These galaxies", "gender": "Féminin", "number": "Pluriel" }]
+      "similar": [
+        { "french": "<strong>Ces</strong> planètes", "english": "These planets", "gender": "Féminin", "number": "Pluriel" },
+        { "french": "<strong>Ces</strong> galaxies", "english": "These galaxies", "gender": "Féminin", "number": "Pluriel" }
+      ]
     },
     {
       "id": "DEM-153",
@@ -3190,7 +3274,10 @@
       "grammar_rule": "Cette + nom féminin singulier.",
       "exception": "⚠️ 'cette voiture' est correct.",
       "eng": "This car is red.",
-      "similar": [{ "french": "<strong>Cette</strong> automobile", "english": "This automobile", "gender": "Féminin", "number": "Singulier" }, { "french": "<strong>Cette</strong> berline", "english": "This sedan", "gender": "Féminin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Cette</strong> automobile", "english": "This automobile", "gender": "Féminin", "number": "Singulier" },
+        { "french": "<strong>Cette</strong> berline", "english": "This sedan", "gender": "Féminin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-154",
@@ -3211,7 +3298,10 @@
       "grammar_rule": "Cet + nom masculin commençant par un h muet.",
       "exception": "⚠️ 'cet hôpital' fait la liaison (cétôpital).",
       "eng": "This hospital is big.",
-      "similar": [{ "french": "<strong>Cet</strong> établissement", "english": "This establishment", "gender": "Masculin", "number": "Singulier" }, { "french": "<strong>Cet</strong> centre médical", "english": "This medical center", "gender": "Masculin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Cet</strong> établissement", "english": "This establishment", "gender": "Masculin", "number": "Singulier" },
+        { "french": "<strong>Cet</strong> centre médical", "english": "This medical center", "gender": "Masculin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-155",
@@ -3232,7 +3322,10 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces enfants' fait la liaison (cé zanfants).",
       "eng": "These children play outside.",
-      "similar": [{ "french": "<strong>Ces</strong> garçons", "english": "These boys", "gender": "Masculin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> filles", "english": "These girls", "gender": "Féminin", "number": "Pluriel" }]
+      "similar": [
+        { "french": "<strong>Ces</strong> garçons", "english": "These boys", "gender": "Masculin", "number": "Pluriel" },
+        { "french": "<strong>Ces</strong> filles", "english": "These girls", "gender": "Féminin", "number": "Pluriel" }
+      ]
     },
     {
       "id": "DEM-156",
@@ -3253,7 +3346,10 @@
       "grammar_rule": "Ce + nom masculin singulier commençant par une consonne.",
       "exception": "⚠️ 'ce chien' est correct.",
       "eng": "This dog is loyal.",
-      "similar": [{ "french": "<strong>Ce</strong> chat", "english": "This cat", "gender": "Masculin", "number": "Singulier" }, { "french": "<strong>Ce</strong> cheval", "english": "This horse", "gender": "Masculin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Ce</strong> chat", "english": "This cat", "gender": "Masculin", "number": "Singulier" },
+        { "french": "<strong>Ce</strong> cheval", "english": "This horse", "gender": "Masculin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-157",
@@ -3274,7 +3370,10 @@
       "grammar_rule": "Cette s'utilise pour tous les noms féminins.",
       "exception": "⚠️ 'cette idée' fait la liaison (cétidée).",
       "eng": "This idea is excellent.",
-      "similar": [{ "french": "<strong>Cette</strong> invention", "english": "This invention", "gender": "Féminin", "number": "Singulier" }, { "french": "<strong>Cette</strong> découverte", "english": "This discovery", "gender": "Féminin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Cette</strong> invention", "english": "This invention", "gender": "Féminin", "number": "Singulier" },
+        { "french": "<strong>Cette</strong> découverte", "english": "This discovery", "gender": "Féminin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-158",
@@ -3295,7 +3394,10 @@
       "grammar_rule": "Avec un h aspiré, on utilise 'ce' même devant une voyelle.",
       "exception": "⚠️ 'ce héros' ne fait PAS la liaison (ce éro).",
       "eng": "This hero is admired.",
-      "similar": [{ "french": "<strong>Ce</strong> héroïne", "english": "This heroine", "gender": "Féminin", "number": "Singulier" }, { "french": "<strong>Ce</strong> champion", "english": "This champion", "gender": "Masculin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Ce</strong> héroïne", "english": "This heroine", "gender": "Féminin", "number": "Singulier" },
+        { "french": "<strong>Ce</strong> champion", "english": "This champion", "gender": "Masculin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-159",
@@ -3316,7 +3418,10 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces chaussures' est correct.",
       "eng": "These shoes are new.",
-      "similar": [{ "french": "<strong>Ces</strong> bottes", "english": "These boots", "gender": "Féminin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> sandales", "english": "These sandals", "gender": "Féminin", "number": "Pluriel" }]
+      "similar": [
+        { "french": "<strong>Ces</strong> bottes", "english": "These boots", "gender": "Féminin", "number": "Pluriel" },
+        { "french": "<strong>Ces</strong> sandales", "english": "These sandals", "gender": "Féminin", "number": "Pluriel" }
+      ]
     },
     {
       "id": "DEM-160",
@@ -3337,7 +3442,10 @@
       "grammar_rule": "Cet + nom masculin commençant par une voyelle.",
       "exception": "⚠️ 'cet oiseau' fait la liaison (cét oiseau).",
       "eng": "This bird sings.",
-      "similar": [{ "french": "<strong>Cet</strong> oiseau chanteur", "english": "This songbird", "gender": "Masculin", "number": "Singulier" }, { "french": "<strong>Cet</strong> oiseau migrateur", "english": "This migratory bird", "gender": "Masculin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Cet</strong> oiseau chanteur", "english": "This songbird", "gender": "Masculin", "number": "Singulier" },
+        { "french": "<strong>Cet</strong> oiseau migrateur", "english": "This migratory bird", "gender": "Masculin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-161",
@@ -3358,7 +3466,10 @@
       "grammar_rule": "Cette + nom féminin singulier.",
       "exception": "⚠️ 'cette maison' est correct.",
       "eng": "This house is white.",
-      "similar": [{ "french": "<strong>Cette</strong> villa", "english": "This villa", "gender": "Féminin", "number": "Singulier" }, { "french": "<strong>Cette</strong> demeure", "english": "This dwelling", "gender": "Féminin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Cette</strong> villa", "english": "This villa", "gender": "Féminin", "number": "Singulier" },
+        { "french": "<strong>Cette</strong> demeure", "english": "This dwelling", "gender": "Féminin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-162",
@@ -3379,7 +3490,10 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces ordinateurs' fait la liaison (cé zordinateurs).",
       "eng": "These computers are powerful.",
-      "similar": [{ "french": "<strong>Ces</strong> appareils", "english": "These devices", "gender": "Masculin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> écrans", "english": "These screens", "gender": "Masculin", "number": "Pluriel" }]
+      "similar": [
+        { "french": "<strong>Ces</strong> appareils", "english": "These devices", "gender": "Masculin", "number": "Pluriel" },
+        { "french": "<strong>Ces</strong> écrans", "english": "These screens", "gender": "Masculin", "number": "Pluriel" }
+      ]
     },
     {
       "id": "DEM-163",
@@ -3400,7 +3514,10 @@
       "grammar_rule": "Cet + nom masculin commençant par un h muet.",
       "exception": "⚠️ 'cet homme' fait la liaison (cé tomme).",
       "eng": "This man is kind.",
-      "similar": [{ "french": "<strong>Cet</strong> homme âgé", "english": "This elderly man", "gender": "Masculin", "number": "Singulier" }, { "french": "<strong>Cet</strong> homme d'affaires", "english": "This businessman", "gender": "Masculin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Cet</strong> homme âgé", "english": "This elderly man", "gender": "Masculin", "number": "Singulier" },
+        { "french": "<strong>Cet</strong> homme d'affaires", "english": "This businessman", "gender": "Masculin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-164",
@@ -3421,7 +3538,10 @@
       "grammar_rule": "Cette + nom féminin singulier.",
       "exception": "⚠️ 'cette table' est correct.",
       "eng": "This table is made of marble.",
-      "similar": [{ "french": "<strong>Cette</strong> chaise", "english": "This chair", "gender": "Féminin", "number": "Singulier" }, { "french": "<strong>Cette</strong> étagère", "english": "This shelf", "gender": "Féminin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Cette</strong> chaise", "english": "This chair", "gender": "Féminin", "number": "Singulier" },
+        { "french": "<strong>Cette</strong> étagère", "english": "This shelf", "gender": "Féminin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-165",
@@ -3442,7 +3562,10 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces fleurs' est correct.",
       "eng": "These flowers are fragrant.",
-      "similar": [{ "french": "<strong>Ces</strong> roses", "english": "These roses", "gender": "Féminin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> tulipes", "english": "These tulips", "gender": "Féminin", "number": "Pluriel" }]
+      "similar": [
+        { "french": "<strong>Ces</strong> roses", "english": "These roses", "gender": "Féminin", "number": "Pluriel" },
+        { "french": "<strong>Ces</strong> tulipes", "english": "These tulips", "gender": "Féminin", "number": "Pluriel" }
+      ]
     },
     {
       "id": "DEM-166",
@@ -3463,7 +3586,10 @@
       "grammar_rule": "Cette s'utilise pour tous les noms féminins.",
       "exception": "⚠️ 'cette école' fait la liaison (cétécole).",
       "eng": "This school is elementary.",
-      "similar": [{ "french": "<strong>Cette</strong> école maternelle", "english": "This preschool", "gender": "Féminin", "number": "Singulier" }, { "french": "<strong>Cette</strong> école secondaire", "english": "This secondary school", "gender": "Féminin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Cette</strong> école maternelle", "english": "This preschool", "gender": "Féminin", "number": "Singulier" },
+        { "french": "<strong>Cette</strong> école secondaire", "english": "This secondary school", "gender": "Féminin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-167",
@@ -3484,7 +3610,10 @@
       "grammar_rule": "Ce + nom masculin singulier commençant par une consonne.",
       "exception": "⚠️ 'ce crayon' est correct.",
       "eng": "This pencil is red.",
-      "similar": [{ "french": "<strong>Ce</strong> stylo", "english": "This pen", "gender": "Masculin", "number": "Singulier" }, { "french": "<strong>Ce</strong> feutre", "english": "This marker", "gender": "Masculin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Ce</strong> stylo", "english": "This pen", "gender": "Masculin", "number": "Singulier" },
+        { "french": "<strong>Ce</strong> feutre", "english": "This marker", "gender": "Masculin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-168",
@@ -3505,7 +3634,10 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces avions' fait la liaison (cé zavions).",
       "eng": "These planes are modern.",
-      "similar": [{ "french": "<strong>Ces</strong> hélicoptères", "english": "These helicopters", "gender": "Masculin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> jets", "english": "These jets", "gender": "Masculin", "number": "Pluriel" }]
+      "similar": [
+        { "french": "<strong>Ces</strong> hélicoptères", "english": "These helicopters", "gender": "Masculin", "number": "Pluriel" },
+        { "french": "<strong>Ces</strong> jets", "english": "These jets", "gender": "Masculin", "number": "Pluriel" }
+      ]
     },
     {
       "id": "DEM-169",
@@ -3526,7 +3658,10 @@
       "grammar_rule": "Cet + nom masculin commençant par un h muet.",
       "exception": "⚠️ 'cet hiver' fait la liaison (cétiver).",
       "eng": "This winter is harsh.",
-      "similar": [{ "french": "<strong>Cet</strong> hiver froid", "english": "This cold winter", "gender": "Masculin", "number": "Singulier" }, { "french": "<strong>Cet</strong> hiver neigeux", "english": "This snowy winter", "gender": "Masculin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Cet</strong> hiver froid", "english": "This cold winter", "gender": "Masculin", "number": "Singulier" },
+        { "french": "<strong>Cet</strong> hiver neigeux", "english": "This snowy winter", "gender": "Masculin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-170",
@@ -3547,7 +3682,10 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces voitures' est correct.",
       "eng": "These cars are electric.",
-      "similar": [{ "french": "<strong>Ces</strong> automobiles", "english": "These automobiles", "gender": "Féminin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> véhicules", "english": "These vehicles", "gender": "Masculin", "number": "Pluriel" }]
+      "similar": [
+        { "french": "<strong>Ces</strong> automobiles", "english": "These automobiles", "gender": "Féminin", "number": "Pluriel" },
+        { "french": "<strong>Ces</strong> véhicules", "english": "These vehicles", "gender": "Masculin", "number": "Pluriel" }
+      ]
     },
     {
       "id": "DEM-171",
@@ -3568,7 +3706,10 @@
       "grammar_rule": "Cette s'utilise pour tous les noms féminins.",
       "exception": "⚠️ 'cette université' fait la liaison (cétuniversité).",
       "eng": "This university is famous.",
-      "similar": [{ "french": "<strong>Cette</strong> faculté", "english": "This faculty", "gender": "Féminin", "number": "Singulier" }, { "french": "<strong>Cette</strong> école", "english": "This school", "gender": "Féminin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Cette</strong> faculté", "english": "This faculty", "gender": "Féminin", "number": "Singulier" },
+        { "french": "<strong>Cette</strong> école", "english": "This school", "gender": "Féminin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-172",
@@ -3589,7 +3730,10 @@
       "grammar_rule": "Ce + nom masculin singulier commençant par une consonne.",
       "exception": "⚠️ 'ce chapeau' est correct.",
       "eng": "This hat is elegant.",
-      "similar": [{ "french": "<strong>Ce</strong> bonnet", "english": "This bonnet", "gender": "Masculin", "number": "Singulier" }, { "french": "<strong>Ce</strong> casque", "english": "This helmet", "gender": "Masculin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Ce</strong> bonnet", "english": "This bonnet", "gender": "Masculin", "number": "Singulier" },
+        { "french": "<strong>Ce</strong> casque", "english": "This helmet", "gender": "Masculin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-173",
@@ -3610,7 +3754,10 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces histoires' fait la liaison (cé zistoires).",
       "eng": "These stories are funny.",
-      "similar": [{ "french": "<strong>Ces</strong> contes", "english": "These tales", "gender": "Masculin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> légendes", "english": "These legends", "gender": "Féminin", "number": "Pluriel" }]
+      "similar": [
+        { "french": "<strong>Ces</strong> contes", "english": "These tales", "gender": "Masculin", "number": "Pluriel" },
+        { "french": "<strong>Ces</strong> légendes", "english": "These legends", "gender": "Féminin", "number": "Pluriel" }
+      ]
     },
     {
       "id": "DEM-175",
@@ -3631,7 +3778,10 @@
       "grammar_rule": "Cette + nom féminin singulier.",
       "exception": "⚠️ 'cette fenêtre' est correct.",
       "eng": "This window is closed.",
-      "similar": [{ "french": "<strong>Cette</strong> porte", "english": "This door", "gender": "Féminin", "number": "Singulier" }, { "french": "<strong>Cette</strong> lucarne", "english": "This skylight", "gender": "Féminin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Cette</strong> porte", "english": "This door", "gender": "Féminin", "number": "Singulier" },
+        { "french": "<strong>Cette</strong> lucarne", "english": "This skylight", "gender": "Féminin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-176",
@@ -3652,7 +3802,10 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces gâteaux' est correct.",
       "eng": "These cakes are delicious.",
-      "similar": [{ "french": "<strong>Ces</strong> desserts", "english": "These desserts", "gender": "Masculin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> pâtisseries", "english": "These pastries", "gender": "Féminin", "number": "Pluriel" }]
+      "similar": [
+        { "french": "<strong>Ces</strong> desserts", "english": "These desserts", "gender": "Masculin", "number": "Pluriel" },
+        { "french": "<strong>Ces</strong> pâtisseries", "english": "These pastries", "gender": "Féminin", "number": "Pluriel" }
+      ]
     },
     {
       "id": "DEM-177",
@@ -3673,7 +3826,10 @@
       "grammar_rule": "Cette s'utilise pour tous les noms féminins.",
       "exception": "⚠️ 'cette eau' fait la liaison (cét eau).",
       "eng": "This water is pure.",
-      "similar": [{ "french": "<strong>Cette</strong> eau minérale", "english": "This mineral water", "gender": "Féminin", "number": "Singulier" }, { "french": "<strong>Cette</strong> eau de source", "english": "This spring water", "gender": "Féminin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Cette</strong> eau minérale", "english": "This mineral water", "gender": "Féminin", "number": "Singulier" },
+        { "french": "<strong>Cette</strong> eau de source", "english": "This spring water", "gender": "Féminin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-178",
@@ -3694,7 +3850,10 @@
       "grammar_rule": "Ce + nom masculin singulier commençant par une consonne.",
       "exception": "⚠️ 'ce château' est correct.",
       "eng": "This castle is historic.",
-      "similar": [{ "french": "<strong>Ce</strong> palais", "english": "This palace", "gender": "Masculin", "number": "Singulier" }, { "french": "<strong>Ce</strong> monument", "english": "This monument", "gender": "Masculin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Ce</strong> palais", "english": "This palace", "gender": "Masculin", "number": "Singulier" },
+        { "french": "<strong>Ce</strong> monument", "english": "This monument", "gender": "Masculin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-179",
@@ -3715,7 +3874,10 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces livres' est correct.",
       "eng": "These books are interesting.",
-      "similar": [{ "french": "<strong>Ces</strong> romans", "english": "These novels", "gender": "Masculin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> dictionnaires", "english": "These dictionaries", "gender": "Masculin", "number": "Pluriel" }]
+      "similar": [
+        { "french": "<strong>Ces</strong> romans", "english": "These novels", "gender": "Masculin", "number": "Pluriel" },
+        { "french": "<strong>Ces</strong> dictionnaires", "english": "These dictionaries", "gender": "Masculin", "number": "Pluriel" }
+      ]
     },
     {
       "id": "DEM-180",
@@ -3736,7 +3898,10 @@
       "grammar_rule": "Cette s'utilise pour tous les noms féminins.",
       "exception": "⚠️ 'cette orange' fait la liaison (cétorange).",
       "eng": "This orange is sour.",
-      "similar": [{ "french": "<strong>Cette</strong> pomme", "english": "This apple", "gender": "Féminin", "number": "Singulier" }, { "french": "<strong>Cette</strong> poire", "english": "This pear", "gender": "Féminin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Cette</strong> pomme", "english": "This apple", "gender": "Féminin", "number": "Singulier" },
+        { "french": "<strong>Cette</strong> poire", "english": "This pear", "gender": "Féminin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-181",
@@ -3757,7 +3922,10 @@
       "grammar_rule": "Avec un h aspiré, on utilise 'ce' même devant une voyelle.",
       "exception": "⚠️ 'ce hibou' ne fait PAS la liaison (ce ibou).",
       "eng": "This owl is silent.",
-      "similar": [{ "french": "<strong>Ce</strong> hibou grand-duc", "english": "This eagle owl", "gender": "Masculin", "number": "Singulier" }, { "french": "<strong>Ce</strong> hérisson", "english": "This hedgehog", "gender": "Masculin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Ce</strong> hibou grand-duc", "english": "This eagle owl", "gender": "Masculin", "number": "Singulier" },
+        { "french": "<strong>Ce</strong> hérisson", "english": "This hedgehog", "gender": "Masculin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-182",
@@ -3778,7 +3946,10 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces montagnes' est correct.",
       "eng": "These mountains are high.",
-      "similar": [{ "french": "<strong>Ces</strong> sommets", "english": "These peaks", "gender": "Masculin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> collines", "english": "These hills", "gender": "Féminin", "number": "Pluriel" }]
+      "similar": [
+        { "french": "<strong>Ces</strong> sommets", "english": "These peaks", "gender": "Masculin", "number": "Pluriel" },
+        { "french": "<strong>Ces</strong> collines", "english": "These hills", "gender": "Féminin", "number": "Pluriel" }
+      ]
     },
     {
       "id": "DEM-183",
@@ -3787,7 +3958,7 @@
       "opt2": "Ces",
       "opt3": "Cette",
       "opt4": "Ce",
-      "ans": "Ce",
+      "ans": "Cet",
       "compAns": "<strong>Ce</strong> arbre est dans le jardin.",
       "cat": "Adjectifs démonstratifs - Masculin singulier",
       "Level": "A1",
@@ -3799,7 +3970,10 @@
       "grammar_rule": "Ce + nom masculin singulier commençant par une consonne.",
       "exception": "⚠️ 'ce arbre' est correct.",
       "eng": "This tree is in the garden.",
-      "similar": [{ "french": "<strong>Ce</strong> chêne", "english": "This oak", "gender": "Masculin", "number": "Singulier" }, { "french": "<strong>Ce</strong> pommier", "english": "This apple tree", "gender": "Masculin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Ce</strong> chêne", "english": "This oak", "gender": "Masculin", "number": "Singulier" },
+        { "french": "<strong>Ce</strong> pommier", "english": "This apple tree", "gender": "Masculin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-184",
@@ -3820,7 +3994,10 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces idées' fait la liaison (cé zidées).",
       "eng": "These ideas are innovative.",
-      "similar": [{ "french": "<strong>Ces</strong> concepts", "english": "These concepts", "gender": "Masculin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> solutions", "english": "These solutions", "gender": "Féminin", "number": "Pluriel" }]
+      "similar": [
+        { "french": "<strong>Ces</strong> concepts", "english": "These concepts", "gender": "Masculin", "number": "Pluriel" },
+        { "french": "<strong>Ces</strong> solutions", "english": "These solutions", "gender": "Féminin", "number": "Pluriel" }
+      ]
     },
     {
       "id": "DEM-185",
@@ -3841,7 +4018,10 @@
       "grammar_rule": "Cet + nom masculin commençant par une voyelle.",
       "exception": "⚠️ 'cet outil' fait la liaison (cétoutil).",
       "eng": "This tool is essential.",
-      "similar": [{ "french": "<strong>Cet</strong> instrument", "english": "This instrument", "gender": "Masculin", "number": "Singulier" }, { "french": "<strong>Cet</strong> appareil", "english": "This device", "gender": "Masculin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Cet</strong> instrument", "english": "This instrument", "gender": "Masculin", "number": "Singulier" },
+        { "french": "<strong>Cet</strong> appareil", "english": "This device", "gender": "Masculin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-186",
@@ -3862,7 +4042,10 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces enfants' fait la liaison (cé zanfants).",
       "eng": "These children are well-behaved.",
-      "similar": [{ "french": "<strong>Ces</strong> garçons", "english": "These boys", "gender": "Masculin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> filles", "english": "These girls", "gender": "Féminin", "number": "Pluriel" }]
+      "similar": [
+        { "french": "<strong>Ces</strong> garçons", "english": "These boys", "gender": "Masculin", "number": "Pluriel" },
+        { "french": "<strong>Ces</strong> filles", "english": "These girls", "gender": "Féminin", "number": "Pluriel" }
+      ]
     },
     {
       "id": "DEM-187",
@@ -3883,7 +4066,10 @@
       "grammar_rule": "Cette s'utilise pour tous les noms féminins.",
       "exception": "⚠️ 'cette église' fait la liaison (cétégise).",
       "eng": "This church is old.",
-      "similar": [{ "french": "<strong>Cette</strong> cathédrale", "english": "This cathedral", "gender": "Féminin", "number": "Singulier" }, { "french": "<strong>Cette</strong> chapelle", "english": "This chapel", "gender": "Féminin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Cette</strong> cathédrale", "english": "This cathedral", "gender": "Féminin", "number": "Singulier" },
+        { "french": "<strong>Cette</strong> chapelle", "english": "This chapel", "gender": "Féminin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-188",
@@ -3904,7 +4090,10 @@
       "grammar_rule": "Cet + nom masculin commençant par un h muet.",
       "exception": "⚠️ 'cet hôtel' fait la liaison (cétôtel).",
       "eng": "This hotel is comfortable.",
-      "similar": [{ "french": "<strong>Cet</strong> établissement", "english": "This establishment", "gender": "Masculin", "number": "Singulier" }, { "french": "<strong>Cet</strong> hébergement", "english": "This accommodation", "gender": "Masculin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Cet</strong> établissement", "english": "This establishment", "gender": "Masculin", "number": "Singulier" },
+        { "french": "<strong>Cet</strong> hébergement", "english": "This accommodation", "gender": "Masculin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-189",
@@ -3925,7 +4114,10 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces chemises' est correct.",
       "eng": "These shirts are made of cotton.",
-      "similar": [{ "french": "<strong>Ces</strong> vestes", "english": "These jackets", "gender": "Féminin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> pantalons", "english": "These pants", "gender": "Masculin", "number": "Pluriel" }]
+      "similar": [
+        { "french": "<strong>Ces</strong> vestes", "english": "These jackets", "gender": "Féminin", "number": "Pluriel" },
+        { "french": "<strong>Ces</strong> pantalons", "english": "These pants", "gender": "Masculin", "number": "Pluriel" }
+      ]
     },
     {
       "id": "DEM-190",
@@ -3946,7 +4138,10 @@
       "grammar_rule": "Cet + nom masculin commençant par une voyelle.",
       "exception": "⚠️ 'cet oiseau' fait la liaison (cét oiseau).",
       "eng": "This bird flies high.",
-      "similar": [{ "french": "<strong>Cet</strong> oiseau migrateur", "english": "This migratory bird", "gender": "Masculin", "number": "Singulier" }, { "french": "<strong>Cet</strong> oiseau de proie", "english": "This bird of prey", "gender": "Masculin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Cet</strong> oiseau migrateur", "english": "This migratory bird", "gender": "Masculin", "number": "Singulier" },
+        { "french": "<strong>Cet</strong> oiseau de proie", "english": "This bird of prey", "gender": "Masculin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-191",
@@ -3967,7 +4162,10 @@
       "grammar_rule": "Cette + nom féminin singulier.",
       "exception": "⚠️ 'cette maison' est correct.",
       "eng": "This house is new.",
-      "similar": [{ "french": "<strong>Cette</strong> villa", "english": "This villa", "gender": "Féminin", "number": "Singulier" }, { "french": "<strong>Cette</strong> demeure", "english": "This dwelling", "gender": "Féminin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Cette</strong> villa", "english": "This villa", "gender": "Féminin", "number": "Singulier" },
+        { "french": "<strong>Cette</strong> demeure", "english": "This dwelling", "gender": "Féminin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-192",
@@ -3988,7 +4186,10 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces animaux' fait la liaison (cé zanimaux).",
       "eng": "These animals are wild.",
-      "similar": [{ "french": "<strong>Ces</strong> bêtes", "english": "These beasts", "gender": "Féminin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> créatures", "english": "These creatures", "gender": "Féminin", "number": "Pluriel" }]
+      "similar": [
+        { "french": "<strong>Ces</strong> bêtes", "english": "These beasts", "gender": "Féminin", "number": "Pluriel" },
+        { "french": "<strong>Ces</strong> créatures", "english": "These creatures", "gender": "Féminin", "number": "Pluriel" }
+      ]
     },
     {
       "id": "DEM-193",
@@ -4009,7 +4210,10 @@
       "grammar_rule": "Cet + nom masculin commençant par un h muet.",
       "exception": "⚠️ 'cet homme' fait la liaison (cé tomme).",
       "eng": "This man is elderly.",
-      "similar": [{ "french": "<strong>Cet</strong> homme âgé", "english": "This elderly man", "gender": "Masculin", "number": "Singulier" }, { "french": "<strong>Cet</strong> homme d'affaires", "english": "This businessman", "gender": "Masculin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Cet</strong> homme âgé", "english": "This elderly man", "gender": "Masculin", "number": "Singulier" },
+        { "french": "<strong>Cet</strong> homme d'affaires", "english": "This businessman", "gender": "Masculin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-194",
@@ -4030,7 +4234,10 @@
       "grammar_rule": "Cette + nom féminin singulier.",
       "exception": "⚠️ 'cette table' est correct.",
       "eng": "This table is round.",
-      "similar": [{ "french": "<strong>Cette</strong> chaise", "english": "This chair", "gender": "Féminin", "number": "Singulier" }, { "french": "<strong>Cette</strong> étagère", "english": "This shelf", "gender": "Féminin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Cette</strong> chaise", "english": "This chair", "gender": "Féminin", "number": "Singulier" },
+        { "french": "<strong>Cette</strong> étagère", "english": "This shelf", "gender": "Féminin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-195",
@@ -4051,7 +4258,10 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces jeux' est correct.",
       "eng": "These games are educational.",
-      "similar": [{ "french": "<strong>Ces</strong> activités", "english": "These activities", "gender": "Féminin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> jouets", "english": "These toys", "gender": "Masculin", "number": "Pluriel" }]
+      "similar": [
+        { "french": "<strong>Ces</strong> activités", "english": "These activities", "gender": "Féminin", "number": "Pluriel" },
+        { "french": "<strong>Ces</strong> jouets", "english": "These toys", "gender": "Masculin", "number": "Pluriel" }
+      ]
     },
     {
       "id": "DEM-196",
@@ -4072,7 +4282,10 @@
       "grammar_rule": "Cette s'utilise pour tous les noms féminins.",
       "exception": "⚠️ 'cette école' fait la liaison (cétécole).",
       "eng": "This school is modern.",
-      "similar": [{ "french": "<strong>Cette</strong> école primaire", "english": "This elementary school", "gender": "Féminin", "number": "Singulier" }, { "french": "<strong>Cette</strong> école secondaire", "english": "This secondary school", "gender": "Féminin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Cette</strong> école primaire", "english": "This elementary school", "gender": "Féminin", "number": "Singulier" },
+        { "french": "<strong>Cette</strong> école secondaire", "english": "This secondary school", "gender": "Féminin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-197",
@@ -4093,7 +4306,10 @@
       "grammar_rule": "Ce + nom masculin singulier commençant par une consonne.",
       "exception": "⚠️ 'ce vélo' est correct.",
       "eng": "This bike is fast.",
-      "similar": [{ "french": "<strong>Ce</strong> scooter", "english": "This scooter", "gender": "Masculin", "number": "Singulier" }, { "french": "<strong>Ce</strong> cyclomoteur", "english": "This moped", "gender": "Masculin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Ce</strong> scooter", "english": "This scooter", "gender": "Masculin", "number": "Singulier" },
+        { "french": "<strong>Ce</strong> cyclomoteur", "english": "This moped", "gender": "Masculin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-198",
@@ -4114,7 +4330,10 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces fleurs' est correct.",
       "eng": "These flowers smell good.",
-      "similar": [{ "french": "<strong>Ces</strong> roses", "english": "These roses", "gender": "Féminin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> lilas", "english": "These lilacs", "gender": "Masculin", "number": "Pluriel" }]
+      "similar": [
+        { "french": "<strong>Ces</strong> roses", "english": "These roses", "gender": "Féminin", "number": "Pluriel" },
+        { "french": "<strong>Ces</strong> lilas", "english": "These lilacs", "gender": "Masculin", "number": "Pluriel" }
+      ]
     },
     {
       "id": "DEM-199",
@@ -4135,7 +4354,10 @@
       "grammar_rule": "Cet + nom masculin commençant par une voyelle.",
       "exception": "⚠️ 'cet arbre' fait la liaison (cétarbre).",
       "eng": "This tree is fruit-bearing.",
-      "similar": [{ "french": "<strong>Cet</strong> arbre fruitier", "english": "This fruit tree", "gender": "Masculin", "number": "Singulier" }, { "french": "<strong>Cet</strong> pommier", "english": "This apple tree", "gender": "Masculin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Cet</strong> arbre fruitier", "english": "This fruit tree", "gender": "Masculin", "number": "Singulier" },
+        { "french": "<strong>Cet</strong> pommier", "english": "This apple tree", "gender": "Masculin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-200",
@@ -4156,7 +4378,10 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces hôtels' fait la liaison (cé zôtels).",
       "eng": "These hotels are expensive.",
-      "similar": [{ "french": "<strong>Ces</strong> établissements", "english": "These establishments", "gender": "Masculin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> palaces", "english": "These palace hotels", "gender": "Masculin", "number": "Pluriel" }]
+      "similar": [
+        { "french": "<strong>Ces</strong> établissements", "english": "These establishments", "gender": "Masculin", "number": "Pluriel" },
+        { "french": "<strong>Ces</strong> palaces", "english": "These palace hotels", "gender": "Masculin", "number": "Pluriel" }
+      ]
     },
     {
       "id": "DEM-201",
@@ -4177,7 +4402,10 @@
       "grammar_rule": "Ce + nom masculin singulier commençant par une consonne.",
       "exception": "⚠️ Devant une voyelle ou un h muet, utilisez 'cet'.",
       "eng": "This book is fascinating.",
-      "similar": [{ "french": "<strong>Ce</strong> roman", "english": "This novel", "gender": "Masculin", "number": "Singulier" }, { "french": "<strong>Ce</strong> poème", "english": "This poem", "gender": "Masculin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Ce</strong> roman", "english": "This novel", "gender": "Masculin", "number": "Singulier" },
+        { "french": "<strong>Ce</strong> poème", "english": "This poem", "gender": "Masculin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-202",
@@ -4198,7 +4426,10 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces étoiles' fait la liaison (cé zétoiles).",
       "eng": "These stars twinkle.",
-      "similar": [{ "french": "<strong>Ces</strong> planètes", "english": "These planets", "gender": "Féminin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> galaxies", "english": "These galaxies", "gender": "Féminin", "number": "Pluriel" }]
+      "similar": [
+        { "french": "<strong>Ces</strong> planètes", "english": "These planets", "gender": "Féminin", "number": "Pluriel" },
+        { "french": "<strong>Ces</strong> galaxies", "english": "These galaxies", "gender": "Féminin", "number": "Pluriel" }
+      ]
     },
     {
       "id": "DEM-203",
@@ -4219,7 +4450,10 @@
       "grammar_rule": "Cette + nom féminin singulier.",
       "exception": "⚠️ 'cette voiture' est correct.",
       "eng": "This car is fast.",
-      "similar": [{ "french": "<strong>Cette</strong> automobile", "english": "This automobile", "gender": "Féminin", "number": "Singulier" }, { "french": "<strong>Cette</strong> moto", "english": "This motorcycle", "gender": "Féminin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Cette</strong> automobile", "english": "This automobile", "gender": "Féminin", "number": "Singulier" },
+        { "french": "<strong>Cette</strong> moto", "english": "This motorcycle", "gender": "Féminin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-204",
@@ -4240,7 +4474,10 @@
       "grammar_rule": "Cet + nom masculin commençant par un h muet.",
       "exception": "⚠️ 'cet hôtel' fait la liaison (cétôtel).",
       "eng": "This hotel is luxurious.",
-      "similar": [{ "french": "<strong>Cet</strong> établissement", "english": "This establishment", "gender": "Masculin", "number": "Singulier" }, { "french": "<strong>Cet</strong> palace", "english": "This palace hotel", "gender": "Masculin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Cet</strong> établissement", "english": "This establishment", "gender": "Masculin", "number": "Singulier" },
+        { "french": "<strong>Cet</strong> palace", "english": "This palace hotel", "gender": "Masculin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-205",
@@ -4261,7 +4498,10 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces enfants' fait la liaison (cé zanfants).",
       "eng": "These children are happy.",
-      "similar": [{ "french": "<strong>Ces</strong> garçons", "english": "These boys", "gender": "Masculin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> filles", "english": "These girls", "gender": "Féminin", "number": "Pluriel" }]
+      "similar": [
+        { "french": "<strong>Ces</strong> garçons", "english": "These boys", "gender": "Masculin", "number": "Pluriel" },
+        { "french": "<strong>Ces</strong> filles", "english": "These girls", "gender": "Féminin", "number": "Pluriel" }
+      ]
     },
     {
       "id": "DEM-206",
@@ -4282,7 +4522,10 @@
       "grammar_rule": "Ce + nom masculin singulier commençant par une consonne.",
       "exception": "⚠️ 'ce arbre' est correct.",
       "eng": "This tree is majestic.",
-      "similar": [{ "french": "<strong>Ce</strong> chêne", "english": "This oak", "gender": "Masculin", "number": "Singulier" }, { "french": "<strong>Ce</strong> pin", "english": "This pine", "gender": "Masculin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Ce</strong> chêne", "english": "This oak", "gender": "Masculin", "number": "Singulier" },
+        { "french": "<strong>Ce</strong> pin", "english": "This pine", "gender": "Masculin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-207",
@@ -4303,7 +4546,10 @@
       "grammar_rule": "Cette s'utilise pour tous les noms féminins.",
       "exception": "⚠️ 'cette idée' fait la liaison (cétidée).",
       "eng": "This idea is brilliant.",
-      "similar": [{ "french": "<strong>Cette</strong> invention", "english": "This invention", "gender": "Féminin", "number": "Singulier" }, { "french": "<strong>Cette</strong> découverte", "english": "This discovery", "gender": "Féminin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Cette</strong> invention", "english": "This invention", "gender": "Féminin", "number": "Singulier" },
+        { "french": "<strong>Cette</strong> découverte", "english": "This discovery", "gender": "Féminin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-208",
@@ -4324,7 +4570,10 @@
       "grammar_rule": "Avec un h aspiré, on utilise 'ce' même devant une voyelle.",
       "exception": "⚠️ 'ce héros' ne fait PAS la liaison (ce éro).",
       "eng": "This hero is brave.",
-      "similar": [{ "french": "<strong>Ce</strong> héroïne", "english": "This heroine", "gender": "Féminin", "number": "Singulier" }, { "french": "<strong>Ce</strong> champion", "english": "This champion", "gender": "Masculin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Ce</strong> héroïne", "english": "This heroine", "gender": "Féminin", "number": "Singulier" },
+        { "french": "<strong>Ce</strong> champion", "english": "This champion", "gender": "Masculin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-209",
@@ -4345,7 +4594,10 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces chaussures' est correct.",
       "eng": "These shoes are comfortable.",
-      "similar": [{ "french": "<strong>Ces</strong> bottes", "english": "These boots", "gender": "Féminin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> sandales", "english": "These sandals", "gender": "Féminin", "number": "Pluriel" }]
+      "similar": [
+        { "french": "<strong>Ces</strong> bottes", "english": "These boots", "gender": "Féminin", "number": "Pluriel" },
+        { "french": "<strong>Ces</strong> sandales", "english": "These sandals", "gender": "Féminin", "number": "Pluriel" }
+      ]
     },
     {
       "id": "DEM-210",
@@ -4366,7 +4618,10 @@
       "grammar_rule": "Cet + nom masculin commençant par une voyelle.",
       "exception": "⚠️ 'cet oiseau' fait la liaison (cét oiseau).",
       "eng": "This bird sings melodiously.",
-      "similar": [{ "french": "<strong>Cet</strong> oiseau chanteur", "english": "This songbird", "gender": "Masculin", "number": "Singulier" }, { "french": "<strong>Cet</strong> oiseau migrateur", "english": "This migratory bird", "gender": "Masculin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Cet</strong> oiseau chanteur", "english": "This songbird", "gender": "Masculin", "number": "Singulier" },
+        { "french": "<strong>Cet</strong> oiseau migrateur", "english": "This migratory bird", "gender": "Masculin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-211",
@@ -4387,7 +4642,10 @@
       "grammar_rule": "Cette + nom féminin singulier.",
       "exception": "⚠️ 'cette maison' est correct.",
       "eng": "This house is white.",
-      "similar": [{ "french": "<strong>Cette</strong> villa", "english": "This villa", "gender": "Féminin", "number": "Singulier" }, { "french": "<strong>Cette</strong> demeure", "english": "This dwelling", "gender": "Féminin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Cette</strong> villa", "english": "This villa", "gender": "Féminin", "number": "Singulier" },
+        { "french": "<strong>Cette</strong> demeure", "english": "This dwelling", "gender": "Féminin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-212",
@@ -4408,7 +4666,10 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces ordinateurs' fait la liaison (cé zordinateurs).",
       "eng": "These computers are modern.",
-      "similar": [{ "french": "<strong>Ces</strong> appareils", "english": "These devices", "gender": "Masculin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> écrans", "english": "These screens", "gender": "Masculin", "number": "Pluriel" }]
+      "similar": [
+        { "french": "<strong>Ces</strong> appareils", "english": "These devices", "gender": "Masculin", "number": "Pluriel" },
+        { "french": "<strong>Ces</strong> écrans", "english": "These screens", "gender": "Masculin", "number": "Pluriel" }
+      ]
     },
     {
       "id": "DEM-213",
@@ -4429,7 +4690,10 @@
       "grammar_rule": "Cet + nom masculin commençant par un h muet.",
       "exception": "⚠️ 'cet homme' fait la liaison (cé tomme).",
       "eng": "This man is elderly.",
-      "similar": [{ "french": "<strong>Cet</strong> homme âgé", "english": "This elderly man", "gender": "Masculin", "number": "Singulier" }, { "french": "<strong>Cet</strong> homme d'affaires", "english": "This businessman", "gender": "Masculin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Cet</strong> homme âgé", "english": "This elderly man", "gender": "Masculin", "number": "Singulier" },
+        { "french": "<strong>Cet</strong> homme d'affaires", "english": "This businessman", "gender": "Masculin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-214",
@@ -4450,7 +4714,10 @@
       "grammar_rule": "Cette + nom féminin singulier.",
       "exception": "⚠️ 'cette table' est correct.",
       "eng": "This table is made of wood.",
-      "similar": [{ "french": "<strong>Cette</strong> chaise", "english": "This chair", "gender": "Féminin", "number": "Singulier" }, { "french": "<strong>Cette</strong> étagère", "english": "This shelf", "gender": "Féminin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Cette</strong> chaise", "english": "This chair", "gender": "Féminin", "number": "Singulier" },
+        { "french": "<strong>Cette</strong> étagère", "english": "This shelf", "gender": "Féminin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-215",
@@ -4471,7 +4738,10 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces fleurs' est correct.",
       "eng": "These flowers are beautiful.",
-      "similar": [{ "french": "<strong>Ces</strong> roses", "english": "These roses", "gender": "Féminin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> tulipes", "english": "These tulips", "gender": "Féminin", "number": "Pluriel" }]
+      "similar": [
+        { "french": "<strong>Ces</strong> roses", "english": "These roses", "gender": "Féminin", "number": "Pluriel" },
+        { "french": "<strong>Ces</strong> tulipes", "english": "These tulips", "gender": "Féminin", "number": "Pluriel" }
+      ]
     },
     {
       "id": "DEM-216",
@@ -4492,7 +4762,10 @@
       "grammar_rule": "Cette s'utilise pour tous les noms féminins.",
       "exception": "⚠️ 'cette école' fait la liaison (cétécole).",
       "eng": "This school is elementary.",
-      "similar": [{ "french": "<strong>Cette</strong> école maternelle", "english": "This preschool", "gender": "Féminin", "number": "Singulier" }, { "french": "<strong>Cette</strong> école secondaire", "english": "This secondary school", "gender": "Féminin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Cette</strong> école maternelle", "english": "This preschool", "gender": "Féminin", "number": "Singulier" },
+        { "french": "<strong>Cette</strong> école secondaire", "english": "This secondary school", "gender": "Féminin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-217",
@@ -4513,7 +4786,10 @@
       "grammar_rule": "Ce + nom masculin singulier commençant par une consonne.",
       "exception": "⚠️ 'ce crayon' est correct.",
       "eng": "This pencil is blue.",
-      "similar": [{ "french": "<strong>Ce</strong> stylo", "english": "This pen", "gender": "Masculin", "number": "Singulier" }, { "french": "<strong>Ce</strong> feutre", "english": "This marker", "gender": "Masculin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Ce</strong> stylo", "english": "This pen", "gender": "Masculin", "number": "Singulier" },
+        { "french": "<strong>Ce</strong> feutre", "english": "This marker", "gender": "Masculin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-218",
@@ -4534,7 +4810,10 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces avions' fait la liaison (cé zavions).",
       "eng": "These planes are at the airport.",
-      "similar": [{ "french": "<strong>Ces</strong> hélicoptères", "english": "These helicopters", "gender": "Masculin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> jets", "english": "These jets", "gender": "Masculin", "number": "Pluriel" }]
+      "similar": [
+        { "french": "<strong>Ces</strong> hélicoptères", "english": "These helicopters", "gender": "Masculin", "number": "Pluriel" },
+        { "french": "<strong>Ces</strong> jets", "english": "These jets", "gender": "Masculin", "number": "Pluriel" }
+      ]
     },
     {
       "id": "DEM-219",
@@ -4555,7 +4834,10 @@
       "grammar_rule": "Cet + nom masculin commençant par un h muet.",
       "exception": "⚠️ 'cet hiver' fait la liaison (cétiver).",
       "eng": "This winter is cold.",
-      "similar": [{ "french": "<strong>Cet</strong> hiver rigoureux", "english": "This harsh winter", "gender": "Masculin", "number": "Singulier" }, { "french": "<strong>Cet</strong> hiver neigeux", "english": "This snowy winter", "gender": "Masculin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Cet</strong> hiver rigoureux", "english": "This harsh winter", "gender": "Masculin", "number": "Singulier" },
+        { "french": "<strong>Cet</strong> hiver neigeux", "english": "This snowy winter", "gender": "Masculin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-220",
@@ -4576,7 +4858,10 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces voitures' est correct.",
       "eng": "These cars are electric.",
-      "similar": [{ "french": "<strong>Ces</strong> automobiles", "english": "These automobiles", "gender": "Féminin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> véhicules", "english": "These vehicles", "gender": "Masculin", "number": "Pluriel" }]
+      "similar": [
+        { "french": "<strong>Ces</strong> automobiles", "english": "These automobiles", "gender": "Féminin", "number": "Pluriel" },
+        { "french": "<strong>Ces</strong> véhicules", "english": "These vehicles", "gender": "Masculin", "number": "Pluriel" }
+      ]
     },
     {
       "id": "DEM-221",
@@ -4597,7 +4882,10 @@
       "grammar_rule": "Cette s'utilise pour tous les noms féminins.",
       "exception": "⚠️ 'cette université' fait la liaison (cétuniversité).",
       "eng": "This university is renowned.",
-      "similar": [{ "french": "<strong>Cette</strong> faculté", "english": "This faculty", "gender": "Féminin", "number": "Singulier" }, { "french": "<strong>Cette</strong> école", "english": "This school", "gender": "Féminin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Cette</strong> faculté", "english": "This faculty", "gender": "Féminin", "number": "Singulier" },
+        { "french": "<strong>Cette</strong> école", "english": "This school", "gender": "Féminin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-222",
@@ -4618,7 +4906,10 @@
       "grammar_rule": "Ce + nom masculin singulier commençant par une consonne.",
       "exception": "⚠️ 'ce chapeau' est correct.",
       "eng": "This hat is made of straw.",
-      "similar": [{ "french": "<strong>Ce</strong> bonnet", "english": "This bonnet", "gender": "Masculin", "number": "Singulier" }, { "french": "<strong>Ce</strong> casque", "english": "This helmet", "gender": "Masculin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Ce</strong> bonnet", "english": "This bonnet", "gender": "Masculin", "number": "Singulier" },
+        { "french": "<strong>Ce</strong> casque", "english": "This helmet", "gender": "Masculin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-223",
@@ -4639,7 +4930,10 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces histoires' fait la liaison (cé zistoires).",
       "eng": "These stories are true.",
-      "similar": [{ "french": "<strong>Ces</strong> contes", "english": "These tales", "gender": "Masculin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> légendes", "english": "These legends", "gender": "Féminin", "number": "Pluriel" }]
+      "similar": [
+        { "french": "<strong>Ces</strong> contes", "english": "These tales", "gender": "Masculin", "number": "Pluriel" },
+        { "french": "<strong>Ces</strong> légendes", "english": "These legends", "gender": "Féminin", "number": "Pluriel" }
+      ]
     },
     {
       "id": "DEM-225",
@@ -4660,7 +4954,10 @@
       "grammar_rule": "Cette + nom féminin singulier.",
       "exception": "⚠️ 'cette fenêtre' est correct.",
       "eng": "This window is open.",
-      "similar": [{ "french": "<strong>Cette</strong> porte", "english": "This door", "gender": "Féminin", "number": "Singulier" }, { "french": "<strong>Cette</strong> lucarne", "english": "This skylight", "gender": "Féminin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Cette</strong> porte", "english": "This door", "gender": "Féminin", "number": "Singulier" },
+        { "french": "<strong>Cette</strong> lucarne", "english": "This skylight", "gender": "Féminin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-226",
@@ -4681,7 +4978,10 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces gâteaux' est correct.",
       "eng": "These cakes are delicious.",
-      "similar": [{ "french": "<strong>Ces</strong> desserts", "english": "These desserts", "gender": "Masculin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> pâtisseries", "english": "These pastries", "gender": "Féminin", "number": "Pluriel" }]
+      "similar": [
+        { "french": "<strong>Ces</strong> desserts", "english": "These desserts", "gender": "Masculin", "number": "Pluriel" },
+        { "french": "<strong>Ces</strong> pâtisseries", "english": "These pastries", "gender": "Féminin", "number": "Pluriel" }
+      ]
     },
     {
       "id": "DEM-227",
@@ -4702,7 +5002,10 @@
       "grammar_rule": "Cette s'utilise pour tous les noms féminins.",
       "exception": "⚠️ 'cette eau' fait la liaison (cét eau).",
       "eng": "This water is fresh.",
-      "similar": [{ "french": "<strong>Cette</strong> eau minérale", "english": "This mineral water", "gender": "Féminin", "number": "Singulier" }, { "french": "<strong>Cette</strong> eau de source", "english": "This spring water", "gender": "Féminin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Cette</strong> eau minérale", "english": "This mineral water", "gender": "Féminin", "number": "Singulier" },
+        { "french": "<strong>Cette</strong> eau de source", "english": "This spring water", "gender": "Féminin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-228",
@@ -4723,7 +5026,10 @@
       "grammar_rule": "Ce + nom masculin singulier commençant par une consonne.",
       "exception": "⚠️ 'ce château' est correct.",
       "eng": "This castle is old.",
-      "similar": [{ "french": "<strong>Ce</strong> palais", "english": "This palace", "gender": "Masculin", "number": "Singulier" }, { "french": "<strong>Ce</strong> monument", "english": "This monument", "gender": "Masculin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Ce</strong> palais", "english": "This palace", "gender": "Masculin", "number": "Singulier" },
+        { "french": "<strong>Ce</strong> monument", "english": "This monument", "gender": "Masculin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-229",
@@ -4744,7 +5050,10 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces livres' est correct.",
       "eng": "These books are on the table.",
-      "similar": [{ "french": "<strong>Ces</strong> cahiers", "english": "These notebooks", "gender": "Masculin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> revues", "english": "These magazines", "gender": "Féminin", "number": "Pluriel" }]
+      "similar": [
+        { "french": "<strong>Ces</strong> cahiers", "english": "These notebooks", "gender": "Masculin", "number": "Pluriel" },
+        { "french": "<strong>Ces</strong> revues", "english": "These magazines", "gender": "Féminin", "number": "Pluriel" }
+      ]
     },
     {
       "id": "DEM-230",
@@ -4765,7 +5074,10 @@
       "grammar_rule": "Cette s'utilise pour tous les noms féminins.",
       "exception": "⚠️ 'cette orange' fait la liaison (cétorange).",
       "eng": "This orange is juicy.",
-      "similar": [{ "french": "<strong>Cette</strong> pomme", "english": "This apple", "gender": "Féminin", "number": "Singulier" }, { "french": "<strong>Cette</strong> poire", "english": "This pear", "gender": "Féminin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Cette</strong> pomme", "english": "This apple", "gender": "Féminin", "number": "Singulier" },
+        { "french": "<strong>Cette</strong> poire", "english": "This pear", "gender": "Féminin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-231",
@@ -4786,7 +5098,10 @@
       "grammar_rule": "Avec un h aspiré, on utilise 'ce' même devant une voyelle.",
       "exception": "⚠️ 'ce hibou' ne fait PAS la liaison (ce ibou).",
       "eng": "This owl is nocturnal.",
-      "similar": [{ "french": "<strong>Ce</strong> hibou grand-duc", "english": "This eagle owl", "gender": "Masculin", "number": "Singulier" }, { "french": "<strong>Ce</strong> hérisson", "english": "This hedgehog", "gender": "Masculin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Ce</strong> hibou grand-duc", "english": "This eagle owl", "gender": "Masculin", "number": "Singulier" },
+        { "french": "<strong>Ce</strong> hérisson", "english": "This hedgehog", "gender": "Masculin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-232",
@@ -4807,7 +5122,10 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces montagnes' est correct.",
       "eng": "These mountains are snow-capped.",
-      "similar": [{ "french": "<strong>Ces</strong> sommets", "english": "These peaks", "gender": "Masculin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> collines", "english": "These hills", "gender": "Féminin", "number": "Pluriel" }]
+      "similar": [
+        { "french": "<strong>Ces</strong> sommets", "english": "These peaks", "gender": "Masculin", "number": "Pluriel" },
+        { "french": "<strong>Ces</strong> collines", "english": "These hills", "gender": "Féminin", "number": "Pluriel" }
+      ]
     },
     {
       "id": "DEM-233",
@@ -4816,8 +5134,8 @@
       "opt2": "Ces",
       "opt3": "Cette",
       "opt4": "Ce",
-      "ans": "Ce",
-      "compAns": "<strong>Ce</strong> arbre est dans le jardin.",
+      "ans": "Cet",
+      "compAns": "<strong>Cet</strong> arbre est dans le jardin.",
       "cat": "Adjectifs démonstratifs - Masculin singulier",
       "Level": "A1",
       "gender": "Masculin",
@@ -4828,7 +5146,10 @@
       "grammar_rule": "Ce + nom masculin singulier commençant par une consonne.",
       "exception": "⚠️ 'ce arbre' est correct.",
       "eng": "This tree is in the garden.",
-      "similar": [{ "french": "<strong>Ce</strong> chêne", "english": "This oak", "gender": "Masculin", "number": "Singulier" }, { "french": "<strong>Ce</strong> pommier", "english": "This apple tree", "gender": "Masculin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Ce</strong> chêne", "english": "This oak", "gender": "Masculin", "number": "Singulier" },
+        { "french": "<strong>Ce</strong> pommier", "english": "This apple tree", "gender": "Masculin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-234",
@@ -4849,7 +5170,10 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces idées' fait la liaison (cé zidées).",
       "eng": "These ideas are creative.",
-      "similar": [{ "french": "<strong>Ces</strong> concepts", "english": "These concepts", "gender": "Masculin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> suggestions", "english": "These suggestions", "gender": "Féminin", "number": "Pluriel" }]
+      "similar": [
+        { "french": "<strong>Ces</strong> concepts", "english": "These concepts", "gender": "Masculin", "number": "Pluriel" },
+        { "french": "<strong>Ces</strong> suggestions", "english": "These suggestions", "gender": "Féminin", "number": "Pluriel" }
+      ]
     },
     {
       "id": "DEM-235",
@@ -4870,7 +5194,10 @@
       "grammar_rule": "Cet + nom masculin commençant par une voyelle.",
       "exception": "⚠️ 'cet outil' fait la liaison (cétoutil).",
       "eng": "This tool is practical.",
-      "similar": [{ "french": "<strong>Cet</strong> instrument", "english": "This instrument", "gender": "Masculin", "number": "Singulier" }, { "french": "<strong>Cet</strong> appareil", "english": "This device", "gender": "Masculin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Cet</strong> instrument", "english": "This instrument", "gender": "Masculin", "number": "Singulier" },
+        { "french": "<strong>Cet</strong> appareil", "english": "This device", "gender": "Masculin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-236",
@@ -4891,7 +5218,10 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces enfants' fait la liaison (cé zanfants).",
       "eng": "These children are happy.",
-      "similar": [{ "french": "<strong>Ces</strong> garçons", "english": "These boys", "gender": "Masculin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> filles", "english": "These girls", "gender": "Féminin", "number": "Pluriel" }]
+      "similar": [
+        { "french": "<strong>Ces</strong> garçons", "english": "These boys", "gender": "Masculin", "number": "Pluriel" },
+        { "french": "<strong>Ces</strong> filles", "english": "These girls", "gender": "Féminin", "number": "Pluriel" }
+      ]
     },
     {
       "id": "DEM-237",
@@ -4912,7 +5242,10 @@
       "grammar_rule": "Cette s'utilise pour tous les noms féminins.",
       "exception": "⚠️ 'cette église' fait la liaison (cétégise).",
       "eng": "This church is Catholic.",
-      "similar": [{ "french": "<strong>Cette</strong> cathédrale", "english": "This cathedral", "gender": "Féminin", "number": "Singulier" }, { "french": "<strong>Cette</strong> chapelle", "english": "This chapel", "gender": "Féminin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Cette</strong> cathédrale", "english": "This cathedral", "gender": "Féminin", "number": "Singulier" },
+        { "french": "<strong>Cette</strong> chapelle", "english": "This chapel", "gender": "Féminin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-238",
@@ -4933,7 +5266,10 @@
       "grammar_rule": "Cet + nom masculin commençant par un h muet.",
       "exception": "⚠️ 'cet hôtel' fait la liaison (cétôtel).",
       "eng": "This hotel is comfortable.",
-      "similar": [{ "french": "<strong>Cet</strong> établissement", "english": "This establishment", "gender": "Masculin", "number": "Singulier" }, { "french": "<strong>Cet</strong> hébergement", "english": "This accommodation", "gender": "Masculin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Cet</strong> établissement", "english": "This establishment", "gender": "Masculin", "number": "Singulier" },
+        { "french": "<strong>Cet</strong> hébergement", "english": "This accommodation", "gender": "Masculin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-239",
@@ -4954,7 +5290,10 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces chemises' est correct.",
       "eng": "These shirts are white.",
-      "similar": [{ "french": "<strong>Ces</strong> vestes", "english": "These jackets", "gender": "Féminin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> pantalons", "english": "These pants", "gender": "Masculin", "number": "Pluriel" }]
+      "similar": [
+        { "french": "<strong>Ces</strong> vestes", "english": "These jackets", "gender": "Féminin", "number": "Pluriel" },
+        { "french": "<strong>Ces</strong> pantalons", "english": "These pants", "gender": "Masculin", "number": "Pluriel" }
+      ]
     },
     {
       "id": "DEM-240",
@@ -4975,7 +5314,10 @@
       "grammar_rule": "Cet + nom masculin commençant par une voyelle.",
       "exception": "⚠️ 'cet oiseau' fait la liaison (cét oiseau).",
       "eng": "This bird flies high.",
-      "similar": [{ "french": "<strong>Cet</strong> oiseau migrateur", "english": "This migratory bird", "gender": "Masculin", "number": "Singulier" }, { "french": "<strong>Cet</strong> oiseau de proie", "english": "This bird of prey", "gender": "Masculin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Cet</strong> oiseau migrateur", "english": "This migratory bird", "gender": "Masculin", "number": "Singulier" },
+        { "french": "<strong>Cet</strong> oiseau de proie", "english": "This bird of prey", "gender": "Masculin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-241",
@@ -4996,7 +5338,10 @@
       "grammar_rule": "Cette + nom féminin singulier.",
       "exception": "⚠️ 'cette maison' est correct.",
       "eng": "This house is big.",
-      "similar": [{ "french": "<strong>Cette</strong> villa", "english": "This villa", "gender": "Féminin", "number": "Singulier" }, { "french": "<strong>Cette</strong> demeure", "english": "This dwelling", "gender": "Féminin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Cette</strong> villa", "english": "This villa", "gender": "Féminin", "number": "Singulier" },
+        { "french": "<strong>Cette</strong> demeure", "english": "This dwelling", "gender": "Féminin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-242",
@@ -5017,7 +5362,10 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces animaux' fait la liaison (cé zanimaux).",
       "eng": "These animals are in the forest.",
-      "similar": [{ "french": "<strong>Ces</strong> bêtes", "english": "These beasts", "gender": "Féminin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> créatures", "english": "These creatures", "gender": "Féminin", "number": "Pluriel" }]
+      "similar": [
+        { "french": "<strong>Ces</strong> bêtes", "english": "These beasts", "gender": "Féminin", "number": "Pluriel" },
+        { "french": "<strong>Ces</strong> créatures", "english": "These creatures", "gender": "Féminin", "number": "Pluriel" }
+      ]
     },
     {
       "id": "DEM-243",
@@ -5038,7 +5386,10 @@
       "grammar_rule": "Cet + nom masculin commençant par un h muet.",
       "exception": "⚠️ 'cet homme' fait la liaison (cé tomme).",
       "eng": "This man is tall.",
-      "similar": [{ "french": "<strong>Cet</strong> homme d'affaires", "english": "This businessman", "gender": "Masculin", "number": "Singulier" }, { "french": "<strong>Cet</strong> homme politique", "english": "This politician", "gender": "Masculin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Cet</strong> homme d'affaires", "english": "This businessman", "gender": "Masculin", "number": "Singulier" },
+        { "french": "<strong>Cet</strong> homme politique", "english": "This politician", "gender": "Masculin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-244",
@@ -5059,7 +5410,10 @@
       "grammar_rule": "Cette + nom féminin singulier.",
       "exception": "⚠️ 'cette table' est correct.",
       "eng": "This table is round.",
-      "similar": [{ "french": "<strong>Cette</strong> chaise", "english": "This chair", "gender": "Féminin", "number": "Singulier" }, { "french": "<strong>Cette</strong> étagère", "english": "This shelf", "gender": "Féminin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Cette</strong> chaise", "english": "This chair", "gender": "Féminin", "number": "Singulier" },
+        { "french": "<strong>Cette</strong> étagère", "english": "This shelf", "gender": "Féminin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-245",
@@ -5080,7 +5434,10 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces jeux' est correct.",
       "eng": "These games are educational.",
-      "similar": [{ "french": "<strong>Ces</strong> activités", "english": "These activities", "gender": "Féminin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> jouets", "english": "These toys", "gender": "Masculin", "number": "Pluriel" }]
+      "similar": [
+        { "french": "<strong>Ces</strong> activités", "english": "These activities", "gender": "Féminin", "number": "Pluriel" },
+        { "french": "<strong>Ces</strong> jouets", "english": "These toys", "gender": "Masculin", "number": "Pluriel" }
+      ]
     },
     {
       "id": "DEM-246",
@@ -5101,7 +5458,10 @@
       "grammar_rule": "Cette s'utilise pour tous les noms féminins.",
       "exception": "⚠️ 'cette école' fait la liaison (cétécole).",
       "eng": "This school is modern.",
-      "similar": [{ "french": "<strong>Cette</strong> école primaire", "english": "This elementary school", "gender": "Féminin", "number": "Singulier" }, { "french": "<strong>Cette</strong> école secondaire", "english": "This secondary school", "gender": "Féminin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Cette</strong> école primaire", "english": "This elementary school", "gender": "Féminin", "number": "Singulier" },
+        { "french": "<strong>Cette</strong> école secondaire", "english": "This secondary school", "gender": "Féminin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-247",
@@ -5122,7 +5482,10 @@
       "grammar_rule": "Ce + nom masculin singulier commençant par une consonne.",
       "exception": "⚠️ 'ce vélo' est correct.",
       "eng": "This bike is fast.",
-      "similar": [{ "french": "<strong>Ce</strong> scooter", "english": "This scooter", "gender": "Masculin", "number": "Singulier" }, { "french": "<strong>Ce</strong> cyclomoteur", "english": "This moped", "gender": "Masculin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Ce</strong> scooter", "english": "This scooter", "gender": "Masculin", "number": "Singulier" },
+        { "french": "<strong>Ce</strong> cyclomoteur", "english": "This moped", "gender": "Masculin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-248",
@@ -5143,7 +5506,10 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces fleurs' est correct.",
       "eng": "These flowers smell good.",
-      "similar": [{ "french": "<strong>Ces</strong> roses", "english": "These roses", "gender": "Féminin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> lilas", "english": "These lilacs", "gender": "Masculin", "number": "Pluriel" }]
+      "similar": [
+        { "french": "<strong>Ces</strong> roses", "english": "These roses", "gender": "Féminin", "number": "Pluriel" },
+        { "french": "<strong>Ces</strong> lilas", "english": "These lilacs", "gender": "Masculin", "number": "Pluriel" }
+      ]
     },
     {
       "id": "DEM-249",
@@ -5164,7 +5530,10 @@
       "grammar_rule": "Cet + nom masculin commençant par une voyelle.",
       "exception": "⚠️ 'cet arbre' fait la liaison (cétarbre).",
       "eng": "This tree is fruit-bearing.",
-      "similar": [{ "french": "<strong>Cet</strong> arbre fruitier", "english": "This fruit tree", "gender": "Masculin", "number": "Singulier" }, { "french": "<strong>Cet</strong> pommier", "english": "This apple tree", "gender": "Masculin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Cet</strong> arbre fruitier", "english": "This fruit tree", "gender": "Masculin", "number": "Singulier" },
+        { "french": "<strong>Cet</strong> pommier", "english": "This apple tree", "gender": "Masculin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-250",
@@ -5185,7 +5554,10 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces hôtels' fait la liaison (cé zôtels).",
       "eng": "These hotels are expensive.",
-      "similar": [{ "french": "<strong>Ces</strong> établissements", "english": "These establishments", "gender": "Masculin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> palaces", "english": "These palace hotels", "gender": "Masculin", "number": "Pluriel" }]
+      "similar": [
+        { "french": "<strong>Ces</strong> établissements", "english": "These establishments", "gender": "Masculin", "number": "Pluriel" },
+        { "french": "<strong>Ces</strong> palaces", "english": "These palace hotels", "gender": "Masculin", "number": "Pluriel" }
+      ]
     },
     {
       "id": "DEM-251",
@@ -5206,7 +5578,10 @@
       "grammar_rule": "Ce + nom masculin singulier commençant par une consonne.",
       "exception": "⚠️ Devant une voyelle ou un h muet, utilisez 'cet'.",
       "eng": "This book is fascinating.",
-      "similar": [{ "french": "<strong>Ce</strong> roman", "english": "This novel", "gender": "Masculin", "number": "Singulier" }, { "french": "<strong>Ce</strong> poème", "english": "This poem", "gender": "Masculin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Ce</strong> roman", "english": "This novel", "gender": "Masculin", "number": "Singulier" },
+        { "french": "<strong>Ce</strong> poème", "english": "This poem", "gender": "Masculin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-252",
@@ -5227,7 +5602,10 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces étoiles' fait la liaison (cé zétoiles).",
       "eng": "These stars shine.",
-      "similar": [{ "french": "<strong>Ces</strong> planètes", "english": "These planets", "gender": "Féminin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> galaxies", "english": "These galaxies", "gender": "Féminin", "number": "Pluriel" }]
+      "similar": [
+        { "french": "<strong>Ces</strong> planètes", "english": "These planets", "gender": "Féminin", "number": "Pluriel" },
+        { "french": "<strong>Ces</strong> galaxies", "english": "These galaxies", "gender": "Féminin", "number": "Pluriel" }
+      ]
     },
     {
       "id": "DEM-253",
@@ -5248,7 +5626,10 @@
       "grammar_rule": "Cette + nom féminin singulier.",
       "exception": "⚠️ 'cette voiture' est correct.",
       "eng": "This car is fast.",
-      "similar": [{ "french": "<strong>Cette</strong> automobile", "english": "This automobile", "gender": "Féminin", "number": "Singulier" }, { "french": "<strong>Cette</strong> moto", "english": "This motorcycle", "gender": "Féminin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Cette</strong> automobile", "english": "This automobile", "gender": "Féminin", "number": "Singulier" },
+        { "french": "<strong>Cette</strong> moto", "english": "This motorcycle", "gender": "Féminin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-254",
@@ -5269,7 +5650,10 @@
       "grammar_rule": "Cet + nom masculin commençant par un h muet.",
       "exception": "⚠️ 'cet hôtel' fait la liaison (cétôtel).",
       "eng": "This hotel is luxurious.",
-      "similar": [{ "french": "<strong>Cet</strong> établissement", "english": "This establishment", "gender": "Masculin", "number": "Singulier" }, { "french": "<strong>Cet</strong> palace", "english": "This palace hotel", "gender": "Masculin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Cet</strong> établissement", "english": "This establishment", "gender": "Masculin", "number": "Singulier" },
+        { "french": "<strong>Cet</strong> palace", "english": "This palace hotel", "gender": "Masculin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-255",
@@ -5290,7 +5674,10 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces enfants' fait la liaison (cé zanfants).",
       "eng": "These children are happy.",
-      "similar": [{ "french": "<strong>Ces</strong> garçons", "english": "These boys", "gender": "Masculin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> filles", "english": "These girls", "gender": "Féminin", "number": "Pluriel" }]
+      "similar": [
+        { "french": "<strong>Ces</strong> garçons", "english": "These boys", "gender": "Masculin", "number": "Pluriel" },
+        { "french": "<strong>Ces</strong> filles", "english": "These girls", "gender": "Féminin", "number": "Pluriel" }
+      ]
     },
     {
       "id": "DEM-256",
@@ -5311,7 +5698,10 @@
       "grammar_rule": "Ce + nom masculin singulier commençant par une consonne.",
       "exception": "⚠️ 'ce arbre' est correct.",
       "eng": "This tree is majestic.",
-      "similar": [{ "french": "<strong>Ce</strong> chêne", "english": "This oak", "gender": "Masculin", "number": "Singulier" }, { "french": "<strong>Ce</strong> pin", "english": "This pine", "gender": "Masculin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Ce</strong> chêne", "english": "This oak", "gender": "Masculin", "number": "Singulier" },
+        { "french": "<strong>Ce</strong> pin", "english": "This pine", "gender": "Masculin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-257",
@@ -5332,7 +5722,10 @@
       "grammar_rule": "Cette s'utilise pour tous les noms féminins.",
       "exception": "⚠️ 'cette idée' fait la liaison (cétidée).",
       "eng": "This idea is brilliant.",
-      "similar": [{ "french": "<strong>Cette</strong> invention", "english": "This invention", "gender": "Féminin", "number": "Singulier" }, { "french": "<strong>Cette</strong> découverte", "english": "This discovery", "gender": "Féminin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Cette</strong> invention", "english": "This invention", "gender": "Féminin", "number": "Singulier" },
+        { "french": "<strong>Cette</strong> découverte", "english": "This discovery", "gender": "Féminin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-258",
@@ -5353,7 +5746,10 @@
       "grammar_rule": "Avec un h aspiré, on utilise 'ce' même devant une voyelle.",
       "exception": "⚠️ 'ce héros' ne fait PAS la liaison (ce éro).",
       "eng": "This hero is brave.",
-      "similar": [{ "french": "<strong>Ce</strong> héroïne", "english": "This heroine", "gender": "Féminin", "number": "Singulier" }, { "french": "<strong>Ce</strong> champion", "english": "This champion", "gender": "Masculin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Ce</strong> héroïne", "english": "This heroine", "gender": "Féminin", "number": "Singulier" },
+        { "french": "<strong>Ce</strong> champion", "english": "This champion", "gender": "Masculin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-259",
@@ -5374,7 +5770,10 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces chaussures' est correct.",
       "eng": "These shoes are comfortable.",
-      "similar": [{ "french": "<strong>Ces</strong> bottes", "english": "These boots", "gender": "Féminin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> sandales", "english": "These sandals", "gender": "Féminin", "number": "Pluriel" }]
+      "similar": [
+        { "french": "<strong>Ces</strong> bottes", "english": "These boots", "gender": "Féminin", "number": "Pluriel" },
+        { "french": "<strong>Ces</strong> sandales", "english": "These sandals", "gender": "Féminin", "number": "Pluriel" }
+      ]
     },
     {
       "id": "DEM-260",
@@ -5395,7 +5794,10 @@
       "grammar_rule": "Cet + nom masculin commençant par une voyelle.",
       "exception": "⚠️ 'cet oiseau' fait la liaison (cét oiseau).",
       "eng": "This bird sings melodiously.",
-      "similar": [{ "french": "<strong>Cet</strong> oiseau chanteur", "english": "This songbird", "gender": "Masculin", "number": "Singulier" }, { "french": "<strong>Cet</strong> oiseau migrateur", "english": "This migratory bird", "gender": "Masculin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Cet</strong> oiseau chanteur", "english": "This songbird", "gender": "Masculin", "number": "Singulier" },
+        { "french": "<strong>Cet</strong> oiseau migrateur", "english": "This migratory bird", "gender": "Masculin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-261",
@@ -5416,7 +5818,10 @@
       "grammar_rule": "Cette + nom féminin singulier.",
       "exception": "⚠️ 'cette maison' est correct.",
       "eng": "This house is white.",
-      "similar": [{ "french": "<strong>Cette</strong> villa", "english": "This villa", "gender": "Féminin", "number": "Singulier" }, { "french": "<strong>Cette</strong> demeure", "english": "This dwelling", "gender": "Féminin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Cette</strong> villa", "english": "This villa", "gender": "Féminin", "number": "Singulier" },
+        { "french": "<strong>Cette</strong> demeure", "english": "This dwelling", "gender": "Féminin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-262",
@@ -5437,7 +5842,10 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces ordinateurs' fait la liaison (cé zordinateurs).",
       "eng": "These computers are modern.",
-      "similar": [{ "french": "<strong>Ces</strong> appareils", "english": "These devices", "gender": "Masculin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> écrans", "english": "These screens", "gender": "Masculin", "number": "Pluriel" }]
+      "similar": [
+        { "french": "<strong>Ces</strong> appareils", "english": "These devices", "gender": "Masculin", "number": "Pluriel" },
+        { "french": "<strong>Ces</strong> écrans", "english": "These screens", "gender": "Masculin", "number": "Pluriel" }
+      ]
     },
     {
       "id": "DEM-263",
@@ -5458,7 +5866,10 @@
       "grammar_rule": "Cet + nom masculin commençant par un h muet.",
       "exception": "⚠️ 'cet homme' fait la liaison (cé tomme).",
       "eng": "This man is elderly.",
-      "similar": [{ "french": "<strong>Cet</strong> homme âgé", "english": "This elderly man", "gender": "Masculin", "number": "Singulier" }, { "french": "<strong>Cet</strong> homme d'affaires", "english": "This businessman", "gender": "Masculin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Cet</strong> homme âgé", "english": "This elderly man", "gender": "Masculin", "number": "Singulier" },
+        { "french": "<strong>Cet</strong> homme d'affaires", "english": "This businessman", "gender": "Masculin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-264",
@@ -5479,7 +5890,10 @@
       "grammar_rule": "Cette + nom féminin singulier.",
       "exception": "⚠️ 'cette table' est correct.",
       "eng": "This table is made of wood.",
-      "similar": [{ "french": "<strong>Cette</strong> chaise", "english": "This chair", "gender": "Féminin", "number": "Singulier" }, { "french": "<strong>Cette</strong> étagère", "english": "This shelf", "gender": "Féminin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Cette</strong> chaise", "english": "This chair", "gender": "Féminin", "number": "Singulier" },
+        { "french": "<strong>Cette</strong> étagère", "english": "This shelf", "gender": "Féminin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-265",
@@ -5500,7 +5914,10 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces fleurs' est correct.",
       "eng": "These flowers are beautiful.",
-      "similar": [{ "french": "<strong>Ces</strong> roses", "english": "These roses", "gender": "Féminin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> tulipes", "english": "These tulips", "gender": "Féminin", "number": "Pluriel" }]
+      "similar": [
+        { "french": "<strong>Ces</strong> roses", "english": "These roses", "gender": "Féminin", "number": "Pluriel" },
+        { "french": "<strong>Ces</strong> tulipes", "english": "These tulips", "gender": "Féminin", "number": "Pluriel" }
+      ]
     },
     {
       "id": "DEM-266",
@@ -5521,7 +5938,10 @@
       "grammar_rule": "Cette s'utilise pour tous les noms féminins.",
       "exception": "⚠️ 'cette école' fait la liaison (cétécole).",
       "eng": "This school is elementary.",
-      "similar": [{ "french": "<strong>Cette</strong> école maternelle", "english": "This preschool", "gender": "Féminin", "number": "Singulier" }, { "french": "<strong>Cette</strong> école secondaire", "english": "This secondary school", "gender": "Féminin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Cette</strong> école maternelle", "english": "This preschool", "gender": "Féminin", "number": "Singulier" },
+        { "french": "<strong>Cette</strong> école secondaire", "english": "This secondary school", "gender": "Féminin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-267",
@@ -5542,7 +5962,10 @@
       "grammar_rule": "Ce + nom masculin singulier commençant par une consonne.",
       "exception": "⚠️ 'ce crayon' est correct.",
       "eng": "This pencil is blue.",
-      "similar": [{ "french": "<strong>Ce</strong> stylo", "english": "This pen", "gender": "Masculin", "number": "Singulier" }, { "french": "<strong>Ce</strong> feutre", "english": "This marker", "gender": "Masculin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Ce</strong> stylo", "english": "This pen", "gender": "Masculin", "number": "Singulier" },
+        { "french": "<strong>Ce</strong> feutre", "english": "This marker", "gender": "Masculin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-268",
@@ -5563,7 +5986,10 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces avions' fait la liaison (cé zavions).",
       "eng": "These planes are at the airport.",
-      "similar": [{ "french": "<strong>Ces</strong> hélicoptères", "english": "These helicopters", "gender": "Masculin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> jets", "english": "These jets", "gender": "Masculin", "number": "Pluriel" }]
+      "similar": [
+        { "french": "<strong>Ces</strong> hélicoptères", "english": "These helicopters", "gender": "Masculin", "number": "Pluriel" },
+        { "french": "<strong>Ces</strong> jets", "english": "These jets", "gender": "Masculin", "number": "Pluriel" }
+      ]
     },
     {
       "id": "DEM-269",
@@ -5584,7 +6010,10 @@
       "grammar_rule": "Cet + nom masculin commençant par un h muet.",
       "exception": "⚠️ 'cet hiver' fait la liaison (cétiver).",
       "eng": "This winter is cold.",
-      "similar": [{ "french": "<strong>Cet</strong> hiver rigoureux", "english": "This harsh winter", "gender": "Masculin", "number": "Singulier" }, { "french": "<strong>Cet</strong> hiver neigeux", "english": "This snowy winter", "gender": "Masculin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Cet</strong> hiver rigoureux", "english": "This harsh winter", "gender": "Masculin", "number": "Singulier" },
+        { "french": "<strong>Cet</strong> hiver neigeux", "english": "This snowy winter", "gender": "Masculin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-270",
@@ -5605,7 +6034,10 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces voitures' est correct.",
       "eng": "These cars are electric.",
-      "similar": [{ "french": "<strong>Ces</strong> automobiles", "english": "These automobiles", "gender": "Féminin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> véhicules", "english": "These vehicles", "gender": "Masculin", "number": "Pluriel" }]
+      "similar": [
+        { "french": "<strong>Ces</strong> automobiles", "english": "These automobiles", "gender": "Féminin", "number": "Pluriel" },
+        { "french": "<strong>Ces</strong> véhicules", "english": "These vehicles", "gender": "Masculin", "number": "Pluriel" }
+      ]
     },
     {
       "id": "DEM-271",
@@ -5626,7 +6058,10 @@
       "grammar_rule": "Cette s'utilise pour tous les noms féminins.",
       "exception": "⚠️ 'cette université' fait la liaison (cétuniversité).",
       "eng": "This university is renowned.",
-      "similar": [{ "french": "<strong>Cette</strong> faculté", "english": "This faculty", "gender": "Féminin", "number": "Singulier" }, { "french": "<strong>Cette</strong> école", "english": "This school", "gender": "Féminin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Cette</strong> faculté", "english": "This faculty", "gender": "Féminin", "number": "Singulier" },
+        { "french": "<strong>Cette</strong> école", "english": "This school", "gender": "Féminin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-272",
@@ -5647,7 +6082,10 @@
       "grammar_rule": "Ce + nom masculin singulier commençant par une consonne.",
       "exception": "⚠️ 'ce chapeau' est correct.",
       "eng": "This hat is made of straw.",
-      "similar": [{ "french": "<strong>Ce</strong> bonnet", "english": "This bonnet", "gender": "Masculin", "number": "Singulier" }, { "french": "<strong>Ce</strong> casque", "english": "This helmet", "gender": "Masculin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Ce</strong> bonnet", "english": "This bonnet", "gender": "Masculin", "number": "Singulier" },
+        { "french": "<strong>Ce</strong> casque", "english": "This helmet", "gender": "Masculin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-273",
@@ -5668,7 +6106,10 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces histoires' fait la liaison (cé zistoires).",
       "eng": "These stories are true.",
-      "similar": [{ "french": "<strong>Ces</strong> contes", "english": "These tales", "gender": "Masculin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> légendes", "english": "These legends", "gender": "Féminin", "number": "Pluriel" }]
+      "similar": [
+        { "french": "<strong>Ces</strong> contes", "english": "These tales", "gender": "Masculin", "number": "Pluriel" },
+        { "french": "<strong>Ces</strong> légendes", "english": "These legends", "gender": "Féminin", "number": "Pluriel" }
+      ]
     },
     {
       "id": "DEM-275",
@@ -5689,7 +6130,10 @@
       "grammar_rule": "Cette + nom féminin singulier.",
       "exception": "⚠️ 'cette fenêtre' est correct.",
       "eng": "This window is open.",
-      "similar": [{ "french": "<strong>Cette</strong> porte", "english": "This door", "gender": "Féminin", "number": "Singulier" }, { "french": "<strong>Cette</strong> lucarne", "english": "This skylight", "gender": "Féminin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Cette</strong> porte", "english": "This door", "gender": "Féminin", "number": "Singulier" },
+        { "french": "<strong>Cette</strong> lucarne", "english": "This skylight", "gender": "Féminin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-276",
@@ -5710,7 +6154,10 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces gâteaux' est correct.",
       "eng": "These cakes are delicious.",
-      "similar": [{ "french": "<strong>Ces</strong> desserts", "english": "These desserts", "gender": "Masculin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> pâtisseries", "english": "These pastries", "gender": "Féminin", "number": "Pluriel" }]
+      "similar": [
+        { "french": "<strong>Ces</strong> desserts", "english": "These desserts", "gender": "Masculin", "number": "Pluriel" },
+        { "french": "<strong>Ces</strong> pâtisseries", "english": "These pastries", "gender": "Féminin", "number": "Pluriel" }
+      ]
     },
     {
       "id": "DEM-277",
@@ -5731,7 +6178,10 @@
       "grammar_rule": "Cette s'utilise pour tous les noms féminins.",
       "exception": "⚠️ 'cette eau' fait la liaison (cét eau).",
       "eng": "This water is fresh.",
-      "similar": [{ "french": "<strong>Cette</strong> eau minérale", "english": "This mineral water", "gender": "Féminin", "number": "Singulier" }, { "french": "<strong>Cette</strong> eau de source", "english": "This spring water", "gender": "Féminin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Cette</strong> eau minérale", "english": "This mineral water", "gender": "Féminin", "number": "Singulier" },
+        { "french": "<strong>Cette</strong> eau de source", "english": "This spring water", "gender": "Féminin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-278",
@@ -5752,7 +6202,10 @@
       "grammar_rule": "Ce + nom masculin singulier commençant par une consonne.",
       "exception": "⚠️ 'ce château' est correct.",
       "eng": "This castle is old.",
-      "similar": [{ "french": "<strong>Ce</strong> palais", "english": "This palace", "gender": "Masculin", "number": "Singulier" }, { "french": "<strong>Ce</strong> monument", "english": "This monument", "gender": "Masculin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Ce</strong> palais", "english": "This palace", "gender": "Masculin", "number": "Singulier" },
+        { "french": "<strong>Ce</strong> monument", "english": "This monument", "gender": "Masculin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-279",
@@ -5773,7 +6226,10 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces livres' est correct.",
       "eng": "These books are on the table.",
-      "similar": [{ "french": "<strong>Ces</strong> cahiers", "english": "These notebooks", "gender": "Masculin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> revues", "english": "These magazines", "gender": "Féminin", "number": "Pluriel" }]
+      "similar": [
+        { "french": "<strong>Ces</strong> cahiers", "english": "These notebooks", "gender": "Masculin", "number": "Pluriel" },
+        { "french": "<strong>Ces</strong> revues", "english": "These magazines", "gender": "Féminin", "number": "Pluriel" }
+      ]
     },
     {
       "id": "DEM-280",
@@ -5794,7 +6250,10 @@
       "grammar_rule": "Cette s'utilise pour tous les noms féminins.",
       "exception": "⚠️ 'cette orange' fait la liaison (cétorange).",
       "eng": "This orange is juicy.",
-      "similar": [{ "french": "<strong>Cette</strong> pomme", "english": "This apple", "gender": "Féminin", "number": "Singulier" }, { "french": "<strong>Cette</strong> poire", "english": "This pear", "gender": "Féminin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Cette</strong> pomme", "english": "This apple", "gender": "Féminin", "number": "Singulier" },
+        { "french": "<strong>Cette</strong> poire", "english": "This pear", "gender": "Féminin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-281",
@@ -5815,7 +6274,10 @@
       "grammar_rule": "Avec un h aspiré, on utilise 'ce' même devant une voyelle.",
       "exception": "⚠️ 'ce hibou' ne fait PAS la liaison (ce ibou).",
       "eng": "This owl is nocturnal.",
-      "similar": [{ "french": "<strong>Ce</strong> hibou grand-duc", "english": "This eagle owl", "gender": "Masculin", "number": "Singulier" }, { "french": "<strong>Ce</strong> hérisson", "english": "This hedgehog", "gender": "Masculin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Ce</strong> hibou grand-duc", "english": "This eagle owl", "gender": "Masculin", "number": "Singulier" },
+        { "french": "<strong>Ce</strong> hérisson", "english": "This hedgehog", "gender": "Masculin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-282",
@@ -5836,7 +6298,10 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces montagnes' est correct.",
       "eng": "These mountains are snow-capped.",
-      "similar": [{ "french": "<strong>Ces</strong> sommets", "english": "These peaks", "gender": "Masculin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> collines", "english": "These hills", "gender": "Féminin", "number": "Pluriel" }]
+      "similar": [
+        { "french": "<strong>Ces</strong> sommets", "english": "These peaks", "gender": "Masculin", "number": "Pluriel" },
+        { "french": "<strong>Ces</strong> collines", "english": "These hills", "gender": "Féminin", "number": "Pluriel" }
+      ]
     },
     {
       "id": "DEM-283",
@@ -5857,7 +6322,10 @@
       "grammar_rule": "Ce + nom masculin singulier commençant par une consonne.",
       "exception": "⚠️ 'ce arbre' est correct.",
       "eng": "This tree is in the garden.",
-      "similar": [{ "french": "<strong>Ce</strong> chêne", "english": "This oak", "gender": "Masculin", "number": "Singulier" }, { "french": "<strong>Ce</strong> pommier", "english": "This apple tree", "gender": "Masculin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Ce</strong> chêne", "english": "This oak", "gender": "Masculin", "number": "Singulier" },
+        { "french": "<strong>Ce</strong> pommier", "english": "This apple tree", "gender": "Masculin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-284",
@@ -5878,7 +6346,10 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces idées' fait la liaison (cé zidées).",
       "eng": "These ideas are creative.",
-      "similar": [{ "french": "<strong>Ces</strong> concepts", "english": "These concepts", "gender": "Masculin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> suggestions", "english": "These suggestions", "gender": "Féminin", "number": "Pluriel" }]
+      "similar": [
+        { "french": "<strong>Ces</strong> concepts", "english": "These concepts", "gender": "Masculin", "number": "Pluriel" },
+        { "french": "<strong>Ces</strong> suggestions", "english": "These suggestions", "gender": "Féminin", "number": "Pluriel" }
+      ]
     },
     {
       "id": "DEM-285",
@@ -5899,7 +6370,10 @@
       "grammar_rule": "Cet + nom masculin commençant par une voyelle.",
       "exception": "⚠️ 'cet outil' fait la liaison (cétoutil).",
       "eng": "This tool is practical.",
-      "similar": [{ "french": "<strong>Cet</strong> instrument", "english": "This instrument", "gender": "Masculin", "number": "Singulier" }, { "french": "<strong>Cet</strong> appareil", "english": "This device", "gender": "Masculin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Cet</strong> instrument", "english": "This instrument", "gender": "Masculin", "number": "Singulier" },
+        { "french": "<strong>Cet</strong> appareil", "english": "This device", "gender": "Masculin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-286",
@@ -5920,7 +6394,10 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces enfants' fait la liaison (cé zanfants).",
       "eng": "These children are happy.",
-      "similar": [{ "french": "<strong>Ces</strong> garçons", "english": "These boys", "gender": "Masculin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> filles", "english": "These girls", "gender": "Féminin", "number": "Pluriel" }]
+      "similar": [
+        { "french": "<strong>Ces</strong> garçons", "english": "These boys", "gender": "Masculin", "number": "Pluriel" },
+        { "french": "<strong>Ces</strong> filles", "english": "These girls", "gender": "Féminin", "number": "Pluriel" }
+      ]
     },
     {
       "id": "DEM-287",
@@ -5941,7 +6418,10 @@
       "grammar_rule": "Cette s'utilise pour tous les noms féminins.",
       "exception": "⚠️ 'cette église' fait la liaison (cétégise).",
       "eng": "This church is Catholic.",
-      "similar": [{ "french": "<strong>Cette</strong> cathédrale", "english": "This cathedral", "gender": "Féminin", "number": "Singulier" }, { "french": "<strong>Cette</strong> chapelle", "english": "This chapel", "gender": "Féminin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Cette</strong> cathédrale", "english": "This cathedral", "gender": "Féminin", "number": "Singulier" },
+        { "french": "<strong>Cette</strong> chapelle", "english": "This chapel", "gender": "Féminin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-288",
@@ -5962,7 +6442,10 @@
       "grammar_rule": "Cet + nom masculin commençant par un h muet.",
       "exception": "⚠️ 'cet hôtel' fait la liaison (cétôtel).",
       "eng": "This hotel is comfortable.",
-      "similar": [{ "french": "<strong>Cet</strong> établissement", "english": "This establishment", "gender": "Masculin", "number": "Singulier" }, { "french": "<strong>Cet</strong> hébergement", "english": "This accommodation", "gender": "Masculin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Cet</strong> établissement", "english": "This establishment", "gender": "Masculin", "number": "Singulier" },
+        { "french": "<strong>Cet</strong> hébergement", "english": "This accommodation", "gender": "Masculin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-289",
@@ -5983,7 +6466,10 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces chemises' est correct.",
       "eng": "These shirts are white.",
-      "similar": [{ "french": "<strong>Ces</strong> vestes", "english": "These jackets", "gender": "Féminin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> pantalons", "english": "These pants", "gender": "Masculin", "number": "Pluriel" }]
+      "similar": [
+        { "french": "<strong>Ces</strong> vestes", "english": "These jackets", "gender": "Féminin", "number": "Pluriel" },
+        { "french": "<strong>Ces</strong> pantalons", "english": "These pants", "gender": "Masculin", "number": "Pluriel" }
+      ]
     },
     {
       "id": "DEM-290",
@@ -6004,7 +6490,10 @@
       "grammar_rule": "Cet + nom masculin commençant par une voyelle.",
       "exception": "⚠️ 'cet oiseau' fait la liaison (cét oiseau).",
       "eng": "This bird flies high.",
-      "similar": [{ "french": "<strong>Cet</strong> oiseau migrateur", "english": "This migratory bird", "gender": "Masculin", "number": "Singulier" }, { "french": "<strong>Cet</strong> oiseau de proie", "english": "This bird of prey", "gender": "Masculin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Cet</strong> oiseau migrateur", "english": "This migratory bird", "gender": "Masculin", "number": "Singulier" },
+        { "french": "<strong>Cet</strong> oiseau de proie", "english": "This bird of prey", "gender": "Masculin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-291",
@@ -6025,7 +6514,10 @@
       "grammar_rule": "Cette + nom féminin singulier.",
       "exception": "⚠️ 'cette maison' est correct.",
       "eng": "This house is big.",
-      "similar": [{ "french": "<strong>Cette</strong> villa", "english": "This villa", "gender": "Féminin", "number": "Singulier" }, { "french": "<strong>Cette</strong> demeure", "english": "This dwelling", "gender": "Féminin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Cette</strong> villa", "english": "This villa", "gender": "Féminin", "number": "Singulier" },
+        { "french": "<strong>Cette</strong> demeure", "english": "This dwelling", "gender": "Féminin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-292",
@@ -6046,7 +6538,10 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces animaux' fait la liaison (cé zanimaux).",
       "eng": "These animals are in the forest.",
-      "similar": [{ "french": "<strong>Ces</strong> bêtes", "english": "These beasts", "gender": "Féminin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> créatures", "english": "These creatures", "gender": "Féminin", "number": "Pluriel" }]
+      "similar": [
+        { "french": "<strong>Ces</strong> bêtes", "english": "These beasts", "gender": "Féminin", "number": "Pluriel" },
+        { "french": "<strong>Ces</strong> créatures", "english": "These creatures", "gender": "Féminin", "number": "Pluriel" }
+      ]
     },
     {
       "id": "DEM-293",
@@ -6067,7 +6562,10 @@
       "grammar_rule": "Cet + nom masculin commençant par un h muet.",
       "exception": "⚠️ 'cet homme' fait la liaison (cé tomme).",
       "eng": "This man is tall.",
-      "similar": [{ "french": "<strong>Cet</strong> homme d'affaires", "english": "This businessman", "gender": "Masculin", "number": "Singulier" }, { "french": "<strong>Cet</strong> homme politique", "english": "This politician", "gender": "Masculin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Cet</strong> homme d'affaires", "english": "This businessman", "gender": "Masculin", "number": "Singulier" },
+        { "french": "<strong>Cet</strong> homme politique", "english": "This politician", "gender": "Masculin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-294",
@@ -6088,7 +6586,10 @@
       "grammar_rule": "Cette + nom féminin singulier.",
       "exception": "⚠️ 'cette table' est correct.",
       "eng": "This table is round.",
-      "similar": [{ "french": "<strong>Cette</strong> chaise", "english": "This chair", "gender": "Féminin", "number": "Singulier" }, { "french": "<strong>Cette</strong> étagère", "english": "This shelf", "gender": "Féminin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Cette</strong> chaise", "english": "This chair", "gender": "Féminin", "number": "Singulier" },
+        { "french": "<strong>Cette</strong> étagère", "english": "This shelf", "gender": "Féminin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-295",
@@ -6109,7 +6610,10 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces jeux' est correct.",
       "eng": "These games are educational.",
-      "similar": [{ "french": "<strong>Ces</strong> activités", "english": "These activities", "gender": "Féminin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> jouets", "english": "These toys", "gender": "Masculin", "number": "Pluriel" }]
+      "similar": [
+        { "french": "<strong>Ces</strong> activités", "english": "These activities", "gender": "Féminin", "number": "Pluriel" },
+        { "french": "<strong>Ces</strong> jouets", "english": "These toys", "gender": "Masculin", "number": "Pluriel" }
+      ]
     },
     {
       "id": "DEM-296",
@@ -6130,7 +6634,10 @@
       "grammar_rule": "Cette s'utilise pour tous les noms féminins.",
       "exception": "⚠️ 'cette école' fait la liaison (cétécole).",
       "eng": "This school is modern.",
-      "similar": [{ "french": "<strong>Cette</strong> école primaire", "english": "This elementary school", "gender": "Féminin", "number": "Singulier" }, { "french": "<strong>Cette</strong> école secondaire", "english": "This secondary school", "gender": "Féminin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Cette</strong> école primaire", "english": "This elementary school", "gender": "Féminin", "number": "Singulier" },
+        { "french": "<strong>Cette</strong> école secondaire", "english": "This secondary school", "gender": "Féminin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-297",
@@ -6151,7 +6658,10 @@
       "grammar_rule": "Ce + nom masculin singulier commençant par une consonne.",
       "exception": "⚠️ 'ce vélo' est correct.",
       "eng": "This bike is fast.",
-      "similar": [{ "french": "<strong>Ce</strong> scooter", "english": "This scooter", "gender": "Masculin", "number": "Singulier" }, { "french": "<strong>Ce</strong> cyclomoteur", "english": "This moped", "gender": "Masculin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Ce</strong> scooter", "english": "This scooter", "gender": "Masculin", "number": "Singulier" },
+        { "french": "<strong>Ce</strong> cyclomoteur", "english": "This moped", "gender": "Masculin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-298",
@@ -6172,7 +6682,10 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces fleurs' est correct.",
       "eng": "These flowers smell good.",
-      "similar": [{ "french": "<strong>Ces</strong> roses", "english": "These roses", "gender": "Féminin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> lilas", "english": "These lilacs", "gender": "Masculin", "number": "Pluriel" }]
+      "similar": [
+        { "french": "<strong>Ces</strong> roses", "english": "These roses", "gender": "Féminin", "number": "Pluriel" },
+        { "french": "<strong>Ces</strong> lilas", "english": "These lilacs", "gender": "Masculin", "number": "Pluriel" }
+      ]
     },
     {
       "id": "DEM-299",
@@ -6193,7 +6706,10 @@
       "grammar_rule": "Cet + nom masculin commençant par une voyelle.",
       "exception": "⚠️ 'cet arbre' fait la liaison (cétarbre).",
       "eng": "This tree is fruit-bearing.",
-      "similar": [{ "french": "<strong>Cet</strong> arbre fruitier", "english": "This fruit tree", "gender": "Masculin", "number": "Singulier" }, { "french": "<strong>Cet</strong> pommier", "english": "This apple tree", "gender": "Masculin", "number": "Singulier" }]
+      "similar": [
+        { "french": "<strong>Cet</strong> arbre fruitier", "english": "This fruit tree", "gender": "Masculin", "number": "Singulier" },
+        { "french": "<strong>Cet</strong> pommier", "english": "This apple tree", "gender": "Masculin", "number": "Singulier" }
+      ]
     },
     {
       "id": "DEM-300",
@@ -6214,7 +6730,10 @@
       "grammar_rule": "Ces s'utilise pour tous les noms au pluriel.",
       "exception": "⚠️ 'ces hôtels' fait la liaison (cé zôtels).",
       "eng": "These hotels are expensive.",
-      "similar": [{ "french": "<strong>Ces</strong> établissements", "english": "These establishments", "gender": "Masculin", "number": "Pluriel" }, { "french": "<strong>Ces</strong> palaces", "english": "These palace hotels", "gender": "Masculin", "number": "Pluriel" }]
+      "similar": [
+        { "french": "<strong>Ces</strong> établissements", "english": "These establishments", "gender": "Masculin", "number": "Pluriel" },
+        { "french": "<strong>Ces</strong> palaces", "english": "These palace hotels", "gender": "Masculin", "number": "Pluriel" }
+      ]
     }
   ]
 }

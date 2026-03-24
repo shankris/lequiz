@@ -1,5 +1,6 @@
 "use client";
 
+import { CircleUser } from "lucide-react";
 import { useSession, signIn, signOut } from "next-auth/react";
 import styles from "./UserMenu.module.css";
 
@@ -14,7 +15,8 @@ export default function UserMenu() {
         className={styles.authButton}
         onClick={() => signIn()}
       >
-        Login to save session
+        <CircleUser size={26} />
+        Connectez-vous pour enregistrer votre progression
       </button>
     );
   }

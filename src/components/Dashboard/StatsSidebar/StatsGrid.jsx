@@ -1,6 +1,6 @@
 "use client";
 
-import { Flame, Trophy, Target } from "lucide-react";
+import { Flame, ChartBarBig, Target } from "lucide-react";
 import styles from "./StatsGrid.module.css";
 
 export default function StatsGrid({ levelStats }) {
@@ -11,8 +11,8 @@ export default function StatsGrid({ levelStats }) {
 
   const stats = [
     {
-      label: "Série",
-      value: `${streak} jours`,
+      label: "Jours consécutifs sur LeQuiz",
+      value: `${streak}`,
       icon: (
         <Flame
           size={20}
@@ -22,7 +22,7 @@ export default function StatsGrid({ levelStats }) {
       color: "orange",
     },
     {
-      label: "Quizs réalisés",
+      label: "LeQuiz complétés",
       value: testsTaken,
       icon: (
         <Target
@@ -33,10 +33,10 @@ export default function StatsGrid({ levelStats }) {
       color: "blue",
     },
     {
-      label: "Succès",
+      label: "Mes progrès",
       value: `${successRate}%`,
       icon: (
-        <Trophy
+        <ChartBarBig
           size={20}
           color='#10b981'
         />

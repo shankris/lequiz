@@ -18,8 +18,15 @@ p {
   margin-block: 0.75em;
 }
 
-p+p {
-  /* margin-block: 0.5em; */
+.header h1 {
+  /* margin-bottom: 0; */
+  color: var(--accentColor);
+}
+
+.subHead {
+  margin: 0 0 0 0;
+  font-size: 17px;
+  color: var(--mutedColor);
 }
 
 li {
