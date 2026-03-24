@@ -122,13 +122,7 @@ export default function QuizPage() {
       });
 
       if (typeof window !== "undefined") {
-        // ---------------- ACTIVITY ----------------
-        const todayStr = new Date().toISOString().split("T")[0];
-        const activity = JSON.parse(localStorage.getItem("activityData") || "{}");
-        activity[todayStr] = true;
-        localStorage.setItem("activityData", JSON.stringify(activity));
-
-        // ---------------- PROGRESS (NEW) ----------------
+        // ---------------- PROGRESS ----------------
         const progress = JSON.parse(localStorage.getItem("quizProgress") || "{}");
 
         const existingScore = progress[sectionId];
@@ -141,8 +135,8 @@ export default function QuizPage() {
         localStorage.setItem("quizProgress", JSON.stringify(progress));
 
         // ---------------- NOTIFY UI ----------------
-        window.dispatchEvent(new Event("activityUpdated"));
-        window.dispatchEvent(new Event("progressUpdated")); // ✅ IMPORTANT
+        window.dispatchEvent(new Event("progressUpdated"));
+        window.dispatchEvent(new Event("statsUpdated")); // 🔥 new event
       }
 
       setStatsSaved(true);

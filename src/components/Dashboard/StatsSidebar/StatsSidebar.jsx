@@ -12,8 +12,7 @@ import UserMenu from "@/components/Auth/UserMenu";
 
 import styles from "./StatsSidebar.module.css";
 
-const LEVEL = "A1"; // for now
-const activityData = JSON.parse(localStorage.getItem("activityData") || "{}");
+const LEVEL = "A1";
 
 export default function StatsSidebar() {
   const router = useRouter();
@@ -28,13 +27,17 @@ export default function StatsSidebar() {
     if (stored) {
       const parsed = JSON.parse(stored);
 
-      // Ensure level exists
+      // 🛠 Fix broken old data
       if (!parsed[LEVEL]) {
         parsed[LEVEL] = getEmptyStats();
-        localStorage.setItem("quiz_stats", JSON.stringify(parsed));
+      }
+
+      if (!parsed[LEVEL].activity || Array.isArray(parsed[LEVEL].activity)) {
+        parsed[LEVEL].activity = {};
       }
 
       setLevelStats(parsed[LEVEL]);
+      localStorage.setItem("quiz_stats", JSON.stringify(parsed));
     } else {
       const initial = {
         [LEVEL]: getEmptyStats(),
@@ -45,7 +48,7 @@ export default function StatsSidebar() {
     }
   }, []);
 
-  // ⏳ Optional: avoid flicker while session loads
+  // ⏳ Avoid flicker while session loads
   if (status === "loading") return null;
 
   return (
@@ -67,8 +70,9 @@ export default function StatsSidebar() {
         />
 
         {/* 📅 Calendar */}
-        <ActivityCalendar activityData={activityData} />
+        <ActivityCalendar activityData={levelStats.activity} />
       </div>
+
       <UserMenu />
     </div>
   );
@@ -81,7 +85,7 @@ function getEmptyStats() {
     testsTaken: 0,
     totalQuestions: 0,
     correctAnswers: 0,
-    activity: {}, // ✅ IMPORTANT (object, not array)
+    activity: {}, // ✅ must be object
     wrongAnswers: [],
   };
 }

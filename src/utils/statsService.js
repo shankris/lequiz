@@ -25,6 +25,11 @@ export function updateStats({ score, totalQuestions, questions, answers, section
 
   const stats = parsed[LEVEL];
 
+  // 🛠 Fix old/broken activity structure
+  if (!stats.activity || Array.isArray(stats.activity)) {
+    stats.activity = {};
+  }
+
   // =========================
   // 📊 Overall Stats
   // =========================
@@ -85,6 +90,10 @@ export function updateStats({ score, totalQuestions, questions, answers, section
     }
   });
 
+  function getLocalDateFromDate(date) {
+    return date.getFullYear() + "-" + String(date.getMonth() + 1).padStart(2, "0") + "-" + String(date.getDate()).padStart(2, "0");
+  }
+
   // =========================
   // 🔥 Streak Calculation (LOCAL SAFE)
   // =========================
@@ -92,6 +101,13 @@ export function updateStats({ score, totalQuestions, questions, answers, section
 
   let streak = 0;
   let currentDate = new Date();
+
+  const todayStr = getLocalDate();
+
+  // Start from yesterday if today has no activity
+  if (!activitySet.has(todayStr)) {
+    currentDate.setDate(currentDate.getDate() - 1);
+  }
 
   while (true) {
     const dateStr = currentDate.getFullYear() + "-" + String(currentDate.getMonth() + 1).padStart(2, "0") + "-" + String(currentDate.getDate()).padStart(2, "0");
