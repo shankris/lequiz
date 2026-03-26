@@ -5,6 +5,12 @@ import { useState, useEffect } from "react";
 import { ArrowLeft, CheckCircle2, XCircle, Trophy, RotateCcw } from "lucide-react";
 
 import QuestionGrid from "@/components/QuestionGrid/QuestionGrid";
+import { prepareQuestions } from "@/utils/quizHelpers";
+import { useQuizData } from "@/hooks/useQuizData";
+import QuizFinished from "@/components/Quiz/QuizFinished";
+import QuestionCard from "@/components/Quiz/QuestionCard";
+import { useQuizStats } from "@/hooks/useQuizStats";
+
 import { updateStats } from "@/utils/statsService";
 import styles from "./page.module.css";
 
@@ -12,10 +18,7 @@ export default function QuizPage() {
   const { sectionId } = useParams();
   const router = useRouter();
 
-  const [currentQuestions, setCurrentQuestions] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(false);
 
   const [selectedOption, setSelectedOption] = useState(null);
   const [hasAnswered, setHasAnswered] = useState(false);
@@ -23,9 +26,6 @@ export default function QuizPage() {
   const [quizFinished, setQuizFinished] = useState(false);
 
   const [answers, setAnswers] = useState([]);
-  const [statsSaved, setStatsSaved] = useState(false);
-
-  const [quizMeta, setQuizMeta] = useState({ title: "", instruction: "" });
 
   // ----------------- LocalStorage helpers -----------------
   const getUsedQuestionIds = () => {
@@ -46,134 +46,17 @@ export default function QuizPage() {
     setHasAnswered(answers[index] !== undefined);
   };
 
-  // ----------------- Load quiz data -----------------
-  useEffect(() => {
-    async function fetchQuizData() {
-      try {
-        setLoading(true);
-
-        const data = await import(`@/data/${sectionId}.json`);
-        let questionsArray = [];
-
-        if (data.default && data.default.questions) {
-          questionsArray = data.default.questions;
-          setQuizMeta({
-            title: data.default.meta?.title || "",
-            instruction: data.default.meta?.instruction || "",
-          });
-        } else {
-          // fallback if your JSON is just an array
-          questionsArray = Array.isArray(data.default) ? data.default : [];
-          setQuizMeta({ title: "", instruction: "" });
-        }
-
-        if (questionsArray.length === 0) {
-          setError(true);
-          return;
-        }
-
-        let usedIds = getUsedQuestionIds();
-
-        let normalizedQuestions = questionsArray
-          .filter((q) => q.Level === "A1")
-          .filter((q) => !usedIds.includes(q.id))
-          .map((q) => ({
-            id: q.id,
-            question: q.Q,
-            options: [q.opt1, q.opt2, q.opt3, q.opt4],
-            answer: q.ans,
-            explanation: `${q.tips || ""} ${q.grammar_rule || ""} ${q.exception || ""}`,
-            translation: q.eng,
-            complete_answer: q.compAns,
-            similar: q.similar,
-          }));
-
-        if (normalizedQuestions.length === 0) {
-          // Reset if all questions used
-          localStorage.removeItem("usedQuestionIds");
-          usedIds = [];
-          normalizedQuestions = questionsArray
-            .filter((q) => q.Level === "A1")
-            .map((q) => ({
-              id: q.id,
-              question: q.Q,
-              options: [q.opt1, q.opt2, q.opt3, q.opt4],
-              answer: q.ans,
-              explanation: `${q.tips || ""} ${q.grammar_rule || ""} ${q.exception || ""}`,
-              translation: q.eng,
-              complete_answer: q.compAns,
-              similar: q.similar,
-            }));
-        }
-
-        const shuffled = [...normalizedQuestions].sort(() => Math.random() - 0.5).slice(0, 20);
-        setUsedQuestionIds([...usedIds, ...shuffled.map((q) => q.id)]);
-        setCurrentQuestions(shuffled);
-      } catch (err) {
-        console.error("Could not find quiz file:", err);
-        setError(true);
-      } finally {
-        setLoading(false);
-      }
-    }
-
-    if (sectionId) fetchQuizData();
-  }, [sectionId]);
+  const { currentQuestions, loading, error, quizMeta } = useQuizData(sectionId);
 
   // ----------------- Save stats, activity, and progress -----------------
-  useEffect(() => {
-    if (quizFinished && !statsSaved && currentQuestions.length > 0) {
-      updateStats({
-        score,
-        totalQuestions: currentQuestions.length,
-        questions: currentQuestions,
-        answers,
-        sectionId,
-        quizName: quizMeta?.title,
-      });
-
-      if (typeof window !== "undefined") {
-        // ---------------- PROGRESS ----------------
-        const progress = JSON.parse(localStorage.getItem("quizProgress") || "{}");
-
-        const existingScore = progress[sectionId];
-
-        if (!existingScore || score > existingScore) {
-          progress[sectionId] = score;
-        }
-
-        localStorage.setItem("quizProgress", JSON.stringify(progress));
-
-        // ---------------- ACTIVITY TRACKING (✅ NEW) ----------------
-        const today = new Date();
-        const todayStr = today.getFullYear() + "-" + String(today.getMonth() + 1).padStart(2, "0") + "-" + String(today.getDate()).padStart(2, "0");
-
-        const activity = JSON.parse(localStorage.getItem("activityData") || "{}");
-
-        const quizName = quizMeta?.title || sectionId || "Quiz";
-
-        if (!activity[todayStr]) {
-          activity[todayStr] = {
-            count: 0,
-            quizzes: [],
-          };
-        }
-
-        // ✅ count EVERY attempt
-        activity[todayStr].count += 1;
-        activity[todayStr].quizzes.push(quizName);
-
-        localStorage.setItem("activityData", JSON.stringify(activity));
-
-        // ---------------- EVENTS ----------------
-        window.dispatchEvent(new Event("progressUpdated"));
-        window.dispatchEvent(new Event("statsUpdated"));
-        window.dispatchEvent(new Event("activityUpdated")); // 👈 important
-      }
-
-      setStatsSaved(true);
-    }
-  }, [quizFinished, statsSaved, currentQuestions, score, answers, sectionId, quizMeta]);
+  useQuizStats({
+    quizFinished,
+    currentQuestions,
+    score,
+    answers,
+    sectionId,
+    quizMeta,
+  });
 
   // ----------------- Loading / Error -----------------
   if (loading) return <div className={styles.status}>Chargement du quiz...</div>;
@@ -219,43 +102,13 @@ export default function QuizPage() {
     setQuizFinished(true);
   };
 
-  const examples = Array.isArray(currentQ.similar) ? currentQ.similar : [];
-
-  // ----------------- Quiz finished screen -----------------
   if (quizFinished) {
-    const percentage = Math.round((score / currentQuestions.length) * 100);
-
     return (
-      <div className={styles.quizContainer}>
-        <div
-          className={styles.questionCard}
-          style={{ textAlign: "center" }}
-        >
-          <Trophy
-            size={64}
-            className={styles.trophyIcon}
-          />
-          <h2 className={styles.questionText}>Quiz Terminé !</h2>
-
-          <div className={styles.scoreCircle}>
-            <span className={styles.scoreBig}>{score}</span>
-            <span className={styles.scoreSmall}>/ {currentQuestions.length}</span>
-          </div>
-
-          <p className={styles.explanation}>{percentage}% de réussite</p>
-
-          <button
-            onClick={() => window.location.reload()}
-            className={styles.nextBtn}
-          >
-            <RotateCcw
-              size={18}
-              style={{ marginRight: "8px" }}
-            />
-            Réessayer
-          </button>
-        </div>
-      </div>
+      <QuizFinished
+        score={score}
+        total={currentQuestions.length}
+        onRetry={() => window.location.reload()}
+      />
     );
   }
 
@@ -274,64 +127,14 @@ export default function QuizPage() {
         {quizMeta.title && <h1 className={styles.quizTitle}>{quizMeta.title}</h1>}
         {quizMeta.instruction && <p className={styles.instruction}>{quizMeta.instruction}</p>}
 
-        <div className={styles.questionCard}>
-          <div className={styles.questionSection}>
-            <h2 className={styles.questionText}>{currentQ.question}</h2>
-            {currentQ.translation && <p className={styles.translationText}>{currentQ.translation}</p>}
-          </div>
-
-          <div className={styles.optionsGrid}>
-            {currentQ.options.map((opt, i) => {
-              const isSelected = selectedOption === opt;
-              const isCorrect = opt === currentQ.answer;
-              let btnClass = styles.btnOption;
-
-              if (hasAnswered) {
-                if (isCorrect) btnClass += ` ${styles.correct}`;
-                else if (isSelected) btnClass += ` ${styles.wrong}`;
-                else btnClass += ` ${styles.disabled}`;
-              }
-
-              return (
-                <button
-                  key={i}
-                  className={btnClass}
-                  onClick={() => handleOptionClick(opt)}
-                  disabled={hasAnswered}
-                >
-                  <span>{opt}</span>
-                  {hasAnswered && isCorrect && <CheckCircle2 size={32} />}
-                  {hasAnswered && isSelected && !isCorrect && <XCircle size={32} />}
-                </button>
-              );
-            })}
-          </div>
-
-          {hasAnswered && (
-            <div className={styles.feedbackArea}>
-              <p className={styles.explanation}>{currentQ.explanation}</p>
-              {currentQ.complete_answer && (
-                <div
-                  className={styles.sentenceText}
-                  dangerouslySetInnerHTML={{ __html: currentQ.complete_answer }}
-                />
-              )}
-
-              {examples.map((ex, i) => (
-                <div key={i}>
-                  <span dangerouslySetInnerHTML={{ __html: ex.french }} /> - {ex.english}
-                </div>
-              ))}
-
-              <button
-                onClick={handleNext}
-                className={styles.nextBtn}
-              >
-                {currentIndex === currentQuestions.length - 1 ? "Voir les résultats" : "Continuer"}
-              </button>
-            </div>
-          )}
-        </div>
+        <QuestionCard
+          question={currentQ}
+          selectedOption={selectedOption}
+          hasAnswered={hasAnswered}
+          onOptionClick={handleOptionClick}
+          onNext={handleNext}
+          isLastQuestion={currentIndex === currentQuestions.length - 1}
+        />
       </div>
 
       <QuestionGrid

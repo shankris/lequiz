@@ -1,3 +1,9 @@
+/**
+ * Manages quiz statistics and user progress using LocalStorage.
+ * Tracks overall performance, daily activity, wrong answers, and streaks.
+ * Updates structured stats data after each quiz attempt.
+ */
+
 const KEY = "quiz_stats";
 const LEVEL = "A1";
 

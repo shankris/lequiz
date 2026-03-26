@@ -1,5 +1,6 @@
 "use client";
 
+import { motion, AnimatePresence } from "framer-motion";
 import { Calendar as CalendarIcon } from "lucide-react";
 import styles from "./ActivityCalendar.module.css";
 
