@@ -25,6 +25,8 @@ export default function QuizPage() {
   const [answers, setAnswers] = useState([]);
   const [statsSaved, setStatsSaved] = useState(false);
 
+  const [quizMeta, setQuizMeta] = useState({ title: "", instruction: "" });
+
   // ----------------- LocalStorage helpers -----------------
   const getUsedQuestionIds = () => {
     if (typeof window === "undefined") return [];
@@ -53,9 +55,17 @@ export default function QuizPage() {
         const data = await import(`@/data/${sectionId}.json`);
         let questionsArray = [];
 
-        if (data.default && Array.isArray(data.default)) questionsArray = data.default;
-        else if (data.default && data.default.questions) questionsArray = data.default.questions;
-        else if (Array.isArray(data)) questionsArray = data;
+        if (data.default && data.default.questions) {
+          questionsArray = data.default.questions;
+          setQuizMeta({
+            title: data.default.meta?.title || "",
+            instruction: data.default.meta?.instruction || "",
+          });
+        } else {
+          // fallback if your JSON is just an array
+          questionsArray = Array.isArray(data.default) ? data.default : [];
+          setQuizMeta({ title: "", instruction: "" });
+        }
 
         if (questionsArray.length === 0) {
           setError(true);
@@ -119,6 +129,7 @@ export default function QuizPage() {
         questions: currentQuestions,
         answers,
         sectionId,
+        quizName: quizMeta?.title,
       });
 
       if (typeof window !== "undefined") {
@@ -127,21 +138,42 @@ export default function QuizPage() {
 
         const existingScore = progress[sectionId];
 
-        // ✅ Keep BEST score only
         if (!existingScore || score > existingScore) {
           progress[sectionId] = score;
         }
 
         localStorage.setItem("quizProgress", JSON.stringify(progress));
 
-        // ---------------- NOTIFY UI ----------------
+        // ---------------- ACTIVITY TRACKING (✅ NEW) ----------------
+        const today = new Date();
+        const todayStr = today.getFullYear() + "-" + String(today.getMonth() + 1).padStart(2, "0") + "-" + String(today.getDate()).padStart(2, "0");
+
+        const activity = JSON.parse(localStorage.getItem("activityData") || "{}");
+
+        const quizName = quizMeta?.title || sectionId || "Quiz";
+
+        if (!activity[todayStr]) {
+          activity[todayStr] = {
+            count: 0,
+            quizzes: [],
+          };
+        }
+
+        // ✅ count EVERY attempt
+        activity[todayStr].count += 1;
+        activity[todayStr].quizzes.push(quizName);
+
+        localStorage.setItem("activityData", JSON.stringify(activity));
+
+        // ---------------- EVENTS ----------------
         window.dispatchEvent(new Event("progressUpdated"));
-        window.dispatchEvent(new Event("statsUpdated")); // 🔥 new event
+        window.dispatchEvent(new Event("statsUpdated"));
+        window.dispatchEvent(new Event("activityUpdated")); // 👈 important
       }
 
       setStatsSaved(true);
     }
-  }, [quizFinished, statsSaved, currentQuestions, score, answers, sectionId]);
+  }, [quizFinished, statsSaved, currentQuestions, score, answers, sectionId, quizMeta]);
 
   // ----------------- Loading / Error -----------------
   if (loading) return <div className={styles.status}>Chargement du quiz...</div>;
@@ -238,9 +270,11 @@ export default function QuizPage() {
           <ArrowLeft size={18} /> Dashboard
         </button>
 
-        <div className={styles.questionCard}>
-          <p className={styles.instruction}>Choisissez la bonne réponse :</p>
+        {/* Quiz Title */}
+        {quizMeta.title && <h1 className={styles.quizTitle}>{quizMeta.title}</h1>}
+        {quizMeta.instruction && <p className={styles.instruction}>{quizMeta.instruction}</p>}
 
+        <div className={styles.questionCard}>
           <div className={styles.questionSection}>
             <h2 className={styles.questionText}>{currentQ.question}</h2>
             {currentQ.translation && <p className={styles.translationText}>{currentQ.translation}</p>}

@@ -95,7 +95,35 @@ export default function ActivityCalendar({ activityData = {} }) {
                   ${d.isWeekend ? styles.weekend : ""}
                   ${d.isFuture ? styles.future : ""}
                 `}
-                title={d.date}
+                title={(() => {
+                  const stored = localStorage.getItem("quiz_stats");
+                  const parsed = stored ? JSON.parse(stored) : {};
+                  const stats = parsed?.A1;
+
+                  const dayData = stats?.activity?.[d.date];
+
+                  if (!dayData) return d.date;
+
+                  const quizzes = Array.isArray(dayData.quizzesList) ? dayData.quizzesList : [];
+
+                  if (quizzes.length === 0) {
+                    return `${d.date} - ${dayData.quizzes || 0} quiz(es)`;
+                  }
+
+                  const recentFirst = [...quizzes].reverse();
+                  const visible = recentFirst.slice(0, 4);
+                  const remaining = recentFirst.length - visible.length;
+
+                  let tooltip = `${d.date} - ${dayData.quizzes || 0} quiz(es)\n`;
+
+                  tooltip += visible.join("\n");
+
+                  if (remaining > 0) {
+                    tooltip += `\n+${remaining} more`;
+                  }
+
+                  return tooltip;
+                })()}
               >
                 <span className={styles.dateNumber}>{new Date(d.date).getDate()}</span>
               </div>

@@ -37,3 +37,10 @@
 .current {
   border: 3px solid #000;
 }
+
+.resultRow {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0 0 0;
+  padding: 0 10px
+}

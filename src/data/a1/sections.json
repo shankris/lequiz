@@ -1,5 +1,11 @@
 [
   {
+    "id": "Fr-VOC",
+    "section": "basic",
+    "title": "Vocabulary",
+    "subtitle": "Word Meanings"
+  },
+  {
     "id": "Fr-Art",
     "section": "basic",
     "title": "Les articles définis",
@@ -8,7 +14,7 @@
   {
     "id": "Fr-Art2",
     "section": "basic",
-    "title": "L'article dans la phrase",
+    "title": "Les articles définis dans la phrase",
     "subtitle": "le, la, les, l'"
   },
   {
@@ -21,42 +27,49 @@
     "id": "Fr-ADJ-POS",
     "section": "basic",
     "title": "Les adjectifs possessifs",
-    "subtitle": "Mon, ma, mes, ton, ta, tes, son, sa, ses"
+    "subtitle": "mon, ma, mes, ton, ta, tes, son, sa, ses"
+  },
+  {
+    "id": "Fr-ART_PRT",
+    "section": "basic",
+    "title": "Les articles partitifs",
+    "subtitle": "du, de la, de l', des"
   },
   {
     "id": "Fr-CON-PRS",
     "section": "conjugation",
-    "title": "Présent",
-    "subtitle": ""
+    "title": "Le présent de l'indicatif",
+    "subtitle": "Le Présent de l’Indicatif"
   },
   {
     "id": "Fr-Con-prs2",
     "section": "conjugation",
-    "title": "Présent",
+    "title": "Le présent de l'indicatif",
     "subtitle": "Les verbes irréguliers"
-  },
-  {
-    "id": "Fr-Fut1",
-    "section": "conjugation",
-    "title": "Futur proche",
-    "subtitle": "Complète la phrase"
   },
   {
     "id": "Fr-Con-PC",
     "section": "conjugation",
-    "title": "Passé Composé",
-    "subtitle": ""
+    "title": "Le passé composé",
+    "subtitle": "avec être et avoir"
   },
   {
-    "id": "Fr-Con-Imp",
+    "id": "Fr-Fut1",
+    "section": "conjugation",
+    "title": "Le futur simple",
+    "subtitle": "Complète la phrase"
+  },
+
+  {
+    "id": "Fr-IMP",
     "section": "conjugation",
     "title": "Impératif",
-    "subtitle": ""
+    "subtitle": "Complétez avec l'impératif des verbes."
   },
   {
-    "id": "Fr-Con-FutProche",
+    "id": "Fr-FUT",
     "section": "conjugation",
-    "title": "Futur proche",
+    "title": "Futur - A2",
     "subtitle": ""
   }
 ]

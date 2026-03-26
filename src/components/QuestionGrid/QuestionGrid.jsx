@@ -12,9 +12,8 @@ export default function QuestionGrid({ questions, answers, currentIndex, onJump 
     <div className={styles.wrapper}>
       {/* ✅ SCORE */}
       <div className={styles.scoreContainer}>
-        <div className={styles.attempted}>Attempted {attempted}</div>
-
         <div className={styles.resultRow}>
+          <span className={styles.attempted}>Tenté {attempted}</span>
           <span className={styles.correctText}>Correct {correct}</span>
           <span className={styles.incorrectText}>Incorrect {incorrect}</span>
         </div>

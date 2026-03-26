@@ -9,7 +9,7 @@
   --headerHeight: 50px;
   --footerHeight: 50px;
 
-  --contentWidth: 1900px;
+  --contentWidth: 1200px;
   --contentWidthMax: 96%;
 
   --genericPadding: 6px;
@@ -40,7 +40,7 @@
   /* ----- Backgrounds ----- */
 
   --headerBg: #e1e1e1;
-  --mainContentBg: #f4f6f8;
+  --mainContentBg: #ededed;
   --footerBg: #e1e1e1;
 
   --bgColor: #f4f6f8;
@@ -96,7 +96,7 @@ html[data-theme="dark"] {
   /* Backgrounds */
 
   --headerBg: #243062;
-  --mainContentBg: #222222;
+  --mainContentBg: #2d2d2d;
   --footerBg: #243062;
 
   --bgColor: #0f172a;

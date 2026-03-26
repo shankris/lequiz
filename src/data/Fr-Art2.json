@@ -1,4 +1,9 @@
 {
+  "meta": {
+    "title": "Les articles définis dans la phrase",
+    "instruction": "Choisissez l'article correct pour chaque mot.",
+    "sectionId": "Fr-ART2"
+  },
   "questions": [
     {
       "id": "ART-375",

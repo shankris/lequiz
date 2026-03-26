@@ -31,7 +31,7 @@
 }
 
 /* Responsive adjustments */
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   .dashboardLayout {
     grid-template-columns: 1fr;
     /* Stack sidebar on mobile */

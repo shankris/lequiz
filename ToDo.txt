@@ -5,3 +5,11 @@ To Do
 - Keyboard selection
 
 - Check all questions
+- Dernier quiz effectué
+- Update data after each question is attempted
+
+
+Les articles partitifs – du, de la, de l', des
+
+un, une, des 
+à, au, à la, aux
