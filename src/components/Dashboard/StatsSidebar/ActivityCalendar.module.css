@@ -17,6 +17,7 @@
   background: var(--surfaceAlt);
   border-radius: 4px;
   transition: var(--transition-fast);
+  cursor: pointer;
 }
 
 /* Active day */
@@ -99,6 +100,7 @@
 .active {
   background: var(--highlight1);
   color: white;
+  cursor: pointer;
 }
 
 /* Weekend */
@@ -121,7 +123,7 @@
 
 .calendarCard {
   margin: 0;
-  padding: 0;
+  padding: 0 0 12px;
   /* background-color: #ddd; */
   border-bottom: 1px solid #e1e1e1;
 }
@@ -129,4 +131,64 @@
 .calendarLegend {
   font-size: 12px;
   color: var(--mutedColor);
+}
+
+.selected {
+  outline: 2px solid #fff;
+  transform: scale(1.1);
+}
+
+.detailsPanel {
+  margin-top: 1rem;
+  /* padding: 1rem; */
+  border-radius: 4px;
+  background: var(--card-bg);
+}
+
+.quizList {
+  padding: 10px 0 16px;
+  /* padding-left: 1rem; */
+  font-size: 14px;
+}
+
+.detailsHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0 10px;
+}
+
+.detailsDate {
+  /* display: inline-block; */
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.detailsQuizCount {
+  font-size: 14px;
+  text-align: right;
+}
+
+.quizTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.quizTable th,
+.quizTable td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.quizTable th {
+  background-color: #f5f5f5;
+  font-weight: 500;
+}
+
+.quizItem {
+  display: block;
+  padding: 4px 0px;
 }

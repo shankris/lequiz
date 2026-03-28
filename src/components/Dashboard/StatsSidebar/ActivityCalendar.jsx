@@ -1,10 +1,32 @@
 "use client";
 
+import { useState } from "react";
+
 import { motion, AnimatePresence } from "framer-motion";
 import { Calendar as CalendarIcon } from "lucide-react";
 import styles from "./ActivityCalendar.module.css";
 
 export default function ActivityCalendar({ activityData = {} }) {
+  // const [selectedDate, setSelectedDate] = useState(null);
+
+  // Current date
+  const currentDate = new Date();
+
+  // Convert to ISO string
+  const todayISO = currentDate.getFullYear() + "-" + String(currentDate.getMonth() + 1).padStart(2, "0") + "-" + String(currentDate.getDate()).padStart(2, "0");
+
+  // Set default selected date to today
+  const [selectedDate, setSelectedDate] = useState(todayISO);
+
+  const stored = typeof window !== "undefined" ? localStorage.getItem("quiz_stats") : null;
+  const parsed = stored ? JSON.parse(stored) : {};
+  const stats = parsed?.A1;
+
+  const selectedDayData = selectedDate ? stats?.activity?.[selectedDate] : null;
+
+  const quizzesList = selectedDayData?.quizzesList || [];
+  const totalQuizzes = selectedDayData?.quizzes || 0;
+
   const today = new Date();
 
   // ✅ Convert object → sorted date array
@@ -90,11 +112,17 @@ export default function ActivityCalendar({ activityData = {} }) {
             {week.map((d, di) => (
               <div
                 key={di}
+                onClick={() => {
+                  if (!d.isFuture) {
+                    setSelectedDate(d.date);
+                  }
+                }}
                 className={`
                   ${styles.day}
                   ${d.isActive ? styles.active : ""}
                   ${d.isWeekend ? styles.weekend : ""}
                   ${d.isFuture ? styles.future : ""}
+                  ${selectedDate === d.date ? styles.selected : ""}
                 `}
                 title={(() => {
                   const stored = localStorage.getItem("quiz_stats");
@@ -134,6 +162,53 @@ export default function ActivityCalendar({ activityData = {} }) {
       </div>
 
       <p className={styles.calendarLegend}>Dernière activité : {getLastActive(activityDates)}</p>
+
+      {selectedDate && (
+        <motion.div
+          key={selectedDate}
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 10 }}
+          className={styles.detailsPanel}
+        >
+          {/* Flex container for date + quiz count */}
+          <div className={styles.detailsHeader}>
+            {/* Format date */}
+            <span className={styles.detailsDate}>
+              {new Date(selectedDate).toLocaleDateString("fr-FR", {
+                day: "2-digit",
+                month: "short",
+                year: "numeric",
+              })}
+            </span>
+
+            {/* Total quizzes (only if data exists) */}
+            {selectedDayData && (
+              <span className={styles.detailsQuizCount}>
+                {totalQuizzes} {totalQuizzes === 1 ? "quiz" : "quizzes"}
+              </span>
+            )}
+          </div>
+
+          {/* Quiz list or "no activity" message */}
+          {!selectedDayData ? (
+            <p>Aucune activité</p>
+          ) : (
+            quizzesList.length > 0 && (
+              <span className={styles.quizList}>
+                {[...quizzesList].reverse().map((quiz, i) => (
+                  <span
+                    className={styles.quizItem}
+                    key={i}
+                  >
+                    {quiz}
+                  </span>
+                ))}
+              </span>
+            )
+          )}
+        </motion.div>
+      )}
     </div>
   );
 }
