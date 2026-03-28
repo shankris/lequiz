@@ -95,12 +95,21 @@ export default function SubSectionGrid() {
 
     const diffDays = Math.floor((today - target) / (1000 * 60 * 60 * 24));
 
-    if (diffDays === 0) return "Today";
-    if (diffDays === 1) return "Yesterday";
-    if (diffDays <= 7) return "Last week";
-    if (diffDays <= 30) return "Last month";
+    // ✅ Same day / yesterday
+    if (diffDays === 0) return "Aujourd’hui";
+    if (diffDays === 1) return "Il y a 1 jour";
 
-    return null;
+    // ✅ 2–6 days
+    if (diffDays < 7) return `Il y a ${diffDays} jours`;
+
+    // ✅ Weeks (7–30 days)
+    const weeks = Math.floor(diffDays / 7);
+    if (diffDays <= 30) {
+      return weeks === 1 ? "Il y a 1 semaine" : `Il y a ${weeks} semaines`;
+    }
+
+    // ✅ More than a month
+    return "Il y a plus d’un mois";
   }
 
   function getProgressColor(percent) {
@@ -165,7 +174,7 @@ export default function SubSectionGrid() {
                           {section.subtitle && <p className={styles.subtitle}>{section.subtitle}</p>}
 
                           {/* ✅ Hydration-safe */}
-                          <span className={styles.lastPlayed}>{mounted ? relativeDate : ""}</span>
+                          <span className={styles.lastPlayed}>{mounted ? `Dernière activité : ${relativeDate || "Pas encore utilisé"}` : ""}</span>
                         </div>
 
                         {/* ✅ Animated Progress Bar */}
@@ -192,12 +201,13 @@ export default function SubSectionGrid() {
                             style={{ color }}
                             initial={{ opacity: 0, y: 5 }}
                             animate={{
-                              opacity: mounted ? 1 : 0,
+                              opacity: mounted ? 0.2 : 0,
                               y: mounted ? 0 : 5,
                             }}
                             transition={{ delay: 0.4 }}
                           >
-                            {percent}%
+                            {percent}
+                            <span className={styles.progressPercent}>%</span>
                           </motion.span>
                         )}
                       </div>
