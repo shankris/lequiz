@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useMemo } from "react";
+import React, { useMemo, useState, useEffect } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import styles from "./SubSectionGrid.module.css";
@@ -29,13 +29,16 @@ function getLastNDaysActivity(activity, days = 30) {
 }
 
 export default function SubSectionGrid() {
-  // ✅ Load stats
-  const stats = useMemo(() => {
-    if (typeof window === "undefined") return null;
+  const [mounted, setMounted] = useState(false);
+  const [stats, setStats] = useState(null);
+
+  // ✅ Fix hydration
+  useEffect(() => {
+    setMounted(true);
 
     const stored = localStorage.getItem(KEY);
     const parsed = stored ? JSON.parse(stored) : {};
-    return parsed[LEVEL] || null;
+    setStats(parsed[LEVEL] || null);
   }, []);
 
   // ✅ Last 30 days activity
@@ -43,14 +46,13 @@ export default function SubSectionGrid() {
     return stats ? getLastNDaysActivity(stats.activity, 30) : {};
   }, [stats]);
 
-  // ✅ 🔥 Build progress map using sectionId
+  // ✅ Progress map
   const sectionProgress = useMemo(() => {
     const map = {};
 
     Object.values(recentActivity).forEach((day) => {
       day.quizzesList?.forEach((quiz) => {
-        const key = quiz.sectionId; // 🔥 THIS is the key you were looking for
-
+        const key = quiz.sectionId;
         if (!key) return;
 
         if (!map[key]) {
@@ -65,7 +67,50 @@ export default function SubSectionGrid() {
     return map;
   }, [recentActivity]);
 
-  // ✅ Group sections
+  // ✅ Last played
+  const lastPlayedMap = useMemo(() => {
+    const map = {};
+
+    Object.values(recentActivity).forEach((day) => {
+      day.quizzesList?.forEach((quiz) => {
+        if (!quiz.sectionId || !quiz.timestamp) return;
+
+        if (!map[quiz.sectionId] || quiz.timestamp > map[quiz.sectionId]) {
+          map[quiz.sectionId] = quiz.timestamp;
+        }
+      });
+    });
+
+    return map;
+  }, [recentActivity]);
+
+  function getRelativeDateLabel(timestamp) {
+    if (!timestamp) return null;
+
+    const now = new Date();
+    const date = new Date(timestamp);
+
+    const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    const target = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+
+    const diffDays = Math.floor((today - target) / (1000 * 60 * 60 * 24));
+
+    if (diffDays === 0) return "Today";
+    if (diffDays === 1) return "Yesterday";
+    if (diffDays <= 7) return "Last week";
+    if (diffDays <= 30) return "Last month";
+
+    return null;
+  }
+
+  function getProgressColor(percent) {
+    if (percent <= 20) return "#ef4444";
+    if (percent <= 40) return "#f97316";
+    if (percent <= 60) return "#f59e0b";
+    if (percent <= 80) return "#84cc16";
+    return "#22c55e";
+  }
+
   const groupedSections = sectionData.reduce((acc, item) => {
     if (!acc[item.section]) acc[item.section] = [];
     acc[item.section].push(item);
@@ -94,9 +139,13 @@ export default function SubSectionGrid() {
 
             <div className={styles.grid}>
               {items.map((section) => {
+                const lastPlayed = lastPlayedMap[section.id];
+                const relativeDate = getRelativeDateLabel(lastPlayed);
                 const progressData = sectionProgress[section.id];
 
                 const percent = progressData ? Math.round((progressData.correct / progressData.total) * 100) : 0;
+
+                const color = getProgressColor(percent);
 
                 return (
                   <Link
@@ -114,18 +163,43 @@ export default function SubSectionGrid() {
                           <h3 className={styles.title}>{section.title}</h3>
 
                           {section.subtitle && <p className={styles.subtitle}>{section.subtitle}</p>}
+
+                          {/* ✅ Hydration-safe */}
+                          <span className={styles.lastPlayed}>{mounted ? relativeDate : ""}</span>
                         </div>
 
-                        {/* ✅ Progress bar */}
+                        {/* ✅ Animated Progress Bar */}
                         <div className={styles.progressBar}>
-                          <div
+                          <motion.div
                             className={styles.progressFill}
-                            style={{ width: `${percent}%` }}
+                            initial={{ width: 0 }}
+                            animate={{
+                              width: mounted ? `${percent}%` : "0%",
+                            }}
+                            transition={{
+                              duration: 0.8,
+                              ease: [0.22, 1, 0.36, 1],
+                            }}
+                            style={{
+                              backgroundColor: color,
+                            }}
                           />
                         </div>
 
-                        {/* ✅ Optional text */}
-                        {percent > 0 && <span className={styles.progressText}>{percent}%</span>}
+                        {percent > 0 && (
+                          <motion.span
+                            className={styles.progressText}
+                            style={{ color }}
+                            initial={{ opacity: 0, y: 5 }}
+                            animate={{
+                              opacity: mounted ? 1 : 0,
+                              y: mounted ? 0 : 5,
+                            }}
+                            transition={{ delay: 0.4 }}
+                          >
+                            {percent}%
+                          </motion.span>
+                        )}
                       </div>
                     </motion.div>
                   </Link>

@@ -1,24 +1,19 @@
 "use client";
 
 import { useState } from "react";
-
 import { motion, AnimatePresence } from "framer-motion";
 import { Calendar as CalendarIcon } from "lucide-react";
 import styles from "./ActivityCalendar.module.css";
 
 export default function ActivityCalendar({ activityData = {} }) {
-  // const [selectedDate, setSelectedDate] = useState(null);
-
-  // Current date
   const currentDate = new Date();
 
-  // Convert to ISO string
   const todayISO = currentDate.getFullYear() + "-" + String(currentDate.getMonth() + 1).padStart(2, "0") + "-" + String(currentDate.getDate()).padStart(2, "0");
 
-  // Set default selected date to today
   const [selectedDate, setSelectedDate] = useState(todayISO);
 
   const stored = typeof window !== "undefined" ? localStorage.getItem("quiz_stats") : null;
+
   const parsed = stored ? JSON.parse(stored) : {};
   const stats = parsed?.A1;
 
@@ -29,18 +24,14 @@ export default function ActivityCalendar({ activityData = {} }) {
 
   const today = new Date();
 
-  // ✅ Convert object → sorted date array
   const activityDates = Object.keys(activityData).sort();
 
-  // 👉 Get earliest activity date
   const firstActivityDate = activityDates.length ? new Date(activityDates[0]) : new Date(today);
 
-  // 👉 Start from beginning of that week (Monday)
   const start = new Date(firstActivityDate);
-  const day = start.getDay(); // 0 = Sunday, 1 = Monday...
-  start.setDate(start.getDate() - ((day + 6) % 7)); // shift to Monday
+  const day = start.getDay();
+  start.setDate(start.getDate() - ((day + 6) % 7));
 
-  // 👉 Build days until today
   const days = [];
   let current = new Date(start);
 
@@ -59,13 +50,13 @@ export default function ActivityCalendar({ activityData = {} }) {
     current.setDate(current.getDate() + 1);
   }
 
-  // 👉 Fill last week to complete 7 days
   const remainder = days.length % 7;
   if (remainder !== 0) {
     const missing = 7 - remainder;
     for (let i = 0; i < missing; i++) {
       const date = new Date(current);
       date.setDate(current.getDate() + i);
+
       const iso = date.getFullYear() + "-" + String(date.getMonth() + 1).padStart(2, "0") + "-" + String(date.getDate()).padStart(2, "0");
 
       days.push({
@@ -77,32 +68,37 @@ export default function ActivityCalendar({ activityData = {} }) {
     }
   }
 
-  // 👉 Split into weeks
   const weeks = [];
   for (let i = 0; i < days.length; i += 7) {
     weeks.push(days.slice(i, i + 7));
   }
 
+  // ✅ Animation Variants
   const containerVariants = {
     hidden: {},
     visible: {
       transition: {
-        staggerChildren: 0.15,
-        delayChildren: 0.3, // 👈 smoother entry
+        staggerChildren: 0.12,
+        delayChildren: 0.15,
       },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 10, scale: 0.98 },
+    hidden: {
+      opacity: 0,
+      y: 20,
+      scale: 0.96,
+      filter: "blur(4px)",
+    },
     visible: {
       opacity: 1,
       y: 0,
       scale: 1,
+      filter: "blur(0px)",
       transition: {
-        type: "spring",
-        stiffness: 120,
-        damping: 14,
+        duration: 0.4,
+        ease: [0.22, 1, 0.36, 1],
       },
     },
   };
@@ -115,7 +111,6 @@ export default function ActivityCalendar({ activityData = {} }) {
       </div>
 
       <div className={styles.calendarGrid}>
-        {/* Week labels (Monday first, French convention) */}
         <div className={styles.weekLabels}>
           {["L", "M", "M", "J", "V", "S", "D"].map((d, i) => (
             <span
@@ -127,7 +122,6 @@ export default function ActivityCalendar({ activityData = {} }) {
           ))}
         </div>
 
-        {/* Weeks */}
         {weeks.map((week, wi) => (
           <div
             key={wi}
@@ -136,11 +130,7 @@ export default function ActivityCalendar({ activityData = {} }) {
             {week.map((d, di) => (
               <div
                 key={di}
-                onClick={() => {
-                  if (!d.isFuture) {
-                    setSelectedDate(d.date);
-                  }
-                }}
+                onClick={() => !d.isFuture && setSelectedDate(d.date)}
                 className={`
                   ${styles.day}
                   ${d.isActive ? styles.active : ""}
@@ -148,35 +138,6 @@ export default function ActivityCalendar({ activityData = {} }) {
                   ${d.isFuture ? styles.future : ""}
                   ${selectedDate === d.date ? styles.selected : ""}
                 `}
-                title={(() => {
-                  const stored = localStorage.getItem("quiz_stats");
-                  const parsed = stored ? JSON.parse(stored) : {};
-                  const stats = parsed?.A1;
-
-                  const dayData = stats?.activity?.[d.date];
-
-                  if (!dayData) return d.date;
-
-                  const quizzes = Array.isArray(dayData.quizzesList) ? dayData.quizzesList : [];
-
-                  if (quizzes.length === 0) {
-                    return `${d.date} - ${dayData.quizzes || 0} quiz(es)`;
-                  }
-
-                  const recentFirst = [...quizzes].reverse();
-                  const visible = recentFirst.slice(0, 4);
-                  const remaining = recentFirst.length - visible.length;
-
-                  let tooltip = `${d.date} - ${dayData.quizzes || 0} quiz(es)\n`;
-
-                  tooltip += visible.join("\n");
-
-                  if (remaining > 0) {
-                    tooltip += `\n+${remaining} more`;
-                  }
-
-                  return tooltip;
-                })()}
               >
                 <span className={styles.dateNumber}>{new Date(d.date).getDate()}</span>
               </div>
@@ -187,62 +148,66 @@ export default function ActivityCalendar({ activityData = {} }) {
 
       <p className={styles.calendarLegend}>Dernière activité : {getLastActive(activityDates)}</p>
 
-      {selectedDate && (
-        <motion.div
-          key={selectedDate}
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 10 }}
-          className={styles.detailsPanel}
-        >
-          <div className={styles.detailsHeader}>
-            <span className={styles.detailsDate}>
-              {new Date(selectedDate).toLocaleDateString("fr-FR", {
-                day: "2-digit",
-                month: "short",
-                year: "numeric",
-              })}
-            </span>
-
-            {selectedDayData && (
-              <span className={styles.detailsQuizCount}>
-                {totalQuizzes} {totalQuizzes === 1 ? "quiz" : "quizzes"}
+      {/* ✅ AnimatePresence FIX */}
+      <AnimatePresence mode='wait'>
+        {selectedDate && (
+          <motion.div
+            key={selectedDate}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 10 }}
+            transition={{ duration: 0.25 }}
+            className={styles.detailsPanel}
+          >
+            <div className={styles.detailsHeader}>
+              <span className={styles.detailsDate}>
+                {new Date(selectedDate).toLocaleDateString("fr-FR", {
+                  day: "2-digit",
+                  month: "short",
+                  year: "numeric",
+                })}
               </span>
+
+              {selectedDayData && (
+                <span className={styles.detailsQuizCount}>
+                  {totalQuizzes} {totalQuizzes === 1 ? "quiz" : "quizzes"}
+                </span>
+              )}
+            </div>
+
+            {!selectedDayData ? (
+              <p>Aucune activité</p>
+            ) : (
+              quizzesList.length > 0 && (
+                <motion.div
+                  className={styles.quizList}
+                  variants={containerVariants}
+                  initial='hidden'
+                  animate='visible'
+                >
+                  {[...quizzesList]
+                    .sort((a, b) => b.timestamp - a.timestamp)
+                    .map((quiz, i) => {
+                      const total = quiz.total || 20;
+                      const percent = Math.round((quiz.correct / total) * 100);
+
+                      return (
+                        <motion.span
+                          className={styles.quizItem}
+                          key={quiz.timestamp || i}
+                          variants={itemVariants}
+                        >
+                          <span className={styles.quizName}>{quiz.name}</span>
+                          <span className={styles.quizPerCent}>{percent}%</span>
+                        </motion.span>
+                      );
+                    })}
+                </motion.div>
+              )
             )}
-          </div>
-
-          {!selectedDayData ? (
-            <p>Aucune activité</p>
-          ) : (
-            quizzesList.length > 0 && (
-              <motion.div
-                className={styles.quizList}
-                variants={containerVariants}
-                initial='hidden'
-                animate='visible'
-              >
-                {[...quizzesList]
-                  .sort((a, b) => b.timestamp - a.timestamp)
-                  .map((quiz, i) => {
-                    const total = quiz.total || 20;
-                    const percent = Math.round((quiz.correct / total) * 100);
-
-                    return (
-                      <motion.span
-                        className={styles.quizItem}
-                        key={quiz.timestamp || i}
-                        variants={itemVariants}
-                      >
-                        <span className={styles.quizName}> {quiz.name} </span>
-                        <span className={styles.quizPerCent}>{percent}%</span>
-                      </motion.span>
-                    );
-                  })}
-              </motion.div>
-            )
-          )}
-        </motion.div>
-      )}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

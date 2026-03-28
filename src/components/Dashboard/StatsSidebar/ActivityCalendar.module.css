@@ -192,6 +192,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 2px 2px 2px 2px;
+  cursor: default;
+  transition: var(--transition-base);
+}
 
-  padding: 4px 0px;
+.quizItem:hover {
+  background: rgb(255, 255, 209);
+  transition: var(--transition-base);
 }
