@@ -123,7 +123,7 @@
 
 .calendarCard {
   margin: 0;
-  padding: 0 0 12px;
+  padding: 0;
   /* background-color: #ddd; */
   border-bottom: 1px solid #e1e1e1;
 }
@@ -189,6 +189,9 @@
 }
 
 .quizItem {
-  display: block;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
   padding: 4px 0px;
 }

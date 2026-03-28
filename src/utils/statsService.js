@@ -1,7 +1,5 @@
 /**
  * Manages quiz statistics and user progress using LocalStorage.
- * Tracks overall performance, daily activity, wrong answers, and streaks.
- * Updates structured stats data after each quiz attempt.
  */
 
 const KEY = "quiz_stats";
@@ -13,18 +11,11 @@ function getLocalDate() {
   return now.getFullYear() + "-" + String(now.getMonth() + 1).padStart(2, "0") + "-" + String(now.getDate()).padStart(2, "0");
 }
 
-export function updateStats({
-  score,
-  totalQuestions,
-  questions,
-  answers,
-  sectionId,
-  quizName, // ✅ NEW (optional)
-}) {
+export function updateStats({ score, totalQuestions, questions, answers, sectionId, quizName }) {
   const stored = localStorage.getItem(KEY);
   const parsed = stored ? JSON.parse(stored) : {};
 
-  // ✅ Initialize level if not present
+  // ✅ Init level
   if (!parsed[LEVEL]) {
     parsed[LEVEL] = {
       testsTaken: 0,
@@ -37,11 +28,6 @@ export function updateStats({
   }
 
   const stats = parsed[LEVEL];
-
-  // 🛠 Fix old/broken activity structure
-  if (!stats.activity || Array.isArray(stats.activity)) {
-    stats.activity = {};
-  }
 
   // =========================
   // 📊 Overall Stats
@@ -61,16 +47,11 @@ export function updateStats({
       correct: 0,
       total: 0,
       wrong: 0,
-      quizzesList: [], // ✅ NEW
+      quizzesList: [],
     };
   }
 
   const dayData = stats.activity[today];
-
-  // 🛠 Backward compatibility (old data fix)
-  if (!Array.isArray(dayData.quizzesList)) {
-    dayData.quizzesList = [];
-  }
 
   // ✅ Count attempts
   dayData.quizzes += 1;
@@ -78,16 +59,20 @@ export function updateStats({
   dayData.total += totalQuestions;
   dayData.wrong += totalQuestions - score;
 
-  // ✅ Store quiz name (duplicates allowed = multiple attempts)
-  const name = quizName || sectionId || "Quiz";
-  dayData.quizzesList.push(name);
+  // ✅ Store quiz result (🔥 improved structure)
+  dayData.quizzesList.push({
+    name: quizName || sectionId || "Quiz",
+    sectionId, // 🔥 critical for mapping
+    correct: score,
+    total: totalQuestions, // 🔥 future-proof
+    timestamp: Date.now(),
+  });
 
   // =========================
   // ❌ Wrong Answers
   // =========================
   questions.forEach((q, index) => {
     const result = answers[index];
-    const today = getLocalDate();
 
     let existing = stats.wrongAnswers.find((w) => w.id === q.id);
 
@@ -95,10 +80,22 @@ export function updateStats({
       if (!existing) {
         stats.wrongAnswers.push({
           id: q.id,
-          question: q.question,
           section: sectionId,
+          wrongDate: today,
           correctDates: [],
         });
+      } else {
+        // ✅ overwrite latest wrong date
+        existing.wrongDate = today;
+
+        // 🔥 RESET progress (important)
+        existing.correctDates = [];
+      }
+    }
+
+    if (result === "correct" && existing) {
+      if (!existing.correctDates.includes(today)) {
+        existing.correctDates.push(today);
       }
     }
 
@@ -112,13 +109,13 @@ export function updateStats({
   // =========================
   // 🔥 Streak Calculation
   // =========================
-  const activitySet = new Set(Object.keys(stats.activity));
+  const activityDates = Object.keys(stats.activity);
+  const activitySet = new Set(activityDates);
 
   let streak = 0;
   let currentDate = new Date();
-  const todayStr = getLocalDate();
 
-  if (!activitySet.has(todayStr)) {
+  if (!activitySet.has(today)) {
     currentDate.setDate(currentDate.getDate() - 1);
   }
 

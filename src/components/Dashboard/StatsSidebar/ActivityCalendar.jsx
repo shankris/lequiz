@@ -83,6 +83,30 @@ export default function ActivityCalendar({ activityData = {} }) {
     weeks.push(days.slice(i, i + 7));
   }
 
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.3, // 👈 smoother entry
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 10, scale: 0.98 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        type: "spring",
+        stiffness: 120,
+        damping: 14,
+      },
+    },
+  };
+
   return (
     <div className={styles.calendarCard}>
       <div className={styles.calendarHeader}>
@@ -171,9 +195,7 @@ export default function ActivityCalendar({ activityData = {} }) {
           exit={{ opacity: 0, y: 10 }}
           className={styles.detailsPanel}
         >
-          {/* Flex container for date + quiz count */}
           <div className={styles.detailsHeader}>
-            {/* Format date */}
             <span className={styles.detailsDate}>
               {new Date(selectedDate).toLocaleDateString("fr-FR", {
                 day: "2-digit",
@@ -182,7 +204,6 @@ export default function ActivityCalendar({ activityData = {} }) {
               })}
             </span>
 
-            {/* Total quizzes (only if data exists) */}
             {selectedDayData && (
               <span className={styles.detailsQuizCount}>
                 {totalQuizzes} {totalQuizzes === 1 ? "quiz" : "quizzes"}
@@ -190,21 +211,34 @@ export default function ActivityCalendar({ activityData = {} }) {
             )}
           </div>
 
-          {/* Quiz list or "no activity" message */}
           {!selectedDayData ? (
             <p>Aucune activité</p>
           ) : (
             quizzesList.length > 0 && (
-              <span className={styles.quizList}>
-                {[...quizzesList].reverse().map((quiz, i) => (
-                  <span
-                    className={styles.quizItem}
-                    key={i}
-                  >
-                    {quiz}
-                  </span>
-                ))}
-              </span>
+              <motion.div
+                className={styles.quizList}
+                variants={containerVariants}
+                initial='hidden'
+                animate='visible'
+              >
+                {[...quizzesList]
+                  .sort((a, b) => b.timestamp - a.timestamp)
+                  .map((quiz, i) => {
+                    const total = quiz.total || 20;
+                    const percent = Math.round((quiz.correct / total) * 100);
+
+                    return (
+                      <motion.span
+                        className={styles.quizItem}
+                        key={quiz.timestamp || i}
+                        variants={itemVariants}
+                      >
+                        <span className={styles.quizName}> {quiz.name} </span>
+                        <span className={styles.quizPerCent}>{percent}%</span>
+                      </motion.span>
+                    );
+                  })}
+              </motion.div>
             )
           )}
         </motion.div>
