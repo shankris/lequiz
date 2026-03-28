@@ -201,3 +201,9 @@
   background: rgb(255, 255, 209);
   transition: var(--transition-base);
 }
+
+.quizCount {
+  font-size: 11px;
+  color: var(--mutedColor);
+  margin-top: 4px;
+}

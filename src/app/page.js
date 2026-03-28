@@ -47,7 +47,7 @@ export default function Home() {
     <div className={styles.dashboardLayout}>
       <main className={styles.mainContent}>
         <header>
-          <h1 className='header'>Bienvenue ! Accélérons votre apprentissage du français.</h1>
+          <h1 className='header'>Accélérons votre apprentissage du français.</h1>
           <div className='subHead'>Choisissez un Quiz pour commencer votre pratique quotidienne.</div>
         </header>
 

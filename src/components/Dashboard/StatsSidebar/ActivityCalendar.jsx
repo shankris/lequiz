@@ -103,13 +103,17 @@ export default function ActivityCalendar({ activityData = {} }) {
     },
   };
 
+  const totalCorrect = quizzesList.reduce((sum, q) => sum + (q.correct || 0), 0);
+  const totalQuestions = quizzesList.reduce((sum, q) => sum + (q.total || 20), 0);
+
+  const successPercent = totalQuestions > 0 ? Math.round((totalCorrect / totalQuestions) * 100) : 0;
+
   return (
     <div className={styles.calendarCard}>
       <div className={styles.calendarHeader}>
         <CalendarIcon size={20} />
         <h4>Activité</h4>
       </div>
-
       <div className={styles.calendarGrid}>
         <div className={styles.weekLabels}>
           {["L", "M", "M", "J", "V", "S", "D"].map((d, i) => (
@@ -145,9 +149,7 @@ export default function ActivityCalendar({ activityData = {} }) {
           </div>
         ))}
       </div>
-
       <p className={styles.calendarLegend}>Dernière activité : {getLastActive(activityDates)}</p>
-
       {/* ✅ AnimatePresence FIX */}
       <AnimatePresence mode='wait'>
         {selectedDate && (
@@ -168,11 +170,13 @@ export default function ActivityCalendar({ activityData = {} }) {
                 })}
               </span>
 
-              {selectedDayData && (
+              {selectedDayData && <span className={styles.detailsQuizCount}>{successPercent}%</span>}
+
+              {/* {selectedDayData && (
                 <span className={styles.detailsQuizCount}>
                   {totalQuizzes} {totalQuizzes === 1 ? "quiz" : "quizzes"}
                 </span>
-              )}
+              )} */}
             </div>
 
             {!selectedDayData ? (
@@ -208,6 +212,17 @@ export default function ActivityCalendar({ activityData = {} }) {
           </motion.div>
         )}
       </AnimatePresence>
+
+      {totalQuizzes > 0 && (
+        <motion.span
+          className={styles.quizCount}
+          initial={{ opacity: 0, y: -10 }} // start hidden and slightly up
+          animate={{ opacity: 1, y: 0 }} // animate to visible and original position
+          transition={{ delay: 2, duration: 0.4 }} // delay in seconds
+        >
+          Total: {totalQuizzes} {totalQuizzes === 1 ? "quiz" : "quizzes"}
+        </motion.span>
+      )}
     </div>
   );
 }
