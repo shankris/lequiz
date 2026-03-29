@@ -1,4 +1,5 @@
-import { Trophy, RotateCcw } from "lucide-react";
+import { Trophy, RotateCcw, Home } from "lucide-react";
+import { useRouter } from "next/navigation";
 import styles from "@/app/quiz/[sectionId]/page.module.css";
 
 /**
@@ -7,6 +8,7 @@ import styles from "@/app/quiz/[sectionId]/page.module.css";
  */
 export default function QuizFinished({ score, total, onRetry }) {
   const percentage = Math.round((score / total) * 100);
+  const router = useRouter();
 
   return (
     <div className={styles.quizContainer}>
@@ -36,6 +38,18 @@ export default function QuizFinished({ score, total, onRetry }) {
             style={{ marginRight: "8px" }}
           />
           Réessayer
+        </button>
+
+        <button
+          onClick={() => router.push("/")}
+          className={styles.nextBtn}
+          style={{ marginTop: "10px" }}
+        >
+          <Home
+            size={18}
+            style={{ marginRight: "8px" }}
+          />
+          Accueil
         </button>
       </div>
     </div>

@@ -11,13 +11,15 @@ export default function UserMenu() {
 
   if (!session) {
     return (
-      <button
-        className={styles.authButton}
-        onClick={() => signIn()}
-      >
-        <CircleUser size={26} />
-        Connectez-vous pour enregistrer votre progression
-      </button>
+      <>
+        <button
+          className={styles.authButton}
+          onClick={() => signIn()}
+        >
+          <CircleUser size={26} />
+          Connectez-vous pour enregistrer votre progression
+        </button>
+      </>
     );
   }
 

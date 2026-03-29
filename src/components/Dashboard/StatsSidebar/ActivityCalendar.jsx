@@ -221,6 +221,7 @@ export default function ActivityCalendar({ activityData = {} }) {
           transition={{ delay: 2, duration: 0.4 }} // delay in seconds
         >
           Total: {totalQuizzes} {totalQuizzes === 1 ? "quiz" : "quizzes"}
+          <br />
         </motion.span>
       )}
     </div>

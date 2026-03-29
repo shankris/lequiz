@@ -50,8 +50,8 @@ export default function Home() {
           <h1 className='header'>Accélérons votre apprentissage du français.</h1>
           <div className='subHead'>Choisissez un Quiz pour commencer votre pratique quotidienne.</div>
         </header>
-
         <SubSectionGrid />
+        <span className={styles.dataInfo}>Toutes les données concernent les 30 derniers jours.</span>
       </main>
 
       <aside className={styles.sidebar}>

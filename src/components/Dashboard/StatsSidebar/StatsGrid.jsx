@@ -33,7 +33,7 @@ export default function StatsGrid({ levelStats }) {
       color: "blue",
     },
     {
-      label: "Mes progrès",
+      label: "Progression globale",
       value: `${successRate}%`,
       icon: (
         <ChartBarBig

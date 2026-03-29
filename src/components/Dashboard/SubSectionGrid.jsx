@@ -84,6 +84,20 @@ export default function SubSectionGrid() {
     return map;
   }, [recentActivity]);
 
+  // ✅ Number of attempts in last 30 days per section
+  const attemptsMap = useMemo(() => {
+    const map = {};
+
+    Object.values(recentActivity).forEach((day) => {
+      day.quizzesList?.forEach((quiz) => {
+        if (!quiz.sectionId) return;
+        map[quiz.sectionId] = (map[quiz.sectionId] || 0) + 1;
+      });
+    });
+
+    return map;
+  }, [recentActivity]);
+
   function getRelativeDateLabel(timestamp) {
     if (!timestamp) return null;
 
@@ -148,6 +162,7 @@ export default function SubSectionGrid() {
 
             <div className={styles.grid}>
               {items.map((section) => {
+                const attempts = attemptsMap[section.id] || 0;
                 const lastPlayed = lastPlayedMap[section.id];
                 const relativeDate = getRelativeDateLabel(lastPlayed);
                 const progressData = sectionProgress[section.id];
@@ -173,8 +188,10 @@ export default function SubSectionGrid() {
 
                           {section.subtitle && <p className={styles.subtitle}>{section.subtitle}</p>}
 
+                          {mounted && <span className={styles.lastPlayed}>Tentatives: {attempts}</span>}
+
                           {/* ✅ Hydration-safe */}
-                          <span className={styles.lastPlayed}>{mounted ? `Dernière activité : ${relativeDate || "Pas encore utilisé"}` : ""}</span>
+                          <span className={styles.lastActive}>{mounted ? `Dernière activité : ${relativeDate || "Pas encore utilisé"}` : ""}</span>
                         </div>
 
                         {/* ✅ Animated Progress Bar */}

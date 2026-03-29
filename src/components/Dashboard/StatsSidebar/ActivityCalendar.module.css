@@ -148,7 +148,8 @@
 .quizList {
   padding: 10px 0 16px;
   /* padding-left: 1rem; */
-  font-size: 14px;
+  font-size: 12px;
+  color: var(--mutedColor);
 }
 
 .detailsHeader {
@@ -165,8 +166,9 @@
 }
 
 .detailsQuizCount {
-  font-size: 14px;
+  font-size: 12px;
   text-align: right;
+  color: var(--mutedColor);
 }
 
 .quizTable {
@@ -197,10 +199,10 @@
   transition: var(--transition-base);
 }
 
-.quizItem:hover {
+/* .quizItem:hover {
   background: rgb(255, 255, 209);
   transition: var(--transition-base);
-}
+} */
 
 .quizCount {
   font-size: 11px;
