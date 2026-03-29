@@ -1,10 +1,10 @@
+import { SidebarProvider } from "@/context/SidebarContext";
+import LayoutClient from "@/components/LayoutClient";
+
 import { Montserrat, Open_Sans } from "next/font/google";
 import "./globals.css";
 
 import Providers from "./providers";
-
-import Header from "@/components/Header/Header";
-import Footer from "@/components/Footer/Footer";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -30,12 +30,9 @@ export default function RootLayout({ children }) {
     <html lang='en'>
       <body className={`${montserrat.variable} ${openSans.variable}`}>
         <Providers>
-          <Header />
-
-          <div className='app-shell'>
-            <main className='app-main'>{children}</main>
-            <Footer />
-          </div>
+          <SidebarProvider>
+            <LayoutClient>{children}</LayoutClient>
+          </SidebarProvider>
         </Providers>
       </body>
     </html>

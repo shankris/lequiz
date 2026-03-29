@@ -1,28 +1,57 @@
 .dashboardLayout {
   display: grid;
   grid-template-columns: 1fr 320px;
-  /* Main content takes remaining space, sidebar is fixed */
   gap: 2.5rem;
   align-items: start;
-
 }
 
 .mainContent {
   display: flex;
   flex-direction: column;
-  /* gap: 2rem; */
 }
 
-
+/* ✅ Desktop Sidebar */
 .sidebar {
   position: sticky;
   top: 70px;
-  /* height: calc(100vh - var(--headerHeight) - 30px - 70px); */
-  /* min-height: calc(100vh - var(--headerHeight) - 30px - 70px); */
   height: calc(100vh - var(--headerHeight) - 30px - 70px);
 }
 
-/* Login Screen Styles */
+/* -------------------- Mobile Drawer -------------------- */
+
+/* ✅ Overlay */
+.overlay {
+  position: fixed;
+  inset: 0;
+  /* cleaner than top/left/width/height */
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 200;
+
+  /* subtle fade improvement */
+  backdrop-filter: blur(1px);
+}
+
+/* ✅ Mobile Sidebar */
+.mobileSidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 320px;
+  max-width: 85%;
+  height: 100vh;
+  background: var(--background);
+  z-index: 210;
+
+  padding: 50px 1rem 1rem 1rem;
+  overflow-y: auto;
+  background-color: var(--mainContentBg);
+
+  /* smoother feel */
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.15);
+}
+
+/* -------------------- Login -------------------- */
+
 .loginWrapper {
   display: flex;
   flex-direction: column;
@@ -34,18 +63,18 @@
 
 .dataInfo {
   font-size: 12px;
-  color: var(--mutedColor2)
+  color: var(--mutedColor2);
 }
 
+/* -------------------- Responsive -------------------- */
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
   .dashboardLayout {
     grid-template-columns: 1fr;
-    /* Stack sidebar on mobile */
   }
 
+  /* ❗ IMPORTANT: hide desktop sidebar */
   .sidebar {
-    position: static;
+    display: none;
   }
 }

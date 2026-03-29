@@ -1,48 +1,39 @@
 "use client";
 
-// import { useSession, signIn } from "next-auth/react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useSidebar } from "@/context/SidebarContext";
+
 import styles from "./page.module.css";
 import SubSectionGrid from "@/components/Dashboard/SubSectionGrid";
 import StatsSidebar from "@/components/Dashboard/StatsSidebar/StatsSidebar";
 
 export default function Home() {
-  /* We are bypassing Auth for now to focus on the Quiz logic.
-     When you are ready for Phase 2, uncomment the useSession logic below.
-  */
+  const { isSidebarOpen, setIsSidebarOpen } = useSidebar();
 
-  // const { data: session, status } = useSession();
-
-  // Mock session for development
+  // Mock session
   const session = {
     user: {
       name: "Apprenant A1",
-      image: "https://ui-avatars.com/api/?name=User", // Placeholder avatar
+      image: "https://ui-avatars.com/api/?name=User",
     },
   };
+
   const status = "authenticated";
 
-  // 1. Handle Loading State
   if (status === "loading") {
     return <div className={styles.loading}>Chargement...</div>;
   }
 
-  // 2. Handle Unauthenticated State (Login Screen)
   if (!session) {
     return (
       <div className={styles.loginWrapper}>
         <h1>Bienvenue sur LeQuiz</h1>
         <p>Connectez-vous pour suivre votre progression en Français A1.</p>
-        <button
-          className='btn-primary'
-          onClick={() => console.log("Sign in clicked - Auth is currently disabled")}
-        >
-          Se connecter avec Google
-        </button>
+        <button className='btn-primary'>Se connecter avec Google</button>
       </div>
     );
   }
 
-  // 3. Dashboard View
   return (
     <div className={styles.dashboardLayout}>
       <main className={styles.mainContent}>
@@ -50,13 +41,43 @@ export default function Home() {
           <h1 className='header'>Accélérons votre apprentissage du français.</h1>
           <div className='subHead'>Choisissez un Quiz pour commencer votre pratique quotidienne.</div>
         </header>
+
         <SubSectionGrid />
+
         <span className={styles.dataInfo}>Toutes les données concernent les 30 derniers jours.</span>
       </main>
 
+      {/* ✅ Desktop Sidebar (unchanged) */}
       <aside className={styles.sidebar}>
         <StatsSidebar user={session.user} />
       </aside>
+
+      {/* ✅ Mobile Sidebar (Animated) */}
+      <AnimatePresence>
+        {isSidebarOpen && (
+          <>
+            {/* Overlay */}
+            <motion.div
+              className={styles.overlay}
+              onClick={() => setIsSidebarOpen(false)}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+            />
+
+            {/* Sliding Sidebar */}
+            <motion.aside
+              className={styles.mobileSidebar}
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "tween", duration: 0.3 }}
+            >
+              <StatsSidebar user={session.user} />
+            </motion.aside>
+          </>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

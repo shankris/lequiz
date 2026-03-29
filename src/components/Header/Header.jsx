@@ -4,6 +4,9 @@ import Image from "next/image";
 import styles from "./Header.module.css";
 import ThemeToggle from "./ThemeToggle";
 import NotificationBell from "../Notification/NotificationBell";
+import MenuToggle from "@/components/MenuToggle/MenuToggle";
+import { useSidebar } from "@/context/SidebarContext";
+
 import SearchInput from "./Search/SearchInput";
 
 const notifications = [
@@ -31,6 +34,9 @@ const notifications = [
 ];
 
 export default function Header() {
+  // ✅ FIX: Move hook INSIDE component
+  const { isSidebarOpen, setIsSidebarOpen } = useSidebar();
+
   return (
     <header className={styles.header}>
       <div className={styles.inner}>
@@ -47,18 +53,20 @@ export default function Header() {
           </div>
         </div>
 
-        {/* <div>
-          <SearchInput />
-        </div> */}
+        {/* <SearchInput /> */}
 
-        {/* Right side of header */}
         <div className={styles.rightIcons}>
           <ThemeToggle />
 
           <NotificationBell
             notifications={notifications}
             onItemClick={(item) => console.log("Clicked", item)}
-            onViewAll={() => router.push("/notifications")}
+            onViewAll={() => console.log("Go to notifications")}
+          />
+
+          <MenuToggle
+            isOpen={isSidebarOpen}
+            onToggle={() => setIsSidebarOpen((prev) => !prev)}
           />
         </div>
       </div>

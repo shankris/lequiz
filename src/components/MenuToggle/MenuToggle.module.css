@@ -1,0 +1,15 @@
+.menuButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: none;
+  padding: 0.5rem;
+  z-index: 1001;
+  /* stays above sidebar */
+}
+
+@media (max-width: 768px) {
+  .menuButton {
+    display: block;
+  }
+}
