@@ -8,7 +8,9 @@ To Do
 - Dernier quiz effectué
 - Update data after each question is attempted
 
-
+- Ansering tips
+- Flag question
+- Add 5 pages - about
 Les articles partitifs – du, de la, de l', des
 
 un, une, des 
@@ -16,3 +18,30 @@ un, une, des
 Dictée à Choix Multiples - this clearly indicates that it is about
 
 opposites
+
+
+Top Picks (for learning apps)
+
+Nicolas
+Neutral, clear pronunciation
+Very “standard French”
+✅ BEST for beginners (A1)
+
+https://elevenlabs.io/app/voice-library?voiceId=AmMsHJaCw4BtwV3KoUXF
+
+
+API Key – Furious Striped Hyena
+sk_f02b40fcd775496e7fb681c595af48b11fc0684289146870
+
+
+Guillaume - Narrator
+Slightly more natural tone
+Still very clear
+Good balance of realism + clarity
+tVu7uvtKsrCoOPPIUVR7
+https://elevenlabs.io/app/voice-library?voiceId=tVu7uvtKsrCoOPPIUVR7
+
+
+Hélène
+Soft, pleasant
+Good for variety (female voice exposure)

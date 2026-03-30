@@ -36,6 +36,12 @@
     "subtitle": "du, de la, de l', des"
   },
   {
+    "id": "Fr-OPP",
+    "section": "basic",
+    "title": "Les contraires",
+    "subtitle": "Choisissez le contraire (l'opposé)"
+  },
+  {
     "id": "Fr-CON-PRS",
     "section": "conjugation",
     "title": "Le présent de l'indicatif",
