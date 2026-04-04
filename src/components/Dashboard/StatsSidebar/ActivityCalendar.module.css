@@ -118,14 +118,15 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 2px 8px;
+  padding: 12px 8px 6px;
 }
 
 .calendarCard {
   margin: 0;
   padding: 0;
   /* background-color: #ddd; */
-  border-bottom: 1px solid #e1e1e1;
+  /* border-bottom: 1px solid #e1e1e1; */
+  border-bottom: 1px solid var(--underlineOne)
 }
 
 .calendarLegend {

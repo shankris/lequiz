@@ -1,13 +1,8 @@
-.dashboardLayout {
-  display: grid;
-  grid-template-columns: 1fr 320px;
-  gap: 2.5rem;
-  align-items: start;
-}
-
 .mainContent {
   display: flex;
   flex-direction: column;
+  padding: 10px 0px 10px 20px;
+  margin-top: var(--headerHeight)
 }
 
 /* ✅ Desktop Sidebar */
@@ -64,6 +59,27 @@
 .dataInfo {
   font-size: 12px;
   color: var(--mutedColor2);
+}
+
+/* Desktop visible, mobile hidden */
+.desktopSidebar {
+  display: block;
+}
+
+/* Mobile hidden by default */
+.mobileSidebar {
+  display: none;
+}
+
+/* 📱 On small screens */
+@media (max-width: 768px) {
+  .desktopSidebar {
+    display: none;
+  }
+
+  .mobileSidebar {
+    display: block;
+  }
 }
 
 /* -------------------- Responsive -------------------- */

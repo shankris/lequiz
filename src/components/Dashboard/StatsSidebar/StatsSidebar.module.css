@@ -1,7 +1,10 @@
 .sidebarContainer {
   display: flex;
   flex-direction: column;
-  margin-top: 10px;
   justify-content: space-between;
-  height: 100%;
+  margin: 0 0 0;
+  height: 100vh;
+  padding: 60px 10px 0;
+  width: 340px
+    /* background-color: rgb(138, 138, 138); */
 }

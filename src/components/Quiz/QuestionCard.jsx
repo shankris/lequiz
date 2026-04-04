@@ -1,5 +1,5 @@
 import { CheckCircle2, XCircle } from "lucide-react";
-import styles from "@/app/quiz/[sectionId]/page.module.css";
+import styles from "./QuestionCard.module.css";
 
 /**
  * Renders the main quiz question UI.

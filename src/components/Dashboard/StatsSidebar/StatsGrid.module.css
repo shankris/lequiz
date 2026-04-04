@@ -1,3 +1,12 @@
+/* Theme Variables */
+:root {
+  --underlineOne: #dedede;
+}
+
+html[data-theme="dark"] {
+  --underlineOne: #5b5b5b;
+}
+
 .calendarCard {
   background: #111;
   padding: 12px;
@@ -51,7 +60,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 10px 6px;
-  border-bottom: 1px solid #e1e1e1;
+  border-bottom: 1px solid var(--underlineOne)
 }
 
 .statItem:hover {

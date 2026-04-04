@@ -24,3 +24,29 @@
 footer {
   margin-top: auto;
 }
+
+.dashboardLayout {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 20px;
+  align-items: start;
+  width: var(--contentWidth);
+  max-width: var ↳ 96% ↳ 1382.39px (--contentWidthMax);
+  padding: var(--genericPadding);
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+
+  .dashboardLayout {
+    display: grid;
+    grid-template-columns: 1fr;
+    /* gap: 20px; */
+    align-items: start;
+  }
+
+  .desktopSidebar {
+    display: none;
+  }
+
+}

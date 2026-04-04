@@ -1,6 +1,6 @@
 import { Trophy, RotateCcw, Home } from "lucide-react";
 import { useRouter } from "next/navigation";
-import styles from "@/app/quiz/[sectionId]/page.module.css";
+import styles from "./QuizFinished.module.css";
 
 /**
  * Displays the final quiz results screen.

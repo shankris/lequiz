@@ -118,8 +118,10 @@ html[data-theme="dark"] {
 .sectionTitle {
   font-size: 26px;
   font-weight: 300;
-  /* margin: 20px 0 15px; */
-  padding-left: 5px;
+  background: #eaeaea;
+  border-radius: 3px;
+  padding: 6px 8px 2px;
+  margin: 18px 0 19px 0;
 }
 
 .textContainer {

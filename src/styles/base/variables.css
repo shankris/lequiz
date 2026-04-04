@@ -45,7 +45,7 @@
 
   --bgColor: #f4f6f8;
   --surfaceColor: #ffffff;
-  --surfaceAlt: #f1f5f9;
+  --surfaceAlt: #e5e5e5;
 
 
   /* Text */
@@ -101,7 +101,7 @@ html[data-theme="dark"] {
 
   --bgColor: #0f172a;
   --surfaceColor: #020617;
-  --surfaceAlt: #020617;
+  --surfaceAlt: #2e2e2e;
 
   /* Text */
   --txtColor: #e5e7eb;

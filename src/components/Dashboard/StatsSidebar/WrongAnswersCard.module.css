@@ -1,5 +1,6 @@
 .card {
-  border-bottom: 1px solid #e1e1e1;
+  /* border-bottom: 1px solid #e1e1e1; */
+  border-bottom: 1px solid var(--underlineOne);
   padding: 6px 0px;
 }
 

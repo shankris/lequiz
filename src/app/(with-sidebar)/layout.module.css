@@ -1,0 +1,5 @@
+  aside .desktopSidebar {
+    width: 340px;
+    height: calc(100vh - var(--headerHeight) - 70px);
+    background-color: #9e2525;
+  }

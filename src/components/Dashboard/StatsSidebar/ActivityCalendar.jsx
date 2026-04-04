@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Calendar as CalendarIcon } from "lucide-react";
 import styles from "./ActivityCalendar.module.css";
@@ -10,7 +10,14 @@ export default function ActivityCalendar({ activityData = {} }) {
 
   const todayISO = currentDate.getFullYear() + "-" + String(currentDate.getMonth() + 1).padStart(2, "0") + "-" + String(currentDate.getDate()).padStart(2, "0");
 
+  // ✅ STATE (order matters)
   const [selectedDate, setSelectedDate] = useState(todayISO);
+  const [showMeta, setShowMeta] = useState(false);
+
+  // ✅ RESET animation trigger on date change
+  useEffect(() => {
+    setShowMeta(false);
+  }, [selectedDate]);
 
   const stored = typeof window !== "undefined" ? localStorage.getItem("quiz_stats") : null;
 
@@ -21,6 +28,13 @@ export default function ActivityCalendar({ activityData = {} }) {
 
   const quizzesList = selectedDayData?.quizzesList || [];
   const totalQuizzes = selectedDayData?.quizzes || 0;
+
+  // ✅ EDGE CASE: no quizzes → still show meta
+  useEffect(() => {
+    if (selectedDayData && quizzesList.length === 0) {
+      setShowMeta(true);
+    }
+  }, [selectedDayData, quizzesList.length]);
 
   const today = new Date();
 
@@ -112,8 +126,9 @@ export default function ActivityCalendar({ activityData = {} }) {
     <div className={styles.calendarCard}>
       <div className={styles.calendarHeader}>
         <CalendarIcon size={20} />
-        <h4>Activité</h4>
+        <span>Activité</span>
       </div>
+
       <div className={styles.calendarGrid}>
         <div className={styles.weekLabels}>
           {["L", "M", "M", "J", "V", "S", "D"].map((d, i) => (
@@ -149,8 +164,9 @@ export default function ActivityCalendar({ activityData = {} }) {
           </div>
         ))}
       </div>
+
       <p className={styles.calendarLegend}>Dernière activité : {getLastActive(activityDates)}</p>
-      {/* ✅ AnimatePresence FIX */}
+
       <AnimatePresence mode='wait'>
         {selectedDate && (
           <motion.div
@@ -161,6 +177,7 @@ export default function ActivityCalendar({ activityData = {} }) {
             transition={{ duration: 0.25 }}
             className={styles.detailsPanel}
           >
+            {/* ✅ DATE + % appear AFTER list */}
             <div className={styles.detailsHeader}>
               <span className={styles.detailsDate}>
                 {new Date(selectedDate).toLocaleDateString("fr-FR", {
@@ -171,59 +188,62 @@ export default function ActivityCalendar({ activityData = {} }) {
               </span>
 
               {selectedDayData && <span className={styles.detailsQuizCount}>{successPercent}%</span>}
-
-              {/* {selectedDayData && (
-                <span className={styles.detailsQuizCount}>
-                  {totalQuizzes} {totalQuizzes === 1 ? "quiz" : "quizzes"}
-                </span>
-              )} */}
             </div>
 
             {!selectedDayData ? (
               <p>Aucune activité</p>
-            ) : (
-              quizzesList.length > 0 && (
-                <motion.div
-                  className={styles.quizList}
-                  variants={containerVariants}
-                  initial='hidden'
-                  animate='visible'
-                >
-                  {[...quizzesList]
-                    .sort((a, b) => b.timestamp - a.timestamp)
-                    .map((quiz, i) => {
-                      const total = quiz.total || 20;
-                      const percent = Math.round((quiz.correct / total) * 100);
+            ) : quizzesList.length > 0 ? (
+              <motion.div
+                className={styles.quizList}
+                variants={containerVariants}
+                initial='hidden'
+                animate='visible'
+                onAnimationComplete={() => setShowMeta(true)}
+              >
+                {[...quizzesList]
+                  .sort((a, b) => b.timestamp - a.timestamp)
+                  .map((quiz, i) => {
+                    const total = quiz.total || 20;
+                    const percent = Math.round((quiz.correct / total) * 100);
 
-                      return (
-                        <motion.span
-                          className={styles.quizItem}
-                          key={quiz.timestamp || i}
-                          variants={itemVariants}
-                        >
-                          <span className={styles.quizName}>{quiz.name}</span>
-                          <span className={styles.quizPerCent}>{percent}%</span>
-                        </motion.span>
-                      );
-                    })}
-                </motion.div>
-              )
+                    return (
+                      <motion.span
+                        className={styles.quizItem}
+                        key={quiz.timestamp || i}
+                        variants={itemVariants}
+                      >
+                        <span className={styles.quizName}>{quiz.name}</span>
+                        <span className={styles.quizPerCent}>{percent}%</span>
+                      </motion.span>
+                    );
+                  })}
+              </motion.div>
+            ) : (
+              <p>Aucune activité</p>
             )}
+
+            {/* ✅ TOTAL appears LAST */}
+            <AnimatePresence>
+              {showMeta && totalQuizzes > 0 && (
+                <motion.span
+                  key={selectedDate + "-total"}
+                  className={styles.quizCount}
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{
+                    delay: 0.6,
+                    duration: 0.45,
+                    ease: [0.22, 1, 0.36, 1],
+                  }}
+                >
+                  Total: {totalQuizzes} {totalQuizzes === 1 ? "quiz" : "quizzes"}
+                </motion.span>
+              )}
+            </AnimatePresence>
           </motion.div>
         )}
       </AnimatePresence>
-
-      {totalQuizzes > 0 && (
-        <motion.span
-          className={styles.quizCount}
-          initial={{ opacity: 0, y: -10 }} // start hidden and slightly up
-          animate={{ opacity: 1, y: 0 }} // animate to visible and original position
-          transition={{ delay: 2, duration: 0.4 }} // delay in seconds
-        >
-          Total: {totalQuizzes} {totalQuizzes === 1 ? "quiz" : "quizzes"}
-          <br />
-        </motion.span>
-      )}
     </div>
   );
 }

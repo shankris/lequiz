@@ -1,9 +1,5 @@
-import { SidebarProvider } from "@/context/SidebarContext";
-import LayoutClient from "@/components/LayoutClient";
-
 import { Montserrat, Open_Sans } from "next/font/google";
 import "./globals.css";
-
 import Providers from "./providers";
 
 const montserrat = Montserrat({
@@ -29,11 +25,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang='en'>
       <body className={`${montserrat.variable} ${openSans.variable}`}>
-        <Providers>
-          <SidebarProvider>
-            <LayoutClient>{children}</LayoutClient>
-          </SidebarProvider>
-        </Providers>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
