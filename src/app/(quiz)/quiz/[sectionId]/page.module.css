@@ -265,6 +265,7 @@ html[data-theme="dark"] {
   display: flex;
   gap: 20px;
   align-items: flex-start;
+  justify-content: center;
 }
 
 .translationText {

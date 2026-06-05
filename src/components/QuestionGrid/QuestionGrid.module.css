@@ -24,12 +24,12 @@
 
 /* States */
 .correct {
-  background-color: #4caf50;
+  background-color: #265a28;
   color: white;
 }
 
 .wrong {
-  background-color: #f44336;
+  background-color: #a6140a;
   color: white;
 }
 
