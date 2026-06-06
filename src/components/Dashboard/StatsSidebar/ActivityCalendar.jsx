@@ -1,20 +1,21 @@
 "use client";
 
+import Link from "next/link";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Calendar as CalendarIcon } from "lucide-react";
 import styles from "./ActivityCalendar.module.css";
 
+const DAYS = 30;
+
 export default function ActivityCalendar({ activityData = {} }) {
-  const currentDate = new Date();
+  const today = new Date();
 
-  const todayISO = currentDate.getFullYear() + "-" + String(currentDate.getMonth() + 1).padStart(2, "0") + "-" + String(currentDate.getDate()).padStart(2, "0");
+  const todayISO = today.getFullYear() + "-" + String(today.getMonth() + 1).padStart(2, "0") + "-" + String(today.getDate()).padStart(2, "0");
 
-  // ✅ STATE (order matters)
   const [selectedDate, setSelectedDate] = useState(todayISO);
   const [showMeta, setShowMeta] = useState(false);
 
-  // ✅ RESET animation trigger on date change
   useEffect(() => {
     setShowMeta(false);
   }, [selectedDate]);
@@ -29,65 +30,63 @@ export default function ActivityCalendar({ activityData = {} }) {
   const quizzesList = selectedDayData?.quizzesList || [];
   const totalQuizzes = selectedDayData?.quizzes || 0;
 
-  // ✅ EDGE CASE: no quizzes → still show meta
   useEffect(() => {
     if (selectedDayData && quizzesList.length === 0) {
       setShowMeta(true);
     }
   }, [selectedDayData, quizzesList.length]);
 
-  const today = new Date();
+  // ======================================================
+  // 📅 STEP 1: STRICT 30-DAY DATA WINDOW
+  // ======================================================
 
-  const activityDates = Object.keys(activityData).sort();
+  const dataDays = [];
 
-  const firstActivityDate = activityDates.length ? new Date(activityDates[0]) : new Date(today);
+  for (let i = DAYS - 1; i >= 0; i--) {
+    const d = new Date(today);
+    d.setDate(today.getDate() - i);
 
-  const start = new Date(firstActivityDate);
-  const day = start.getDay();
-  start.setDate(start.getDate() - ((day + 6) % 7));
+    const iso = d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0");
 
-  const days = [];
-  let current = new Date(start);
-
-  while (current <= today) {
-    const iso = current.getFullYear() + "-" + String(current.getMonth() + 1).padStart(2, "0") + "-" + String(current.getDate()).padStart(2, "0");
-
-    const dayData = activityData[iso];
-
-    days.push({
+    dataDays.push({
       date: iso,
-      isActive: !!dayData,
-      isWeekend: current.getDay() === 0 || current.getDay() === 6,
-      isFuture: current > today,
+      isActive: !!activityData?.[iso],
+      isData: true,
+      isWeekend: d.getDay() === 0 || d.getDay() === 6,
     });
-
-    current.setDate(current.getDate() + 1);
   }
 
-  const remainder = days.length % 7;
-  if (remainder !== 0) {
-    const missing = 7 - remainder;
-    for (let i = 0; i < missing; i++) {
-      const date = new Date(current);
-      date.setDate(current.getDate() + i);
+  // ======================================================
+  // 📅 STEP 2: MONDAY ALIGNMENT PADDING (visual only)
+  // ======================================================
 
-      const iso = date.getFullYear() + "-" + String(date.getMonth() + 1).padStart(2, "0") + "-" + String(date.getDate()).padStart(2, "0");
+  const startDay = new Date(dataDays[0].date).getDay();
+  const pad = (startDay + 6) % 7;
 
-      days.push({
-        date: iso,
-        isActive: false,
-        isWeekend: date.getDay() === 0 || date.getDay() === 6,
-        isFuture: true,
-      });
-    }
-  }
+  const paddedDays = [
+    ...Array.from({ length: pad }).map(() => ({
+      date: null,
+      isActive: false,
+      isData: false,
+      disabled: true,
+    })),
+    ...dataDays,
+  ];
+
+  // ======================================================
+  // 📅 STEP 3: SPLIT INTO WEEKS
+  // ======================================================
 
   const weeks = [];
-  for (let i = 0; i < days.length; i += 7) {
-    weeks.push(days.slice(i, i + 7));
+
+  for (let i = 0; i < paddedDays.length; i += 7) {
+    weeks.push(paddedDays.slice(i, i + 7));
   }
 
-  // ✅ Animation Variants
+  // ======================================================
+  // 🎞 ANIMATIONS (unchanged)
+  // ======================================================
+
   const containerVariants = {
     hidden: {},
     visible: {
@@ -117,10 +116,17 @@ export default function ActivityCalendar({ activityData = {} }) {
     },
   };
 
+  const activityDates = Object.keys(activityData).sort();
+
   const totalCorrect = quizzesList.reduce((sum, q) => sum + (q.correct || 0), 0);
+
   const totalQuestions = quizzesList.reduce((sum, q) => sum + (q.total || 20), 0);
 
   const successPercent = totalQuestions > 0 ? Math.round((totalCorrect / totalQuestions) * 100) : 0;
+
+  // ======================================================
+  // 🧩 UI
+  // ======================================================
 
   return (
     <div className={styles.calendarCard}>
@@ -149,16 +155,18 @@ export default function ActivityCalendar({ activityData = {} }) {
             {week.map((d, di) => (
               <div
                 key={di}
-                onClick={() => !d.isFuture && setSelectedDate(d.date)}
+                onClick={() => {
+                  if (!d.isData) return; // 🔥 disable padding clicks
+                  setSelectedDate(d.date);
+                }}
                 className={`
                   ${styles.day}
                   ${d.isActive ? styles.active : ""}
-                  ${d.isWeekend ? styles.weekend : ""}
-                  ${d.isFuture ? styles.future : ""}
+                  ${d.disabled ? styles.disabled : ""}
                   ${selectedDate === d.date ? styles.selected : ""}
                 `}
               >
-                <span className={styles.dateNumber}>{new Date(d.date).getDate()}</span>
+                {d.date && <span className={styles.dateNumber}>{new Date(d.date).getDate()}</span>}
               </div>
             ))}
           </div>
@@ -174,10 +182,8 @@ export default function ActivityCalendar({ activityData = {} }) {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 10 }}
-            transition={{ duration: 0.25 }}
             className={styles.detailsPanel}
           >
-            {/* ✅ DATE + % appear AFTER list */}
             <div className={styles.detailsHeader}>
               <span className={styles.detailsDate}>
                 {new Date(selectedDate).toLocaleDateString("fr-FR", {
@@ -207,14 +213,19 @@ export default function ActivityCalendar({ activityData = {} }) {
                     const percent = Math.round((quiz.correct / total) * 100);
 
                     return (
-                      <motion.span
-                        className={styles.quizItem}
+                      <Link
                         key={quiz.timestamp || i}
-                        variants={itemVariants}
+                        href={`/quiz/${quiz.sectionId}`}
+                        className={styles.quizLink}
                       >
-                        <span className={styles.quizName}>{quiz.name}</span>
-                        <span className={styles.quizPerCent}>{percent}%</span>
-                      </motion.span>
+                        <motion.span
+                          className={styles.quizItem}
+                          variants={itemVariants}
+                        >
+                          <span className={styles.quizName}>{quiz.name}</span>
+                          <span className={styles.quizPerCent}>{percent}%</span>
+                        </motion.span>
+                      </Link>
                     );
                   })}
               </motion.div>
@@ -222,21 +233,9 @@ export default function ActivityCalendar({ activityData = {} }) {
               <p>Aucune activité</p>
             )}
 
-            {/* ✅ TOTAL appears LAST */}
             <AnimatePresence>
               {showMeta && totalQuizzes > 0 && (
-                <motion.span
-                  key={selectedDate + "-total"}
-                  className={styles.quizCount}
-                  initial={{ opacity: 0, y: -10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -10 }}
-                  transition={{
-                    delay: 0.6,
-                    duration: 0.45,
-                    ease: [0.22, 1, 0.36, 1],
-                  }}
-                >
+                <motion.span className={styles.quizCount}>
                   Total: {totalQuizzes} {totalQuizzes === 1 ? "quiz" : "quizzes"}
                 </motion.span>
               )}
@@ -248,7 +247,10 @@ export default function ActivityCalendar({ activityData = {} }) {
   );
 }
 
-// ✅ Helper
+// ======================================================
+// 🧠 Helper
+// ======================================================
+
 function getLastActive(activityDates) {
   if (!activityDates || activityDates.length === 0) return "Aucune";
 

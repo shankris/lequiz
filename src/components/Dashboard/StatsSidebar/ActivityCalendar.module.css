@@ -147,7 +147,7 @@
 }
 
 .quizList {
-  padding: 10px 0 16px;
+  padding: 0px 0 16px;
   /* padding-left: 1rem; */
   font-size: 12px;
   color: var(--mutedColor);
@@ -157,7 +157,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 0 10px;
+  padding: 0 0 6px;
 }
 
 .detailsDate {
@@ -196,8 +196,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 2px 2px 2px 2px;
-  cursor: default;
   transition: var(--transition-base);
+  font-size: 14px;
 }
 
 /* .quizItem:hover {
@@ -209,4 +209,23 @@
   font-size: 11px;
   color: var(--mutedColor);
   margin-top: 4px;
+}
+
+a.quizLink {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  cursor: pointer;
+}
+
+.quizLink:hover {
+  background: rgb(255, 255, 209);
+  transition: var(--transition-base);
+  opacity: 0.85;
+  cursor: pointer;
+}
+
+a.quizLink:hover {
+  text-decoration: none;
+  color: inherit;
 }

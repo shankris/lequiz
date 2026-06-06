@@ -48,6 +48,25 @@ export default function StatsSidebar() {
     }
   }, []);
 
+  function getLastTwoMonthsActivity(activity = {}) {
+    const now = new Date();
+
+    const start = new Date();
+    start.setMonth(now.getMonth() - 1); // last month + current month
+
+    const filtered = {};
+
+    Object.entries(activity).forEach(([date, value]) => {
+      const d = new Date(date);
+
+      if (d >= start && d <= now) {
+        filtered[date] = value;
+      }
+    });
+
+    return filtered;
+  }
+
   // ⏳ Avoid flicker while session loads
   if (status === "loading") return null;
 
@@ -70,7 +89,7 @@ export default function StatsSidebar() {
         />
 
         {/* 📅 Calendar */}
-        <ActivityCalendar activityData={levelStats.activity} />
+        <ActivityCalendar activityData={getLastTwoMonthsActivity(levelStats.activity)} />
       </div>
 
       <UserMenu />
